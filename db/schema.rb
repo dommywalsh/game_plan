@@ -10,9 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_07_133448) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_08_115947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.float "longitude"
+    t.float "latitude"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_events_on_game_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.text "desciption"
+    t.integer "capacity"
+    t.integer "first_place_points"
+    t.integer "second_place_points"
+    t.integer "losing_points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "user_id", null: false
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_players_on_event_id"
+    t.index ["user_id"], name: "index_players_on_user_id"
+  end
+
+  create_table "user_ratings", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "user_id", null: false
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_user_ratings_on_game_id"
+    t.index ["user_id"], name: "index_user_ratings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +70,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_07_133448) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "games"
+  add_foreign_key "events", "users"
+  add_foreign_key "players", "events"
+  add_foreign_key "players", "users"
+  add_foreign_key "user_ratings", "games"
+  add_foreign_key "user_ratings", "users"
 end
