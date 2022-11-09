@@ -1,0 +1,12 @@
+<%# <div class="container d-flex map-card-container">
+<%# div for search bar and cards%>
+  <div class="container mt-4 card-overflow">
+    <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a coworking space"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %> %>
+  </div>
