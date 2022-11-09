@@ -1,0 +1,19 @@
+<h1>this is is our new event page</h1>
+<p>AN event needs a date and time; a specific game (catan, poker), location, name, and description, </p>
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a new event</h3>
+        <%= simple_form_for @event do |f| %>
+          <%= f.input :name, placeholder: 'Event name' %>
+          <%= f.input :address, placeholder: '18 Clarievaux road, Kalk bay , Cape Town' %>
+          <%= f.input :description, placeholder: 'Give us details about your event...' %>
+          <%= f.input :image, as: :file %>
+          <%= f.submit class: 'btn-ghost' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
