@@ -1,3 +1,11 @@
+<h1>this is the index page</h1>
+<ol>
+<% @events.each do |event| %>
+<li><%= event.name %></li>
+<% end %>
+</ol>
+
+
 <%# <div class="container d-flex map-card-container">
 <%# div for search bar and cards%>
   <div class="container mt-4 card-overflow">
@@ -10,3 +18,5 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %> %>
   </div>
+
+

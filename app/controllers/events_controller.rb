@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @event.user = current_user
 
     if @event.save
-      redirect_to dashboard_path
+      redirect_to events_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :date, :latitude, :longitude, :description, :user_id, :game_id)
+    params.require(:event).permit(:name, :date, :latitude, :longitude, :description, :game_id)
   end
 end
