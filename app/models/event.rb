@@ -5,8 +5,9 @@ class Event < ApplicationRecord
   belongs_to :user
   belongs_to :game
   has_many :players
+  has_many :users, through: :players
   has_one_attached :photo
-  
+
 
   include PgSearch::Model
       pg_search_scope :search_by_address_and_date,
