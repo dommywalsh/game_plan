@@ -4,9 +4,9 @@ class EventsController < ApplicationController
 
     if params[:query].present?
       @events = Event.search_by_game_and_date(params[:query])
-      else
-        @events = Event.all
-      end
+    else
+      @events = Event.all
+    end
 
       @markers = @events.geocoded.map do |event|
         {
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @event.user = current_user
 
     if @event.save
-      redirect_to events_path
+      redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity
     end
