@@ -4,4 +4,5 @@ class Event < ApplicationRecord
   belongs_to :user
   belongs_to :game
   has_many :players
+  has_one_attached :photo
 end

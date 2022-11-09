@@ -51,6 +51,8 @@ gem "open-uri"
 
 gem "geocoder"
 
+gem "cloudinary"
+
 gem "dotenv-rails", groups: [:development, :test]
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

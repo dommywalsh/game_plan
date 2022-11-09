@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @games = Game.all
   end
 
   def create
