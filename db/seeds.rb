@@ -124,6 +124,7 @@ puts "Creating events"
       address: "4, Southern Right Circle",
       description: "A lovely night with some friends",
     )
+    eventtwo.save!
 
     eventthree = Event.new(
       date: DateTime.new(),
@@ -133,6 +134,7 @@ puts "Creating events"
       address: "41, Skilpadvlei Road",
       description: "Please bring some wine",
     )
+    eventthree.save!
 
     eventfour = Event.new(
       date: DateTime.new(),
@@ -142,6 +144,7 @@ puts "Creating events"
       address: " 38, De la Haye Avenue",
       description: "Should be fun",
     )
+    eventfour.save!
 
     eventfive = Event.new(
       date: DateTime.new(),
@@ -151,6 +154,7 @@ puts "Creating events"
       address: "15, Willow Way",
       description: "Please bring some wine",
     )
+    eventfive.save!
 
     eventsix = Event.new(
       date: DateTime.new(),
@@ -160,6 +164,7 @@ puts "Creating events"
       address: "28, Klinker Street",
       description: "Please be serious about gaming",
     )
+    eventsix.save!
 
     eventseven = Event.new(
       date: DateTime.new(),
@@ -169,6 +174,7 @@ puts "Creating events"
       address: "17, Louis Botha Avenue",
       description: "BE the game, live the game",
     )
+    eventseven.save!
 
     eventeight = Event.new(
       date: DateTime.new(),
@@ -178,6 +184,7 @@ puts "Creating events"
       address: ": 27, Tradewinds Circle",
       description: "Please bring some wine",
     )
+    eventeight.save!
 
     eventnine = Event.new(
       date: DateTime.new(),
@@ -187,6 +194,7 @@ puts "Creating events"
       address: "6, Eksteen Street",
       description: "Just some good mates looking to have a lekker time",
     )
+    eventnine.save!
 
 puts "#{Event.count} Events created"
 puts "creating players"
@@ -201,16 +209,6 @@ puts "creating players"
   # player.user = User.all.sample
   player.save!
 end
-
-# create_table "user_ratings", force: :cascade do |t|
-#   t.bigint "game_id", null: false
-#   t.bigint "user_id", null: false
-#   t.integer "rating"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-#   t.index ["game_id"], name: "index_user_ratings_on_game_id"
-#   t.index ["user_id"], name: "index_user_ratings_on_user_id"
-# end
 
 puts "#{Player.count} players created"
 
