@@ -6,7 +6,8 @@ class User < ApplicationRecord
   has_many :user_ratings
   has_many :players
   has_many :events
- 
+  has_one_attached :photo
+
   after_save :set_user_ratings
 
   def set_user_ratings
@@ -18,4 +19,5 @@ class User < ApplicationRecord
   # def update_first_place_rating!(game)
 
   # end
+
 end
