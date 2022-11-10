@@ -1,9 +1,10 @@
+
 <div class="banner">
   <div class="banner-content text-center">
     <h1>Game Plan</h1>
     <p>Play what you want, where you want, with who you want to.</p>
 <%# div for search bar and cards %>
-      <div class="container mt-4 card-overflow">
+      <div class="container mt-4 card-overflow bar">
         <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
         <%= text_field_tag :query,
         params[:query],
@@ -11,9 +12,9 @@
         placeholder: "Enter your location"
         %>
         <%= collection_select(:gamefilter, :name, @games, :name, :name, prompt: true) %>
-        <%= f.label "Start Date" %>
+        <%#= f.label "Start Date" %>
         <%= f.date_field :start_date %>
-        <%= f.label "End Date" %>
+        <%# <%= f.label "End Date" %>
         <%= f.date_field :end_date %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
