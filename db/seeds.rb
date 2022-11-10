@@ -215,7 +215,7 @@ puts "#{Player.count} players created"
 rating = UserRating.new(
   game_id: Game.all.sample.id,
   user_id: User.all.sample.id,
-  rating: rand(1..5)
+  rating: 1000
 )
 rating.save!
 puts "#{UserRating.count} ratings created"
