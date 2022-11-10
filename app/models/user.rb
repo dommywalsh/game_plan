@@ -6,4 +6,16 @@ class User < ApplicationRecord
   has_many :user_ratings
   has_many :players
   has_many :events
+ 
+  after_save :set_user_ratings
+
+  def set_user_ratings
+    Game.all.each do |game|
+      User
+    end
+  end
+
+  # def update_first_place_rating!(game)
+
+  # end
 end

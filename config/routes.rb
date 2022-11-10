@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :events do
     get "finish", on: :member
-    post "submit_scores"
+    post "submit_scores", on: :member
     resources :players, only: [:create, :update]
   end
 

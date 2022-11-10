@@ -7,5 +7,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
-  def leaderboard; end
+  def leaderboard
+    @game = Game.find(params[:id])
+  end
 end

@@ -60,8 +60,13 @@ class EventsController < ApplicationController
   end
 
   def submit_scores
-    raise
-    
+    @event = Event.find(params[:id])
+    @first_place = User.find_by(email: params[:first_place])
+    @second_place = User.find_by(email: params[:second_place])
+    @game = @event.game
+    @first_place.user_ratings.find_by(game: @game).increment_first_place_score!
+    @second_place.user_ratings.find_by(game: @game).increment_second_place_score!
+
   end
 
   private
