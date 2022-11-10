@@ -1,13 +1,10 @@
 class EventsController < ApplicationController
   def index
-    # @question = Question.find(params[:question_id])
-    # @answers = @question.answers
-    # @answer = Answer.all
     @games = Game.all
     @event = Event.new
     @events = Event.all
+
     if params[:query].present?
-      # @events = Event.search_by_address(params[:query])
       @events = Event.near(params[:query], 5)
     end
 
@@ -17,9 +14,10 @@ class EventsController < ApplicationController
       @events = Event.where(game: @game)
     end
 
-    if params[:start_date].present? && params[:end_date].present?
-      start_date = params[:start_date].to_datetime
-      end_date = params[:end_date].to_datetime
+    if params[:date_input].present?
+      date_input = params[:date_input].split("to")
+      start_date = date_input.first.to_datetime
+      end_date = date_input.last.to_datetime
       @events = Event.where(date: start_date..end_date)
     end
 
@@ -27,8 +25,11 @@ class EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
+
         info_window: render_to_string(partial: "info_window", locals: {event: event}),
         image_url: helpers.asset_url("Logo.png")
+
+
       }
     end
   end
@@ -37,6 +38,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @player = Player.new
   end
+
   def new
     @event = Event.new
   end

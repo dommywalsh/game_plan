@@ -8,9 +8,10 @@
 require "faker"
 require "open-uri"
 
-# Event.destroy_all
-# Event.destroy_all
-# User.destroy_all
+Player.destroy_all
+Event.destroy_all
+ UserRating.destroy_all
+ User.destroy_all
 
 puts "creating users"
 
@@ -106,7 +107,7 @@ puts "Creating events"
 # User.all.each do |user|
     # file = URI.open("https://www.mydeskhub.com/wp-content/uploads/2017/06/Mob-H-27-scaled.jpg")
     eventone = Event.new(
-      date: DateTime.now,
+      date: DateTime.now + 10.days,
       user_id: User.all.sample.id,
       name: "Girls night out",
       game_id: Game.all.sample.id,
@@ -117,7 +118,7 @@ puts "Creating events"
     eventone.save!
 
     eventtwo = Event.new(
-      date: DateTime.now,
+      date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
       name: "Big games night",
       game_id: Game.all.sample.id,
@@ -127,7 +128,7 @@ puts "Creating events"
     eventtwo.save!
 
     eventthree = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
       name: "RISK NIGHT BABY",
       game_id: Game.all.sample.id,
@@ -137,7 +138,7 @@ puts "Creating events"
     eventthree.save!
 
     eventfour = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now + 1.days,
       user_id: User.all.sample.id,
       name: "Girls night out",
       game_id: Game.all.sample.id,
@@ -147,7 +148,7 @@ puts "Creating events"
     eventfour.save!
 
     eventfive = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
       name: "Secret H",
       game_id: Game.all.sample.id,
@@ -157,7 +158,7 @@ puts "Creating events"
     eventfive.save!
 
     eventsix = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
       name: "Thursday catan",
       game_id: Game.all.sample.id,
@@ -167,7 +168,7 @@ puts "Creating events"
     eventsix.save!
 
     eventseven = Event.new(
-      date: DateTime.now,
+      date: DateTime.now + 2.days,
       user_id: User.all.sample.id,
       name: "Poker night",
       game_id: Game.all.sample.id,
@@ -177,7 +178,7 @@ puts "Creating events"
     eventseven.save!
 
     eventeight = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now + 2.weeks,
       user_id: User.all.sample.id,
       name: "Champs only",
       game_id: Game.all.sample.id,
@@ -187,7 +188,7 @@ puts "Creating events"
     eventeight.save!
 
     eventnine = Event.new(
-      date: DateTime.now - 1.weeks,
+      date: DateTime.now + 3.weeks,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
