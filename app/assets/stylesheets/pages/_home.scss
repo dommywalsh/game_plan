@@ -4,9 +4,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+  background-image: image-url("gameplan.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #7678ED;
   background-position: center;
 
   h1 {

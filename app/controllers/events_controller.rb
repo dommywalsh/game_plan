@@ -23,14 +23,14 @@ class EventsController < ApplicationController
       @events = Event.where(date: start_date..end_date)
     end
 
-      @markers = @events.geocoded.map do |event|
-        {
-          lat: event.latitude,
-          lng: event.longitude,
-          # info_window: render_to_string(partial: "info_window", locals: { event: event }),
-          # image_url: helpers.asset_url("LogoGold.png")
-        }
-      end
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {event: event}),
+        image_url: helpers.asset_url("Logo.png")
+      }
+    end
   end
 
   def show
