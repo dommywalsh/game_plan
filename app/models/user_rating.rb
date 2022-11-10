@@ -11,4 +11,9 @@ class UserRating < ApplicationRecord
     self.rating += self.game.second_place_points
     self.save
   end
+
+  def increment_losing_scores!
+    self.rating += self.game.losing_points
+    self.save
+  end
 end

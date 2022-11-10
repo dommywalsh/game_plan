@@ -15,7 +15,7 @@
 
 
 
-<% if @event.owner?(current_user) && @event.endable?%>
+<% if @event.owner?(current_user) %>
   <%= link_to "End Game", finish_event_path(@event) %>
   <% else %>
 <% end %>
