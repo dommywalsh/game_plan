@@ -19,9 +19,7 @@
     </div>
       <div>
         <% @events.each do |event| %>
-      <div>
-        <p><%= link_to event.name, event_path(event) %></p>
-      </div>
+          <%= render "card", event: event %>
         <% end %>
     </div>
   </div>
