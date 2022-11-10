@@ -36,4 +36,7 @@ class PagesController < ApplicationController
     # @future_bookings = @user.bookings.select { |booking| booking.status == "pending" }
     # @past_bookings = @user.bookings.select { |booking| booking.status == "rejected" }
   end
+  def leaderboard
+  end
+  
 end
