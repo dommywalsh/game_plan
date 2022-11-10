@@ -1,22 +1,26 @@
 <h1>this is the index page</h1>
 <ol>
 <% @events.each do |event| %>
-<li><%= event.name %></li>
+  <li><%= event.name %></li>
 <% end %>
 </ol>
 
 
-<%# <div class="container d-flex map-card-container">
-<%# div for search bar and cards%>
+<div class="container d-flex map-card-container">
+<%# div for search bar and cards %>
   <div class="container mt-4 card-overflow">
-    <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a coworking space"
+        placeholder: "Enter your location"
       %>
+      <%= collection_select(:gamefilter, :name, @games, :name, :name, prompt: true) %>
+      <%= f.label "Start Date" %>
+      <%= f.date_field :start_date %>
+      <%= f.label "End Date" %>
+      <%= f.date_field :end_date %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %> %>
+    <% end %>
   </div>
-
-
+</div>

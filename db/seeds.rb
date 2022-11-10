@@ -106,7 +106,7 @@ puts "Creating events"
 # User.all.each do |user|
     # file = URI.open("https://www.mydeskhub.com/wp-content/uploads/2017/06/Mob-H-27-scaled.jpg")
     eventone = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now,
       user_id: User.all.sample.id,
       name: "Girls night out",
       game_id: Game.all.sample.id,
@@ -117,11 +117,11 @@ puts "Creating events"
     eventone.save!
 
     eventtwo = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now,
       user_id: User.all.sample.id,
       name: "Big games night",
       game_id: Game.all.sample.id,
-      address: "4, Southern Right Circle",
+      address: "4, Southern Right Circle, Cape Town",
       description: "A lovely night with some friends",
     )
     eventtwo.save!
@@ -131,7 +131,7 @@ puts "Creating events"
       user_id: User.all.sample.id,
       name: "RISK NIGHT BABY",
       game_id: Game.all.sample.id,
-      address: "41, Skilpadvlei Road",
+      address: "41, Skilpadvlei Road, Cape Town",
       description: "Please bring some wine",
     )
     eventthree.save!
@@ -141,7 +141,7 @@ puts "Creating events"
       user_id: User.all.sample.id,
       name: "Girls night out",
       game_id: Game.all.sample.id,
-      address: " 38, De la Haye Avenue",
+      address: " 38, De la Haye Avenue, Cape Town",
       description: "Should be fun",
     )
     eventfour.save!
@@ -151,7 +151,7 @@ puts "Creating events"
       user_id: User.all.sample.id,
       name: "Secret H",
       game_id: Game.all.sample.id,
-      address: "15, Willow Way",
+      address: "15, Willow Way, Cape Town",
       description: "Please bring some wine",
     )
     eventfive.save!
@@ -161,17 +161,17 @@ puts "Creating events"
       user_id: User.all.sample.id,
       name: "Thursday catan",
       game_id: Game.all.sample.id,
-      address: "28, Klinker Street",
+      address: "28, Klinker Street, Cape Town",
       description: "Please be serious about gaming",
     )
     eventsix.save!
 
     eventseven = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now,
       user_id: User.all.sample.id,
       name: "Poker night",
       game_id: Game.all.sample.id,
-      address: "17, Louis Botha Avenue",
+      address: "17, Louis Botha Avenue, Cape Town",
       description: "BE the game, live the game",
     )
     eventseven.save!
@@ -181,17 +181,17 @@ puts "Creating events"
       user_id: User.all.sample.id,
       name: "Champs only",
       game_id: Game.all.sample.id,
-      address: ": 27, Tradewinds Circle",
+      address: ": 27, Tradewinds Circle, Cape Town",
       description: "Please bring some wine",
     )
     eventeight.save!
 
     eventnine = Event.new(
-      date: DateTime.new(),
+      date: DateTime.now - 1.weeks,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street",
+      address: "6, Eksteen Street, Cape Town",
       description: "Just some good mates looking to have a lekker time",
     )
     eventnine.save!
