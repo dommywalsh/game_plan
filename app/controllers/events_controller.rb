@@ -1,7 +1,5 @@
 class EventsController < ApplicationController
   def index
-
-
     # @question = Question.find(params[:question_id])
     # @answers = @question.answers
     # @answer = Answer.all
