@@ -13,4 +13,12 @@
   <% end %>
 <% end %>
 
+
+
+<% if @event.owner?(current_user) && @event.endable?%>
+  <%= link_to "End Game", finish_event_path(@event) %>
+  <% else %>
+<% end %>
+
+
 </div>

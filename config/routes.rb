@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :events do
-    get "finish"
+    get "finish", on: :member
     post "submit_scores"
     resources :players, only: [:create, :update]
   end

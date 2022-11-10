@@ -39,6 +39,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @player = Player.new
   end
+
   def new
     @event = Event.new
   end
@@ -54,11 +55,14 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit; end
+  def finish
+    @event = Event.find(params[:id])
+  end
 
-  def update; end
-
-  def destroy; end
+  def submit_scores
+    raise
+    
+  end
 
   private
 
