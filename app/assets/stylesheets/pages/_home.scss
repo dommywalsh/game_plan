@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url("gameplan.png");
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -23,5 +23,28 @@
     font-size: 25px;
     font-weight: lighter;
     margin-bottom: 30px;
+  }
+
+  .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 24px;
+    border-radius: 50px;
+  }
+
+  .form-control {
+    margin-right: 8px;
+    outline: none;
+    border: none;
+    color: aliceblue;
+  }
+
+  .btn-primary {
+    margin-left: 8px;
+    background-color: #7678ED;
+    border-radius: 50;
+    border: none;
   }
 }
