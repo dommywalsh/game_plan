@@ -8,11 +8,13 @@ class User < ApplicationRecord
   has_many :events
   has_one_attached :photo
 
-  after_save :set_user_ratings
+  after_create :create_user_ratings
 
-  def set_user_ratings
+  INITIAL_RATING = 1500
+
+  def create_user_ratings
     Game.all.each do |game|
-      User
+      UserRating.create(game: game, user: self, rating: INITIAL_RATING)
     end
   end
 

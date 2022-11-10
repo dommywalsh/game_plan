@@ -66,6 +66,9 @@ class EventsController < ApplicationController
     @first_place.user_ratings.find_by(game: @game).increment_first_place_score!
     @second_place.user_ratings.find_by(game: @game).increment_second_place_score!
 
+
+    
+    redirect_to leaderboard_game_path(@game)
   end
 
   private
