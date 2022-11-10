@@ -201,7 +201,7 @@ puts "creating players"
 
 10.times do
   player = Player.new(
-    status: rand(1..3),
+    status: rand(0...3),
     event_id: Event.all.sample.id,
     user_id: User.all.sample.id
   )
