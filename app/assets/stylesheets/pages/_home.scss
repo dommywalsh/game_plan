@@ -1,18 +1,22 @@
 // Specific CSS for your home-page
-
 .banner {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url("gameplan.png");
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: #7678ED;
+
   h1 {
-    color: white;
+    color: #FFE800;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 90px;
+    font-family: 'Rubik Bubbles', cursive;
   }
+
   p {
     color: white;
     opacity: .8;
@@ -20,8 +24,4 @@
     font-weight: lighter;
     margin-bottom: 30px;
   }
-  .btn {
-    padding: 15px 50px;
-  }
 }
-
