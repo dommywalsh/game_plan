@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :user_ratings
   has_many :players
   has_many :events
+  has_one_attached :photo
 end
