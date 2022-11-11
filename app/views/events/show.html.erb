@@ -5,14 +5,15 @@
 <h4>Game: <%= @event.game.name %></h4>
 <h5>Description: <%= @event.description %></h5>
 
-<% if @event.users.include? current_user %>
-  <p>"You are signed up for this game"</p>
+<% if @event.users.accepted.include? current_user %>
+  <h5>You are signed up for this game</h5>
+<% elsif @event.users.include? current_user %>
+  <h5>Your invitation is still pending...</h5>
 <% else %>
   <%= simple_form_for [@event, @player] do |f| %>
     <%= f.button :submit, "join event", class: "btn btn-ghost"%>
   <% end %>
 <% end %>
-
 
 
 <% if @event.owner?(current_user) %>

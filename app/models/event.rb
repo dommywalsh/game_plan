@@ -5,7 +5,12 @@ class Event < ApplicationRecord
   belongs_to :user
   belongs_to :game
   has_many :players
-  has_many :users, through: :players
+  has_many :users, through: :players do
+    def accepted
+      where("players.status = 1")
+    end
+  end
+
   has_one_attached :photo
 
   include PgSearch::Model
@@ -29,5 +34,8 @@ class Event < ApplicationRecord
     end
   end
 
-  
+  # def accepted_users
+  #   accepted_players = self.players.accepted
+  #   accepted_players.map(&:user)
+  # end
 end

@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
     @player.user = current_user
 
     if @player.save
-      redirect_to event_path(@event), notice: "you are now part of this event"
+      redirect_to event_path(@event), notice: "you have submmited a request to join this event"
     else
       render :new, status: :unprocessable_entity
     end
