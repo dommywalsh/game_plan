@@ -1,9 +1,9 @@
-<h1><%= @game.name %> leaderboard</h1>
-<ol>
-  <% @game.user_ratings.each do |user_rating| %>
-    <li><%= user_rating.rating %> (<%= user_rating.user.email %>)</li>
-  <% end %>
-</ol>
-
-
-
+<div class="container">
+  <h1><%= @game.name %> leaderboard</h1>
+  <div class="d-flex justify-content-center">
+    <ol>
+      <% @game.user_ratings.each do |user_rating| %>
+        <li><%= user_rating.user.first_name %> <%= user_rating.user.second_name %>: <%= user_rating.rating %> </li>
+      <% end %>
+    </ol>
+  </div>
