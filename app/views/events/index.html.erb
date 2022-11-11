@@ -1,12 +1,14 @@
 <div class="d-flex">
   <div class="card-box">
+  <br>
+  <h4 style="text-align:center">Pick the game to join!</h4>
     <div class="container d-flex map-card-container">
       <div class="container mt-4 card-overflow bar">
         <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Enter your location"
+            placeholder: "Enter location"
           %>
           <div class="form-control">
             <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
@@ -18,7 +20,7 @@
         <% end %>
       </div>
     </div>
-      <div>
+      <div class="cards d-grid p-2">
         <% @events.each do |event| %>
           <%= render "card", event: event %>
         <% end %>
