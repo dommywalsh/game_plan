@@ -15,24 +15,22 @@
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  overflow-y: scroll;
+  height: 70vh;
 }
 
 .cards-home {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 32px;
+  grid-gap: 20px;
 }
 
 .card-space-feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 32px;
-}
-
-.overflow {
-  overflow: scroll;
+  grid-gap: 20px;
 }
 
 // Smallest device

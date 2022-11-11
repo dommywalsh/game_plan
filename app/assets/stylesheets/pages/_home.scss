@@ -18,6 +18,14 @@
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
   }
 
+  h4 {
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Rubik Bubbles', cursive;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  }
+
   h3 {
     color: rgb(0, 0, 0);
     font-family: 'Poppins', sans-serif;
@@ -47,13 +55,16 @@
     border-bottom: 1px solid rgb(0, 0, 0);
     background: transparent;
     vertical-align: baseline;
-    font: inherit;
     text-decoration-color: #000000;
   }
 
   input, select {
     border: none;
     color: rgb(0, 0, 0);
+    background: transparent;
+  }
+
+  input#query{
     background: transparent;
   }
 
@@ -65,4 +76,4 @@
 
   .flatpickr-input[readonly] {
     background: transparent;
-}
+  }

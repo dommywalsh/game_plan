@@ -48,14 +48,17 @@
 
 .btn-primary {
   margin-left: 8px;
-  background-color: #f43653;
+  background-color: #FB4B4E;
   border-radius: 10px;
   border: none;
   display: flex;
-  box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
+  box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  padding: 20;
+  margin-right: 8px;
 }
 
 .btn-primary:hover {
   background-color: #000000;
-  color: #f43653;
+  color: #FB4B4E;
 }

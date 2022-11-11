@@ -24,14 +24,16 @@ Game.create(
   first_place_points: 300,
   second_place_points: 150,
   losing_points: -100,
+  photo: "Catan.png"
 )
 
 Game.create(
   name: "Risk",
   desciption: "In the Risk game, the goal is simple, players aim to conquer their enemies, territories by building an army, moving their troops in, and engaging in battle. Depending on the role of the dice, a player will either defeat the enemy or be defeated." ,
   first_place_points: 300,
-  second_place_points: 150 ,
+  second_place_points: 150,
   losing_points: -100,
+  photo: "risk.webp"
 )
 
 Game.create(
@@ -40,6 +42,7 @@ Game.create(
   first_place_points: 300,
   second_place_points: 150 ,
   losing_points: -100,
+  photo: "secret hitler.webp"
 )
 
 Game.create(
@@ -48,6 +51,7 @@ Game.create(
   first_place_points: 300,
   second_place_points: 150 ,
   losing_points: -100,
+  photo: "code_names.jpg"
 )
 
 Game.create(
@@ -56,6 +60,7 @@ Game.create(
   first_place_points: 300,
   second_place_points: 150 ,
   losing_points: -100,
+  photo: "30-seconds.jpg"
 )
 
 Game.create(
@@ -64,6 +69,7 @@ Game.create(
   first_place_points: 300,
   second_place_points: 150 ,
   losing_points: -100,
+  photo: "perudo.jpg"
 )
 
 
@@ -121,7 +127,7 @@ puts "Creating events"
       user_id: User.all.sample.id,
       name: "Girls night out",
       game_id: Game.all.sample.id,
-      address: "Calle Bailen 11, Bajos 08010 Barcelona",
+      address: "69, Uys Krige Drive",
       description: "Please bring some wine",
 
     )
@@ -221,11 +227,11 @@ puts "Creating events"
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     eventnine = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 67.weeks,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "5, Links Drive",
       description: "Just some good mates looking to have a lekker time",
 
     )
@@ -234,11 +240,11 @@ puts "Creating events"
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     eventten = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 15.weeks,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "15, Waboomskloof",
       description: "Just some good mates looking to have a lekker time",
 
     )
@@ -247,11 +253,11 @@ puts "Creating events"
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     event11 = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 10.weeks,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "Pakalolo Table View, 14, Beach Boulevard",
       description: "Just some good mates looking to have a lekker time",
 
     )
@@ -260,50 +266,50 @@ puts "Creating events"
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     event12 = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 5.weeks,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "15, B. Molokoane Road",
       description: "Just some good mates looking to have a lekker time",
 
     )
     event12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event12.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://hw.menardc.com/main/items/media/WOODA004/ProductLarge/WI_P_SC_5PCActionDiningSet_MAIN.jpg")
     event13 = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "Lets have some fun ",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "54, Walmer Road",
       description: "Just some good mates looking to have a lekker time",
 
     )
     event13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event13.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://media.gardenista.com/wp-content/uploads/2015/04/fields/cropped-crate-and-barrel-savanna-cane-rug.jpg")
     event14 = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 12.days,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "8, Braambos Lane",
       description: "Just some good mates looking to have a lekker time",
 
     )
     event14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event14.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLxd2oN4B7t8dwYW_ABMN-KoSTXySptCWi8owbFIKrxO2_U54EacOh_F-qgGhhqEcH8FQ&usqp=CAU")
     event15 = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 25.days,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "52, Blue Valley Avenue",
       description: "Just some good mates looking to have a lekker time",
 
     )
@@ -312,25 +318,25 @@ puts "Creating events"
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     event16 = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 16.days,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
+      address: "34, Shelduck Crescent",
       description: "Just some good mates looking to have a lekker time",
 
     )
     event16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event16.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://i.ebayimg.com/images/g/niwAAOSw481gZtpD/s-l300.jpg")
     event17 = Event.new(
-      date: DateTime.now + 3.weeks,
+      date: DateTime.now + 7.weeks,
       user_id: User.all.sample.id,
       name: "Legends only",
       game_id: Game.all.sample.id,
-      address: "6, Eksteen Street, Cape Town",
-      description: "Just some good mates looking to have a lekker time",
+      address: "Witzands Aquifer Nature Reserve, 1, Dassenberg Drive",
+      description: "I love games hey, I think I could be addicted to Perudo, please help me but also play with me",
 
     )
     event17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
