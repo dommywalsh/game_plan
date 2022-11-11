@@ -7,6 +7,15 @@
      <% @user.events.each do |event| %>
       <div class="card-myspace border border-dark border-3 p-3 rounded">
         <h4><%= link_to event.name, event_path(event) %></h4>
+        <div>
+          <h6 class="text-dark mt-4" >Event requests:</h6>
+          <% if event.players.pending.first %>
+          <% event.players.pending.each do |player| %>
+            <%= player.user.email %>
+          <% end %>
+          <% end %>
+        </div>
+
       </div>
       <% end %>
       </div>
