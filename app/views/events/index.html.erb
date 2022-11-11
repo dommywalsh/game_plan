@@ -8,18 +8,19 @@
             class: "form-control",
             placeholder: "Enter your location"
           %>
-          <%= collection_select(:gamefilter, :name, @games, :name, :name, prompt: true) %>
-          <%= f.label "Select Date" %>
-          <%= f.date_field :date_input, data: { controller: "flatpicker" } %>
+          <div class="form-control">
+            <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
+          </div>
+          <div class="form-control">
+            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: "Select date" %>
+          </div>
           <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
       <div>
         <% @events.each do |event| %>
-      <div>
-        <p><%= link_to event.name, event_path(event) %></p>
-      </div>
+          <%= render "card", event: event %>
         <% end %>
     </div>
   </div>

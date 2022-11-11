@@ -58,6 +58,14 @@ Game.create(
   losing_points: -100,
 )
 
+Game.create(
+  name: "Perudo",
+  desciption: "Perudo can be played with two or more players. Each player starts with a cup and five dice. Players throw one die to see who starts. To begin, each player simultaneously shakes the cup and then upends it onto the table using it to conceal their dice from other players.",
+  first_place_points: 300,
+  second_place_points: 150 ,
+  losing_points: -100,
+)
+
 
 puts "#{Game.count} games created"
 
@@ -101,18 +109,13 @@ User.create(
   bio: "Just a fun guy looking for a board game"
 )
 
-
 puts "#{User.count} users created"
-
-
-
-
-
 
 puts "Creating events"
 
 # User.all.each do |user|
-    # file = URI.open("https://www.mydeskhub.com/wp-content/uploads/2017/06/Mob-H-27-scaled.jpg")
+
+    file = URI.open("https://tinyurl.com/bdf35nh4")
     eventone = Event.new(
       date: DateTime.now + 10.days,
       user_id: User.all.sample.id,
@@ -120,10 +123,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "Calle Bailen 11, Bajos 08010 Barcelona",
       description: "Please bring some wine",
+
     )
-    # eventone.image.attach(io: file, filename: 'Eventone.jpg', content_type: 'image/jpg')
+    eventone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventone.save!
 
+    file = URI.open("https://tinyurl.com/yk6byn9f")
     eventtwo = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
@@ -131,9 +136,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "4, Southern Right Circle, Cape Town",
       description: "A lovely night with some friends",
+
     )
+    eventtwo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventtwo.save!
 
+    file = URI.open("https://tinyurl.com/2p8xh8xt")
     eventthree = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
@@ -141,9 +149,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "41, Skilpadvlei Road, Cape Town",
       description: "Please bring some wine",
+
     )
+    eventthree.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventthree.save!
 
+    file = URI.open("https://tinyurl.com/4yrdvt4b")
     eventfour = Event.new(
       date: DateTime.now + 1.days,
       user_id: User.all.sample.id,
@@ -151,9 +162,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: " 38, De la Haye Avenue, Cape Town",
       description: "Should be fun",
+
     )
+    eventfour.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventfour.save!
 
+    file = URI.open("https://tinyurl.com/4yrdvt4b")
     eventfive = Event.new(
       date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
@@ -161,9 +175,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "15, Willow Way, Cape Town",
       description: "Please bring some wine",
+
     )
+    eventfive.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventfive.save!
 
+    file = URI.open("https://tinyurl.com/4yrdvt4b")
     eventsix = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
@@ -171,9 +188,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "28, Klinker Street, Cape Town",
       description: "Please be serious about gaming",
+
     )
+    eventsix.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventsix.save!
 
+    file = URI.open("https://tinyurl.com/ypjmwwx6")
     eventseven = Event.new(
       date: DateTime.now + 2.days,
       user_id: User.all.sample.id,
@@ -181,9 +201,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "17, Louis Botha Avenue, Cape Town",
       description: "BE the game, live the game",
+
     )
+    eventseven.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventseven.save!
 
+    file = URI.open("https://tinyurl.com/3ddypsmz")
     eventeight = Event.new(
       date: DateTime.now + 2.weeks,
       user_id: User.all.sample.id,
@@ -191,9 +214,12 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: ": 27, Tradewinds Circle, Cape Town",
       description: "Please bring some wine",
+
     )
+    eventeight.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventeight.save!
 
+    file = URI.open("https://tinyurl.com/3ddypsmz")
     eventnine = Event.new(
       date: DateTime.now + 3.weeks,
       user_id: User.all.sample.id,
@@ -201,13 +227,119 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "6, Eksteen Street, Cape Town",
       description: "Just some good mates looking to have a lekker time",
+
     )
+    eventnine.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventnine.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    eventten = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    eventten.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    eventten.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    event11 = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    event11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event11.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    event12 = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    event12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event12.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    event13 = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    event13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event13.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    event14 = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    event14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event14.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    event15 = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    event15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event15.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    event16 = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    event16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event16.save!
+
+    file = URI.open("https://tinyurl.com/3ddypsmz")
+    event17 = Event.new(
+      date: DateTime.now + 3.weeks,
+      user_id: User.all.sample.id,
+      name: "Legends only",
+      game_id: Game.all.sample.id,
+      address: "6, Eksteen Street, Cape Town",
+      description: "Just some good mates looking to have a lekker time",
+
+    )
+    event17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event17.save!
 
 puts "#{Event.count} Events created"
 puts "creating players"
 
-10.times do
+20.times do
   player = Player.new(
     status: rand(0...3),
     event_id: Event.all.sample.id,
@@ -223,7 +355,7 @@ puts "#{Player.count} players created"
 rating = UserRating.new(
   game_id: Game.all.sample.id,
   user_id: User.all.sample.id,
-  rating: 1000
+  rating: rand(1000..2000)
 )
 rating.save!
 puts "#{UserRating.count} ratings created"
