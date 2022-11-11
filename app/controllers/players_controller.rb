@@ -14,17 +14,14 @@ class PlayersController < ApplicationController
 
   def accept
     @player = Player.find(params[:id])
-    # @event = Event.find(params[:event_id])
-    @player.confirmed
+    @player.status = "confirmed"
     @player.save
     redirect_to dashboard_path
   end
 
   def reject
     @player = Player.find(params[:id])
-    # @event = Event.find(params[:event_id])
-    @player.event = @event
-    @player.rejected
+    @player.status = "rejected"
     @player.save
     redirect_to dashboard_path
   end

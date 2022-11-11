@@ -14,8 +14,8 @@
                 <div class="d-flex justify-content-between">
                     <%= player.user.email %>
                     <div class="d-flex justify-content-end">
-                      <p class="remove-text-decoration"><%= link_to "✅", accept_event_player_path(player, event), data: {turbo_method: :patch} %></p>
-                      <p class="remove-text-decoration"><%= link_to "❌", reject_event_player_path(player, event), data: {turbo_method: :patch} %></p>
+                      <p class="remove-text-decoration"><%= button_to "✅", accept_event_player_path(event, player), method: :patch %></p>
+                      <p class="remove-text-decoration"><%= button_to "❌", reject_event_player_path(event, player), method: :patch %></p>
                     </div>
                 </div>
               </div>
