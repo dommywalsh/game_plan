@@ -16,10 +16,11 @@
             placeholder: "Enter your location"
           %>
           <div class="form-control">
-          <%= collection_select(:gamefilter, :name, @games, :name, :name, prompt: true) %> </div>
+            <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
+          </div>
           <div class="form-control">
-          <%= f.label "Select Date" %>
-          <%= f.date_field :date_input, data: { controller: "flatpicker" } %> </div>
+            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: "Select date..." %>
+          </div>
           <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
       </div>
