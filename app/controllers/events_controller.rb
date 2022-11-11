@@ -8,17 +8,17 @@ class EventsController < ApplicationController
       @events = Event.near(params[:query], 5)
     end
 
-    if params[:gamefilter].present? && params[:gamefilter][:name]
-      name = params[:gamefilter][:name]
+    if params[:gamefilter].present?
+      name = params[:gamefilter]
       @game = Game.find_by(name: name)
-      @events = Event.where(game: @game)
+      @events = @events.where(game: @game)
     end
 
     if params[:date_input].present?
       date_input = params[:date_input].split("to")
       start_date = date_input.first.to_datetime
       end_date = date_input.last.to_datetime
-      @events = Event.where(date: start_date..end_date)
+      @events = @events.where(date: start_date..end_date)
     end
 
     @markers = @events.geocoded.map do |event|
