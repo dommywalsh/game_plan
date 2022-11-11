@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   resources :events do
     get "finish", on: :member
     post "submit_scores", on: :member
-    resources :players, only: [:create, :update]
+    resources :players, only: [:create, :update] do
+      member do
+        patch :accept
+        patch :reject
+      end
+    end
   end
 
   resources :games, only: [:index, :show] do
@@ -15,5 +20,4 @@ Rails.application.routes.draw do
   end
 
   get "dashboard", to: "pages#dashboard"
-  get "leaderboard", to: "pages#leaderboard"
 end

@@ -1,0 +1,11 @@
+<h1>Leaderboards page</h1>
+<div class="container mt-4 card-overflow">
+  <div class="cards d-grid p-2">
+  <% @games.each do |game| %>
+    <div class="card-category">
+    <%= link_to game.name, leaderboard_game_path(game) %>
+    </div>
+  <% end %>
+  </div>
+  </ul>
+</div>

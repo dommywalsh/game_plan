@@ -10,4 +10,8 @@ class GamesController < ApplicationController
   def leaderboard
     @game = Game.find(params[:id])
   end
+
+  def leaderboards
+    @games = Game.all
+  end
 end
