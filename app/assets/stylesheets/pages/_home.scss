@@ -64,8 +64,12 @@
     background: transparent;
   }
 
-  input#query{
+  input#query {
     background: transparent;
+  }
+
+  input::placeholder {
+    color: black;
   }
 
   select#gamefilter {
