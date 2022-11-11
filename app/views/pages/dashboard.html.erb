@@ -4,21 +4,26 @@
   <% if @events%>
     <h3>Upcoming events you're hosting:</h3>
     <div class="cards d-grid p-2">
-     <% @user.events.each do |event| %>
-      <div class="card-myspace border border-dark border-3 p-3 rounded">
-        <h4><%= link_to event.name, event_path(event) %></h4>
-        <div>
+      <% @user.events.each do |event| %>
+        <div class="card-myspace border border-dark border-3 p-3 rounded">
+          <h4><%= link_to event.name, event_path(event) %></h4>
           <h6 class="text-dark mt-4" >Event requests:</h6>
           <% if event.players.pending.first %>
-          <% event.players.pending.each do |player| %>
-            <%= player.user.email %>
-          <% end %>
+            <% event.players.pending.each do |player| %>
+              <div>
+                <div class="d-flex justify-content-between">
+                    <%= player.user.email %>
+                    <div class="d-flex justify-content-end">
+                      <p class="remove-text-decoration"><%= link_to "✅", accept_event_player_path(player, event), data: {turbo_method: :patch} %></p>
+                      <p class="remove-text-decoration"><%= link_to "❌", reject_event_player_path(player, event), data: {turbo_method: :patch} %></p>
+                    </div>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
-
-      </div>
       <% end %>
-      </div>
+    </div>
   <% end %>
 
 </div>
