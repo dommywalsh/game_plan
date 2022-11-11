@@ -1,9 +1,24 @@
 <div class="container">
   <h1><%= @game.name %> leaderboard</h1>
-  <div class="d-flex justify-content-center">
-    <ol>
-      <% @game.user_ratings.each do |user_rating| %>
-        <li><%= user_rating.user.first_name %> <%= user_rating.user.second_name %>: <%= user_rating.rating %> </li>
-      <% end %>
-    </ol>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @game.user_ratings.each do |user_rating| %>
+        <tr>
+          <th scope="row"><%=1 %></th>
+          <th><%=user_rating.user.first_name%> </th>
+          <th><%= user_rating.user.second_name%> </th>
+          <th><%= user_rating.rating %></th>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
   </div>
