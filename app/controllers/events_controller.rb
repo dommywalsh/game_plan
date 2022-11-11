@@ -37,6 +37,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @player = Player.new
+    @user = current_user
   end
 
   def new

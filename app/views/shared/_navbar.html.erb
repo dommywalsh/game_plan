@@ -12,7 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
         <li class="nav-item active d-flex align-items-center" >
-            <%= link_to "Leaderboard", leaderboard_path, class: "btn btn-primary" %>
+
+            <%= link_to "Leaderboard", leaderboards_games_path, class: "btn btn-primary" %>
+
           </li>
           <li class="nav-item active d-flex align-items-center" >
             <%= link_to "Dashboard", dashboard_path , class: "btn btn-primary" %>
