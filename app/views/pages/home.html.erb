@@ -6,8 +6,7 @@
 <div class="banner">
   <div class="banner-content text-center">
     <h1>Game Plan</h1>
-    <p>Play what you want, where you want, with who you want to.</p>
-<%# div for search bar and cards %>
+    <h3>Life is better shared, play games together!</h3>
       <div class="container mt-4 card-overflow bar">
         <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
           <%= text_field_tag :query,
@@ -19,7 +18,7 @@
             <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
           </div>
           <div class="form-control">
-            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: "Select date..." %>
+            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: "Select date" %>
           </div>
           <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
