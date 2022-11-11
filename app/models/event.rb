@@ -8,23 +8,26 @@ class Event < ApplicationRecord
   has_many :users, through: :players
   has_one_attached :photo
 
-
   include PgSearch::Model
-      pg_search_scope :search_by_address,
-      against: :address,
-      using: {
-        tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    pg_search_scope :search_by_address,
+    against: :address,
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
 
-  # include PgSearch::Model
+  def owner?(user)
+    self.user == user
+  end
 
-  # acts_as_mappable lat_column_name: :latitude,
-  #                  lng_column_name: :longitude
+  def endable?
+    DateTime.now > self.date
+  end
 
-  # pg_search_scope :search_by_game_and_date,
-  #             against: [ :game, :date ],
-  #             using: {
-  #               tsearch: { any_word: true }
-  #                     }
+  def participants
+    self.players.map do |player|
+      player.user.email
+    end
+  end
 
+  
 end

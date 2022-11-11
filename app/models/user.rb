@@ -7,4 +7,19 @@ class User < ApplicationRecord
   has_many :players
   has_many :events
   has_one_attached :photo
+
+  after_create :create_user_ratings
+
+  INITIAL_RATING = 1500
+
+  def create_user_ratings
+    Game.all.each do |game|
+      UserRating.create(game: game, user: self, rating: INITIAL_RATING)
+    end
+  end
+
+  # def update_first_place_rating!(game)
+
+  # end
+
 end

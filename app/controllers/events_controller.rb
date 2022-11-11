@@ -54,11 +54,24 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit; end
+  def finish
+    @event = Event.find(params[:id])
+  end
 
-  def update; end
+  def submit_scores
+    @event = Event.find(params[:id])
+    @first_place = User.find_by(email: params[:first_place])
+    @second_place = User.find_by(email: params[:second_place])
+    @game = @event.game
+    @first_place.user_ratings.find_by(game: @game).increment_first_place_score!
+    @second_place.user_ratings.find_by(game: @game).increment_second_place_score!
+    losing_users = @event.users.reject { |user| [@first_place, @second_place].include?(user) }
+    losing_users.each do |user|
+      user.user_ratings.find_by(game: @game).increment_losing_scores!
+    end
 
-  def destroy; end
+    redirect_to leaderboard_game_path(@game)
+  end
 
   private
 
