@@ -13,6 +13,5 @@ class GamesController < ApplicationController
 
   def leaderboards
     @games = Game.all
-    @number = 0
   end
 end

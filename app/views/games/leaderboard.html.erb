@@ -10,9 +10,9 @@
         </tr>
       </thead>
       <tbody>
-        <% @game.user_ratings.each do |user_rating| %>
+        <% @game.user_ratings.each_with_index do |user_rating, index| %>
         <tr>
-          <th scope="row"><%=1 %></th>
+          <th scope="row"><%=index + 1%></th>
           <th><%=user_rating.user.first_name%> </th>
           <th><%= user_rating.user.second_name%> </th>
           <th><%= user_rating.rating %></th>
