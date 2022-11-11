@@ -1,1 +1,15 @@
 <H1>DASHBOARD</H1>
+
+<div class="container mt-4">
+  <% if @events%>
+    <h3>Upcoming events you're hosting:</h3>
+    <div class="cards d-grid p-2">
+     <% @user.events.each do |event| %>
+      <div class="card-myspace border border-dark border-3 p-3 rounded">
+        <h4><%= link_to event.name, event_path(event) %></h4>
+      </div>
+      <% end %>
+      </div>
+  <% end %>
+
+</div>
