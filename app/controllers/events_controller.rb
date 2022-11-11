@@ -27,7 +27,7 @@ class EventsController < ApplicationController
         lng: event.longitude,
 
         info_window: render_to_string(partial: "info_window", locals: {event: event}),
-        image_url: helpers.asset_url("Logo.png")
+        image_url: helpers.asset_url("markers.png")
 
 
       }
