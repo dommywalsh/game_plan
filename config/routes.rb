@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   # resources :users, only: :show
-  get 'users/:username', to: "users#show"
+  get 'users/:username', to: "users#show", as: "profile_page"
 
   get "dashboard", to: "pages#dashboard"
 end
