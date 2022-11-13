@@ -18,8 +18,12 @@ class User < ApplicationRecord
     end
   end
 
-  # def update_first_place_rating!(game)
+  def accepted_events
+    self.players.select { |player| player.status == "confirmed" }
+  end
 
-  # end
+  def pending_events
+    self.players.select { |player| player.status == "pending" }
+  end
 
 end

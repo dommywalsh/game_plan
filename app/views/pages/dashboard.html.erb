@@ -34,20 +34,29 @@
   <% end %>
 
   <% #container for events you're booked into %>
-  <div class="container">
-      <%if @user.players %>
-      <div class="cards d-grid p-2">
+  <h2>Upcoming events:</h2>
+  <div class="cards d-grid p-2">
+      <%if @user.accepted_events %>
         <div class="card-myspace border border-dark border-3 p-3 rounded">
           <h2>Confirmed bookings</h2>
             <ol>
               <div class="container mt-4 ">
-                <%= @user.players.each do |players| %>
-                  <li><%=players.event.name %></li>
+                <% @user.accepted_events.each do |player| %>
+                  <li><%=player.event.name %></li>
                 <% end %>
               </div>
             </ol>
         </div>
-      </div>
+        <div class="card-myspace border border-dark border-3 p-3 rounded">
+          <h2>Pending events</h2>
+            <ol>
+              <div class="container mt-4 ">
+                <% @user.pending_events.each do |player| %>
+                  <li><%=player.event.name %></li>
+                <% end %>
+              </div>
+            </ol>
+        </div>
       <%end%>
   </div>
 
