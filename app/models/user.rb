@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :players
   has_many :events
   has_one_attached :photo
+  validates :username, uniqueness: true
 
   after_create :create_user_ratings
 
@@ -26,4 +27,7 @@ class User < ApplicationRecord
     self.players.select { |player| player.status == "pending" }
   end
 
+  def to_param
+    username
+  end
 end

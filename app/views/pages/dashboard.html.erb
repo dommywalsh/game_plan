@@ -3,7 +3,7 @@
 <% #container for hosted events %>
 <div class="container mt-4 ">
   <% if @events%>
-    <h3>Events you're hosting:</h3>
+    <h3>Hosted games:</h3>
     <div class="cards d-grid p-2">
       <% @user.events.each do |event| %>
         <div class="card-myspace border border-dark border-3 p-3 rounded">
@@ -34,7 +34,7 @@
   <% end %>
 
   <% #container for events you're booked into %>
-  <h2>Upcoming events:</h2>
+  <h2>Booked events:</h2>
   <div class="cards d-grid p-2">
       <%if @user.accepted_events %>
         <div class="card-myspace border border-dark border-3 p-3 rounded">
@@ -48,7 +48,7 @@
             </ol>
         </div>
         <div class="card-myspace border border-dark border-3 p-3 rounded">
-          <h2>Pending events</h2>
+          <h2>Pending bookings</h2>
             <ol>
               <div class="container mt-4 ">
                 <% @user.pending_events.each do |player| %>
