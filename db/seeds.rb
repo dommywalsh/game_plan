@@ -121,7 +121,7 @@ puts "Creating events"
 
 # User.all.each do |user|
 
-    file = URI.open("https://tinyurl.com/bdf35nh4")
+    file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
     eventone = Event.new(
       date: DateTime.now + 10.days,
       user_id: User.all.sample.id,
@@ -147,14 +147,14 @@ puts "Creating events"
     eventtwo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventtwo.save!
 
-    file = URI.open("https://tinyurl.com/2p8xh8xt")
+    file = URI.open("https://www.google.com/imgres?imgurl=https%3A%2F%2Fcb.scene7.com%2Fis%2Fimage%2FCrate%2FG7655_PicnicTableInBagV2SHS18%2F%24web_pdp_main_carousel_zoom_med%24%2F220913134827%2Foutdoor-entertaining.jpg&imgrefurl=https%3A%2F%2Fwww.crateandbarrel.com%2Foutdoor-table-in-a-bag%2Fs670848&tbnid=PnUz4MbQQZmL3M&vet=12ahUKEwje4c3Dhav7AhU8g84BHS9mDhYQMygOegUIARCRAg..i&docid=8QB4b6T8Ob8VLM&w=1195&h=1195&q=beach%20table&ved=2ahUKEwje4c3Dhav7AhU8g84BHS9mDhYQMygOegUIARCRAg")
     eventthree = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
       name: "RISK NIGHT BABY",
       game_id: Game.all.sample.id,
       address: "41, Skilpadvlei Road, Cape Town",
-      description: "Please bring some wine",
+      description: "You love to see it, couple mates having a good time",
 
     )
     eventthree.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -180,7 +180,7 @@ puts "Creating events"
       name: "Secret H",
       game_id: Game.all.sample.id,
       address: "15, Willow Way, Cape Town",
-      description: "Please bring some wine",
+      description: "Excited to meet some new people, but looking for serrious gamers please",
 
     )
     eventfive.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -219,7 +219,7 @@ puts "Creating events"
       name: "Champs only",
       game_id: Game.all.sample.id,
       address: ": 27, Tradewinds Circle, Cape Town",
-      description: "Please bring some wine",
+      description: "Please bring some wine and snacks, I do not supply that.Ampped!",
 
     )
     eventeight.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -229,7 +229,7 @@ puts "Creating events"
     eventnine = Event.new(
       date: DateTime.now + 67.weeks,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "Boardgames are for sissies",
       game_id: Game.all.sample.id,
       address: "5, Links Drive",
       description: "Just some good mates looking to have a lekker time",
@@ -242,10 +242,10 @@ puts "Creating events"
     eventten = Event.new(
       date: DateTime.now + 15.weeks,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "SO escited for this guys",
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
-      description: "Just some good mates looking to have a lekker time",
+      description: "Lets be respectful of our opponents as well as the game we are playing",
 
     )
     eventten.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -258,7 +258,7 @@ puts "Creating events"
       name: "Legends only",
       game_id: Game.all.sample.id,
       address: "Pakalolo Table View, 14, Beach Boulevard",
-      description: "Just some good mates looking to have a lekker time",
+      description: "Table View loving",
 
     )
     event11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -268,10 +268,10 @@ puts "Creating events"
     event12 = Event.new(
       date: DateTime.now + 5.weeks,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "Please bring dice",
       game_id: Game.all.sample.id,
       address: "15, B. Molokoane Road",
-      description: "Just some good mates looking to have a lekker time",
+      description: "Molo road with the lads!",
 
     )
     event12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -284,7 +284,7 @@ puts "Creating events"
       name: "Lets have some fun ",
       game_id: Game.all.sample.id,
       address: "54, Walmer Road",
-      description: "Just some good mates looking to have a lekker time",
+      description: "Good clean fun please",
 
     )
     event13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -297,7 +297,7 @@ puts "Creating events"
       name: "Legends only",
       game_id: Game.all.sample.id,
       address: "8, Braambos Lane",
-      description: "Just some good mates looking to have a lekker time",
+      description: "Interesting how cream always rises to the top",
 
     )
     event14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -307,7 +307,7 @@ puts "Creating events"
     event15 = Event.new(
       date: DateTime.now + 25.days,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "We love games",
       game_id: Game.all.sample.id,
       address: "52, Blue Valley Avenue",
       description: "Just some good mates looking to have a lekker time",
@@ -323,7 +323,7 @@ puts "Creating events"
       name: "Legends only",
       game_id: Game.all.sample.id,
       address: "34, Shelduck Crescent",
-      description: "Just some good mates looking to have a lekker time",
+      description: "If someone would like to stay after I am happy to play some Perudo after the game",
 
     )
     event16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
