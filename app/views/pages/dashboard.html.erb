@@ -1,8 +1,9 @@
 <H1>DASHBOARD</H1>
 
-<div class="container mt-4">
+<% #container for hosted events %>
+<div class="container mt-4 ">
   <% if @events%>
-    <h3>Upcoming events you're hosting:</h3>
+    <h3>Hosted games:</h3>
     <div class="cards d-grid p-2">
       <% @user.events.each do |event| %>
         <div class="card-myspace border border-dark border-3 p-3 rounded">
@@ -24,6 +25,39 @@
         </div>
       <% end %>
     </div>
+    <% else %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h2>You are not currently hosting any events</h2>
+        </div>
+      </div>
   <% end %>
+
+  <% #container for events you're booked into %>
+  <h2>Booked events:</h2>
+  <div class="cards d-grid p-2">
+      <%if @user.accepted_events %>
+        <div class="card-myspace border border-dark border-3 p-3 rounded">
+          <h2>Confirmed bookings</h2>
+            <ol>
+              <div class="container mt-4 ">
+                <% @user.accepted_events.each do |player| %>
+                  <li><%=player.event.name %></li>
+                <% end %>
+              </div>
+            </ol>
+        </div>
+        <div class="card-myspace border border-dark border-3 p-3 rounded">
+          <h2>Pending bookings</h2>
+            <ol>
+              <div class="container mt-4 ">
+                <% @user.pending_events.each do |player| %>
+                  <li><%=player.event.name %></li>
+                <% end %>
+              </div>
+            </ol>
+        </div>
+      <%end%>
+  </div>
 
 </div>
