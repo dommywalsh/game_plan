@@ -9,6 +9,7 @@ class GamesController < ApplicationController
 
   def leaderboard
     @game = Game.find(params[:id])
+    @player_scores = @game.user_ratings.sort_by { |user| user[:rating] }.reverse
   end
 
   def leaderboards
