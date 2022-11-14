@@ -242,7 +242,7 @@ puts "Creating events"
     eventten = Event.new(
       date: DateTime.now + 15.weeks,
       user_id: User.all.sample.id,
-      name: "SO escited for this guys",
+      name: "SO amped for this guys",
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
       description: "Lets be respectful of our opponents as well as the game we are playing",
