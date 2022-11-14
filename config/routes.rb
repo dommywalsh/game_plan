@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         patch :reject
       end
     end
-    resources :messages, only: :create
+    resources :messages, only: [:create, :index]
   end
 
   resources :games, only: [:index, :show] do

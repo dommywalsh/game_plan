@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import EventSubscriptionController from "./event_subscription_controller"
+application.register("event-subscription", EventSubscriptionController)
+
 import FlatpickerController from "./flatpicker_controller"
 application.register("flatpicker", FlatpickerController)
 

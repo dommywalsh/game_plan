@@ -37,6 +37,12 @@
       <% else %>
     <% end %>
 
+<% # chatoom  %>
 
+<div>
+<% if @event.users.accepted.include? current_user %>
+  <%= link_to "Group messages", event_messages_path(@event) %>
+<% end %>
+</div>
 
 </div>
