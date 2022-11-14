@@ -6,13 +6,7 @@ data-event-subscription-event-id-value="<%= @event.id%>">
 
   <div class="messages" data-event-subscription-target="messages">
     <% @messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.user.username %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
+      <%= render "messages/message", message: message %>
     <% end %>
   </div>
 

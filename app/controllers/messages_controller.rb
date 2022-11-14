@@ -6,7 +6,13 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
-      redirect_to event_messages_path(@event)
+      EventChannel.broadcast_to(
+        @event,
+        render_to_string(partial: "messages/message",
+          locals: { message: @message } )
+      )
+      head :ok
+      # redirect_to event_messages_path(@event)
     else
       render "events/show", status: :unprocessable_entity
     end
