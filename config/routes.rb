@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   resources :games, only: [:index, :show] do
     get "leaderboards", on: :collection
-    get "leaderboard", on: :member
   end
 
   # resources :users, only: :show

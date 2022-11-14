@@ -6,13 +6,13 @@
       <div class="mt-4 card-overflow bar">
         <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
           <div class="form-control">
-            <%= f.text_field :query, placeholder: "Enter location" %>
+            <%= f.text_field :query, placeholder: params[:query].present? ? params[:query] : "Enter Location" %>
           </div>
           <div class="form-control">
-            <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
+            <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: params[:gamefilter].present? ? params[:gamefilter] : "Select game") %>
           </div>
           <div class="form-control">
-            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: "Select date" %>
+            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: params[:date_input].present? ? params[:date_input] : "Select date" %>
           </div>
           <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>

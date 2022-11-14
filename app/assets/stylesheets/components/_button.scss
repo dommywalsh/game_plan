@@ -16,8 +16,10 @@
   color: black;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #670bff;
+  background: #6a4b9b;
   transition: background 0.3s ease;
+  width: 800px;
+  justify-content: center;
 }
 
 .btn-flat:hover {
@@ -48,18 +50,18 @@
 
 .btn-primary {
   margin-left: 8px;
-  background-color: #00FFAB;
+  background-color: #00ffab;
   border-radius: 10px;
   border: none;
   display: flex;
   color: black;
-  box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   padding: 20;
   margin-right: 8px;
 }
 
 .btn-primary:hover {
   background-color: #000000;
-  color: #00FFAB;
-  border-color: #00FFAB;
+  color: #00ffab;
+  border-color: #00ffab;
 }
