@@ -5,8 +5,9 @@ class EventsController < ApplicationController
     @events = Event.all
 
     if params[:query].present?
-      @events = Event.near(params[:query], 5)
+      @events = Event.near(params[:query], 20)
     end
+
 
     if params[:gamefilter].present?
       name = params[:gamefilter]
@@ -28,8 +29,6 @@ class EventsController < ApplicationController
 
         info_window: render_to_string(partial: "info_window", locals: {event: event}),
         image_url: helpers.asset_url("markers.png")
-
-
       }
     end
   end
