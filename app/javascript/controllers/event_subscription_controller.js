@@ -7,6 +7,8 @@ export default class extends Controller {
   static values = {
     eventId: Number,
   };
+
+
   connect() {
     console.log(
       `Connecting to the ActionCable channel with id ${this.eventIdValue}`
@@ -20,8 +22,13 @@ export default class extends Controller {
           this.#insertMessageAndScrollDown(data);
         },
       }
-    );
+    )
   }
+
+  resetForm(event) {
+    const form = event.target
+    form.reset()
+  };
 
   #insertMessageAndScrollDown(data) {
     this.messagesTarget.insertAdjacentHTML("beforeend", data);
@@ -29,6 +36,9 @@ export default class extends Controller {
       scrollHeightElement: this.element.scrollHeight,
       scrollHeightMessages: this.messagesTarget.scrollHeight,
     });
+
     window.scrollTo(0, document.body.scrollHeight);
   }
+
+
 }
