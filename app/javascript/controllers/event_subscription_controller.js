@@ -8,7 +8,6 @@ export default class extends Controller {
     eventId: Number,
   };
 
-
   connect() {
     console.log(
       `Connecting to the ActionCable channel with id ${this.eventIdValue}`
@@ -22,23 +21,16 @@ export default class extends Controller {
           this.#insertMessageAndScrollDown(data);
         },
       }
-    )
+    );
   }
 
   resetForm(event) {
-    const form = event.target
-    form.reset()
-  };
-
-  #insertMessageAndScrollDown(data) {
-    this.messagesTarget.insertAdjacentHTML("beforeend", data);
-    console.log({
-      scrollHeightElement: this.element.scrollHeight,
-      scrollHeightMessages: this.messagesTarget.scrollHeight,
-    });
-
-    window.scrollTo(0, document.body.scrollHeight);
+    const form = event.target;
+    form.reset();
   }
 
-
+  #insertMessageAndScrollDown(data) {
+    this.messagesTarget.insertAdjacentHTML("beforeend", data)
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+  }
 }
