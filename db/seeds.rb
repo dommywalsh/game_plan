@@ -85,7 +85,8 @@ User.create(
   first_name: "Peter",
   second_name: "Parker",
   phonenumber: 828085052,
-  bio: "Hi there, avid board games player looking to meet up a few a few legends and put my skill to the test"
+  bio: "Hi there, avid board games player looking to meet up a few a few legends and put my skill to the test",
+  username: "spiderman"
 )
 
 User.create(
@@ -94,7 +95,8 @@ User.create(
   first_name: "Menno" ,
   second_name: "Bru" ,
   phonenumber: 864545052,
-  bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by player with other players"
+  bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by player with other players",
+  username: "ziod"
 )
 
 User.create(
@@ -103,7 +105,8 @@ User.create(
   first_name: "Connor" ,
   second_name: "Mac" ,
   phonenumber: 828085052,
-  bio: "Love board games, please let me play with you"
+  bio: "Love board games, please let me play with you",
+  username: "CONNYBOY"
 )
 
 User.create(
@@ -112,14 +115,45 @@ User.create(
   first_name: "Sally" ,
   second_name: "Ali" ,
   phonenumber: 160160515,
-  bio: "Just a fun guy looking for a board game"
+  bio: "Just a fun guy looking for a board game",
+  username: "Sexy sally"
+)
+
+User.create(
+  email: "dom@gmail.com",
+  password: "123456",
+  first_name: "Dom" ,
+  second_name: "Welly" ,
+  phonenumber: 160160515,
+  bio: "We love to game with Dommo",
+  username: "DOMMY"
+)
+
+User.create(
+  email: "lion@gmail.com",
+  password: "123456",
+  first_name: "Lionel" ,
+  second_name: "Messi" ,
+  phonenumber: 160160515,
+  bio: "So good to be alive , lets goo!",
+  username: "THE GOAT"
+)
+
+User.create(
+  email: "kelly@gmail.com",
+  password: "123456",
+  first_name: "Kelly" ,
+  second_name: "Parker" ,
+  phonenumber: 160160515,
+  bio: "I enjoy playing games with my mates ",
+  username: "KELLYGIRL1"
 )
 
 puts "#{User.count} users created"
 
 puts "Creating events"
 
-# User.all.each do |user|
+ User.all.each do |user|
 
     file = URI.open("https://tinyurl.com/bdf35nh4")
     eventone = Event.new(
@@ -260,6 +294,8 @@ puts "Creating events"
     )
     eventten.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventten.save!
+
+  end
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     event11 = Event.new(
