@@ -5,6 +5,7 @@ class Event < ApplicationRecord
   belongs_to :user
   belongs_to :game
   has_many :players
+  has_many :messages
   has_many :users, through: :players do
     def accepted
       where("players.status = 1")
@@ -17,7 +18,7 @@ class Event < ApplicationRecord
     pg_search_scope :search_by_address,
     against: :address,
     using: {
-      tsearch: { prefix: true } 
+      tsearch: { prefix: true }
   }
 
   def owner?(user)

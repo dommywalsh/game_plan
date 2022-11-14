@@ -16,4 +16,6 @@ class UserRating < ApplicationRecord
     self.rating += self.game.losing_points
     self.save
   end
+
+  
 end
