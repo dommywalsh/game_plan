@@ -149,11 +149,101 @@ User.create(
   username: "KELLYGIRL1"
 )
 
+User.create(
+  email: "kiki@gmail.com",
+  password: "123456",
+  first_name: "Kiki" ,
+  second_name: "Kennedy" ,
+  phonenumber: 160160515,
+  bio: "My journey with games has been a weird but fruity one, I really enjoy games but I rarely win ",
+  username: "KEEKSGOOI"
+)
+
+User.create(
+  email: "molly@gmail.com",
+  password: "123456",
+  first_name: "Molly" ,
+  second_name: "MOO" ,
+  phonenumber: 160160515,
+  bio: "Please let me win, just one game of Catan. I have been studying the game for years now and never won one. ",
+  username: "MOLLY :)"
+)
+
+User.create(
+  email: "emily@gmail.com",
+  password: "123456",
+  first_name: "Emily" ,
+  second_name: "Goop" ,
+  phonenumber: 160160515,
+  bio: "I think the best way to describe me would be via the song HELLO from Adele ",
+  username: "GOOPO69"
+)
+
+User.create(
+  email: "ty@gmail.com",
+  password: "123456",
+  first_name: "Tyrone" ,
+  second_name: "Cummins" ,
+  phonenumber: 160160515,
+  bio: "I love code names, with my vocab its no doubt I have never lost a game, looking for a new team member. ",
+  username: "KELLYGIRL1"
+)
+
+User.create(
+  email: "janine@gmail.com",
+  password: "123456",
+  first_name: "janine" ,
+  second_name: "Legend" ,
+  phonenumber: 160160515,
+  bio: "Hi, I am from Cape Town, over going out and drinking but I really love have a few glases of wine and playing a nice boardgame ",
+  username: "JANNIE(:"
+)
+
+User.create(
+  email: "kelly@gmail.com",
+  password: "123456",
+  first_name: "Kelly" ,
+  second_name: "Parker" ,
+  phonenumber: 160160515,
+  bio: "I enjoy playing games with my mates ",
+  username: "KELLYTHELEGEND"
+)
+
+User.create(
+  email: "Luno@gmail.com",
+  password: "123456",
+  first_name: "Luno" ,
+  second_name: "LUUN" ,
+  phonenumber: 160160515,
+  bio: "Well well well, what to say.",
+  username: "LunoGIRL1"
+)
+
+User.create(
+  email: "SY@gmail.com",
+  password: "123456",
+  first_name: "SY" ,
+  second_name: "SIMMONS" ,
+  phonenumber: 160160515,
+  bio: "Every dog has its day... not me mate",
+  username: "SYBOI"
+)
+
+User.create(
+  email: "jonty@gmail.com",
+  password: "123456",
+  first_name: "jonty" ,
+  second_name: "Rhodes" ,
+  phonenumber: 160160515,
+  bio: "I used to be a fantastic cricketer, looking to meet new people and play some games ",
+  username: "CATCHY"
+)
+
 puts "#{User.count} users created"
 
 puts "Creating events"
 
- User.all.each do |user|
+#  User.all.each do |user|
 
     file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
     eventone = Event.new(
@@ -296,7 +386,7 @@ puts "Creating events"
     eventten.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventten.save!
 
-  end
+
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     event11 = Event.new(
@@ -399,7 +489,7 @@ puts "Creating events"
 puts "#{Event.count} Events created"
 puts "creating players"
 
-20.times do
+100.times do
   player = Player.new(
     status: rand(0...3),
     event_id: Event.all.sample.id,
