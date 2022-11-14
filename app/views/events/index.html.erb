@@ -1,15 +1,13 @@
 <div class="d-flex">
   <div class="card-box">
-  <br>
-  <h4 style="text-align:center">Pick the game to join!</h4>
-    <div class="container d-flex map-card-container">
-      <div class="container mt-4 card-overflow bar">
+    <br>
+    <h4 style="text-align:center">Pick the game to join!</h4>
+    <div class="d-flex map-card-container">
+      <div class="mt-4 card-overflow bar">
         <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Enter location"
-          %>
+          <div class="form-control">
+            <%= f.text_field :query, placeholder: "Enter location" %>
+          </div>
           <div class="form-control">
             <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
           </div>
@@ -20,13 +18,13 @@
         <% end %>
       </div>
     </div>
-      <div class="cards d-grid p-2">
-        <% @events.each do |event| %>
-          <%= render "card", event: event %>
-        <% end %>
+    <div class="cards d-grid p-2">
+      <% @events.each do |event| %>
+        <%= render "card", event: event %>
+      <% end %>
     </div>
   </div>
-  <div class="fixed-element" style="width: 45%; height: 100vh;"
+  <div style="width: 35%; height: 100vh;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

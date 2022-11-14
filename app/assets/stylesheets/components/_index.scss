@@ -5,8 +5,9 @@
 @import "navbar";
 @import "button";
 @import "card";
-@import "new";
+@import "letters";
 
-.card-box{
-  background-color: #FFFC52;
+.card-box {
+  background-color: white;
+  flex-grow: 2;
 }
