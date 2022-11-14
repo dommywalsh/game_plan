@@ -26,6 +26,12 @@
   <% else %>
 <% end %>
 
+<% # chatoom  %>
 
+<% if @event.users.accepted.include? current_user %>
+  <%= simple_form_for [@event, @message] do |f| %>
+    <%= f.button :submit, "message the group", class: "btn btn-ghost"%>
+    <% end %>
+<% end %>
 
 </div>

@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @message.event = @event
     @message.user = current_user
 
+    raise
     if @message.save
       redirect_to event_messages_path(@event)
     else
@@ -12,7 +13,7 @@ class MessagesController < ApplicationController
     end
   end
 
-  private
+private
 
   def message_params
     params.require(:message).permit(:content)

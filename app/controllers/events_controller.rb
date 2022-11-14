@@ -37,6 +37,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @player = Player.new
     @user = current_user
+    @message = Message.new
   end
 
   def new
