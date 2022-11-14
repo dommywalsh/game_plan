@@ -7,7 +7,11 @@ data-event-subscription-event-id-value="<%= @event.id%>">
 
     <div class="messages" data-event-subscription-target="messages">
       <% @messages.each do |message| %>
-        <%= render "messages/message", message: message %>
+        <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+          <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+            <%= render "messages/message", message: message %>
+          </div>
+        </div>
       <% end %>
     </div>
 
