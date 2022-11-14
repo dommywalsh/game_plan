@@ -20,6 +20,10 @@
   <% end %>
 <% end %>
 
+<% @accepted_users.each do |accepted_user| %>
+<%= accepted_user.email %>
+<% end %>
+
 
 <% if @event.owner?(current_user) %>
   <%= link_to "End Game", finish_event_path(@event) %>
