@@ -3,7 +3,7 @@
       <% if event.photo.attached? %>
         <%= cl_image_tag event.photo.key %>
       <% else %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class:"event-card-img" %>
+      <%= image_tag "https://tinyurl.com/9frz2xjv", class:"event-card-img" %>
       <% end %>
     <div class="card-trip-infos">
       <div>
@@ -12,7 +12,7 @@
       <h2 class="card-trip-pricing"><%= event.game.name %></h2>
       <% if event.user.photo.attached? %>
         <%= cl_image_tag event.user.photo.key, class: "card-trip-user photo-bordered" %>
-        <%# <%= cl_image_tag event.game.photo.key, class: "card-trip-user photo-bordered" %> 
+        <%# <%= cl_image_tag event.game.photo.key, class: "card-trip-user photo-bordered" %>
       <% else %>
 
       <% end %>
