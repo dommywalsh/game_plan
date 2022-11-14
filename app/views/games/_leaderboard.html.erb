@@ -1,0 +1,25 @@
+<div class="p-2 d-flex">
+  <div class="container">
+    <h4> <%= game.name %> Leaderboard</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% game.user_ratings.sort_by{ |player| player.rating }.reverse.each_with_index do |player, index| %>
+          <tr>
+            <th scope="row"><%=index + 1%></th>
+            <th><%= player.user.first_name%> </th>
+            <th><%= player.user.second_name%> </th>
+            <th><%= player.rating %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
