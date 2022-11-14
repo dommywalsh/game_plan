@@ -38,6 +38,7 @@ class EventsController < ApplicationController
     @player = Player.new
     @user = current_user
     @message = Message.new
+    @accepted_users = @event.users.accepted
   end
 
   def new

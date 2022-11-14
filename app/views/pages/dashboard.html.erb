@@ -1,13 +1,19 @@
-<H1>DASHBOARD</H1>
-
+<br>
+<h4 style="text-align: center">Dashboard</h4>
 <% #container for hosted events %>
 <div class="container mt-4 ">
   <% if @events%>
     <h3>Hosted games:</h3>
     <div class="cards d-grid p-2">
+
       <% @user.events.each do |event| %>
         <div class="card-myspace border border-dark border-3 p-3 rounded">
           <h4><%= link_to event.name, event_path(event) %></h4>
+          <h6 class="text-dark mt-4" >Current accepted players:</h6>
+          <%# <% @accepted_users.each do |accepted_user| %>
+          <%# <%= accepted_user.email %>
+          <%# <% end %> 
+
           <h6 class="text-dark mt-4" >Event requests:</h6>
           <% if event.players.pending.first %>
             <% event.players.pending.each do |player| %>
@@ -22,6 +28,7 @@
               </div>
             <% end %>
           <% end %>
+
         </div>
       <% end %>
     </div>

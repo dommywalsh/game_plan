@@ -1,15 +1,17 @@
 <div class="banner">
   <div class="banner-content text-center">
-    <h1>Game Plan</h1>
+    <h1 class="ml7">
+      <span class="text-wrapper">
+      <span class="letters" data-controller="letters">Game Plan</span>
+      </span>
+    </h1>
     <br>
     <h3>Life is better shared, play games together!</h3>
       <div class="container mt-4 card-overflow bar">
         <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Enter location"
-          %>
+          <div class="form-control">
+            <%= f.text_field :query, placeholder: "Enter location" %>
+          </div>
           <div class="form-control">
             <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
           </div>
