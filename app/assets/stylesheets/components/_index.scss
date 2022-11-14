@@ -5,7 +5,16 @@
 @import "navbar";
 @import "button";
 @import "card";
+@import "letters";
 
 .card-box{
-  background-color: #FFFC52;
+  background-color: white;
+  flex-grow: 2;
 }
+
+
+
+// .fixed-element {
+//   margin-right: 0px;
+//   padding-right: 0px;
+// }
