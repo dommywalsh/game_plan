@@ -32,10 +32,10 @@
 
 <% # chatoom  %>
 
+<div>
 <% if @event.users.accepted.include? current_user %>
-  <%= simple_form_for [@event, @message] do |f| %>
-    <%= f.button :submit, "message the group", class: "btn btn-ghost"%>
-    <% end %>
+  <%= link_to "Group messages", event_messages_path(@event) %>
 <% end %>
+</div>
 
 </div>
