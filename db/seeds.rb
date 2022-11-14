@@ -129,6 +129,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "69, Uys Krige Drive",
       description: "Please bring some wine",
+      capacity: rand(3..8)
 
     )
     eventone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -142,6 +143,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "4, Southern Right Circle, Cape Town",
       description: "A lovely night with some friends",
+      capacity: rand(3..8)
 
     )
     eventtwo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -155,6 +157,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "41, Skilpadvlei Road, Cape Town",
       description: "Please bring some wine",
+      capacity: 10
 
     )
     eventthree.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -168,6 +171,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: " 38, De la Haye Avenue, Cape Town",
       description: "Should be fun",
+      capacity: rand(3..8)
 
     )
     eventfour.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -181,6 +185,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "15, Willow Way, Cape Town",
       description: "Please bring some wine",
+      capacity: rand(3..8)
 
     )
     eventfive.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -194,6 +199,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "28, Klinker Street, Cape Town",
       description: "Please be serious about gaming",
+      capacity: rand(3..8)
 
     )
     eventsix.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -207,6 +213,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "17, Louis Botha Avenue, Cape Town",
       description: "BE the game, live the game",
+      capacity: rand(3..8)
 
     )
     eventseven.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -220,6 +227,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: ": 27, Tradewinds Circle, Cape Town",
       description: "Please bring some wine",
+      capacity: rand(3..8)
 
     )
     eventeight.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -233,6 +241,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "5, Links Drive",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     eventnine.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -246,6 +255,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     eventten.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -259,6 +269,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "Pakalolo Table View, 14, Beach Boulevard",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     event11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -272,6 +283,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "15, B. Molokoane Road",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     event12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -285,6 +297,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "54, Walmer Road",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     event13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -298,6 +311,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "8, Braambos Lane",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     event14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -311,6 +325,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "52, Blue Valley Avenue",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     event15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -324,6 +339,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "34, Shelduck Crescent",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     event16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -337,6 +353,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "Witzands Aquifer Nature Reserve, 1, Dassenberg Drive",
       description: "I love games hey, I think I could be addicted to Perudo, please help me but also play with me",
+      capacity: rand(3..8)
 
     )
     event17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
