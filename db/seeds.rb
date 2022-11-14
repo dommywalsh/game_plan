@@ -289,7 +289,7 @@ puts "Creating events"
       name: "SO amped for this guys",
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
-      description: "Lets be respectful of our opponents as well as the game we are playing"
+      description: "Lets be respectful of our opponents as well as the game we are playing",
       capacity: rand(3..8)
 
     )
@@ -333,7 +333,7 @@ puts "Creating events"
       name: "Lets have some fun ",
       game_id: Game.all.sample.id,
       address: "54, Walmer Road",
-      description: "Good clean fun please"
+      description: "Good clean fun please",
       capacity: rand(3..8)
 
     )
