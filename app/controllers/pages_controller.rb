@@ -26,6 +26,7 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @events = @user.events
+
   end
 
 end

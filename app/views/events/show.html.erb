@@ -4,14 +4,19 @@
 <h1>Event: <%= @event.name %></h1>
 <h4>Game: <%= @event.game.name %></h4>
 <h5>Description: <%= @event.description %></h5>
+<h5>Capacity: <%= @event.capacity %></h5>
+
+<%= image_tag "#{@event.game.photo}" %>
 
 <% if @event.users.accepted.include? current_user %>
   <h5>You are signed up for this game</h5>
 <% elsif @event.users.include? current_user %>
   <h5>Your invitation is still pending...</h5>
 <% else %>
+    <% if @event.users.accepted.count < @event.capacity %>
   <%= simple_form_for [@event, @player] do |f| %>
     <%= f.button :submit, "join event", class: "btn btn-ghost"%>
+    <% end %>
   <% end %>
 <% end %>
 

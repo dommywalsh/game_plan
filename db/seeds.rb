@@ -85,7 +85,8 @@ User.create(
   first_name: "Peter",
   second_name: "Parker",
   phonenumber: 828085052,
-  bio: "Hi there, avid board games player looking to meet up a few a few legends and put my skill to the test"
+  bio: "Hi there, avid board games player looking to meet up a few a few legends and put my skill to the test",
+  username: "spiderman"
 )
 
 User.create(
@@ -94,7 +95,8 @@ User.create(
   first_name: "Menno" ,
   second_name: "Bru" ,
   phonenumber: 864545052,
-  bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by player with other players"
+  bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by player with other players",
+  username: "ziod"
 )
 
 User.create(
@@ -103,7 +105,8 @@ User.create(
   first_name: "Connor" ,
   second_name: "Mac" ,
   phonenumber: 828085052,
-  bio: "Love board games, please let me play with you"
+  bio: "Love board games, please let me play with you",
+  username: "CONNYBOY"
 )
 
 User.create(
@@ -112,14 +115,45 @@ User.create(
   first_name: "Sally" ,
   second_name: "Ali" ,
   phonenumber: 160160515,
-  bio: "Just a fun guy looking for a board game"
+  bio: "Just a fun guy looking for a board game",
+  username: "Sexy sally"
+)
+
+User.create(
+  email: "dom@gmail.com",
+  password: "123456",
+  first_name: "Dom" ,
+  second_name: "Welly" ,
+  phonenumber: 160160515,
+  bio: "We love to game with Dommo",
+  username: "DOMMY"
+)
+
+User.create(
+  email: "lion@gmail.com",
+  password: "123456",
+  first_name: "Lionel" ,
+  second_name: "Messi" ,
+  phonenumber: 160160515,
+  bio: "So good to be alive , lets goo!",
+  username: "THE GOAT"
+)
+
+User.create(
+  email: "kelly@gmail.com",
+  password: "123456",
+  first_name: "Kelly" ,
+  second_name: "Parker" ,
+  phonenumber: 160160515,
+  bio: "I enjoy playing games with my mates ",
+  username: "KELLYGIRL1"
 )
 
 puts "#{User.count} users created"
 
 puts "Creating events"
 
-# User.all.each do |user|
+ User.all.each do |user|
 
     file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
     eventone = Event.new(
@@ -129,6 +163,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "69, Uys Krige Drive",
       description: "Please bring some wine",
+      capacity: rand(3..8)
 
     )
     eventone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -142,6 +177,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "4, Southern Right Circle, Cape Town",
       description: "A lovely night with some friends",
+      capacity: rand(3..8)
 
     )
     eventtwo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -155,6 +191,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "41, Skilpadvlei Road, Cape Town",
       description: "You love to see it, couple mates having a good time",
+      capacity: 10
 
     )
     eventthree.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -168,6 +205,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: " 38, De la Haye Avenue, Cape Town",
       description: "Should be fun",
+      capacity: rand(3..8)
 
     )
     eventfour.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -181,6 +219,8 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "15, Willow Way, Cape Town",
       description: "Excited to meet some new people, but looking for serrious gamers please",
+      capacity: rand(3..8)
+
 
     )
     eventfive.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -194,6 +234,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "28, Klinker Street, Cape Town",
       description: "Please be serious about gaming",
+      capacity: rand(3..8)
 
     )
     eventsix.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -207,6 +248,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "17, Louis Botha Avenue, Cape Town",
       description: "BE the game, live the game",
+      capacity: rand(3..8)
 
     )
     eventseven.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -220,6 +262,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: ": 27, Tradewinds Circle, Cape Town",
       description: "Please bring some wine and snacks, I do not supply that.Ampped!",
+      capacity: rand(3..8)
 
     )
     eventeight.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -233,6 +276,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "5, Links Drive",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     eventnine.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -245,11 +289,14 @@ puts "Creating events"
       name: "SO amped for this guys",
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
-      description: "Lets be respectful of our opponents as well as the game we are playing",
+      description: "Lets be respectful of our opponents as well as the game we are playing"
+      capacity: rand(3..8)
 
     )
     eventten.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventten.save!
+
+  end
 
     file = URI.open("https://tinyurl.com/3ddypsmz")
     event11 = Event.new(
@@ -259,6 +306,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "Pakalolo Table View, 14, Beach Boulevard",
       description: "Table View loving",
+      capacity: rand(3..8)
 
     )
     event11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -272,6 +320,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "15, B. Molokoane Road",
       description: "Molo road with the lads!",
+      capacity: rand(3..8)
 
     )
     event12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -284,7 +333,8 @@ puts "Creating events"
       name: "Lets have some fun ",
       game_id: Game.all.sample.id,
       address: "54, Walmer Road",
-      description: "Good clean fun please",
+      description: "Good clean fun please"
+      capacity: rand(3..8)
 
     )
     event13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -298,6 +348,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "8, Braambos Lane",
       description: "Interesting how cream always rises to the top",
+      capacity: rand(3..8)
 
     )
     event14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -311,6 +362,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "52, Blue Valley Avenue",
       description: "Just some good mates looking to have a lekker time",
+      capacity: rand(3..8)
 
     )
     event15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -324,6 +376,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "34, Shelduck Crescent",
       description: "If someone would like to stay after I am happy to play some Perudo after the game",
+      capacity: rand(3..8)
 
     )
     event16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -337,6 +390,7 @@ puts "Creating events"
       game_id: Game.all.sample.id,
       address: "Witzands Aquifer Nature Reserve, 1, Dassenberg Drive",
       description: "I love games hey, I think I could be addicted to Perudo, please help me but also play with me",
+      capacity: rand(3..8)
 
     )
     event17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
