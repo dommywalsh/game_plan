@@ -245,7 +245,7 @@ puts "Creating events"
 
 #  User.all.each do |user|
 
-    file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+    file = URI.open("https://i.pinimg.com/474x/aa/a9/60/aaa9601beeee93ff5e0dffd4325a5ef9.jpg")
     eventone = Event.new(
       date: DateTime.now + 10.days,
       user_id: User.all.sample.id,
@@ -259,7 +259,7 @@ puts "Creating events"
     eventone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventone.save!
 
-    file = URI.open("https://tinyurl.com/yk6byn9f")
+    file = URI.open("https://i.pinimg.com/474x/82/e8/5f/82e85f77f610b5d41390e819c187fa36.jpg")
     eventtwo = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
@@ -273,7 +273,7 @@ puts "Creating events"
     eventtwo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventtwo.save!
 
-    file = URI.open("https://www.google.com/imgres?imgurl=https%3A%2F%2Fcb.scene7.com%2Fis%2Fimage%2FCrate%2FG7655_PicnicTableInBagV2SHS18%2F%24web_pdp_main_carousel_zoom_med%24%2F220913134827%2Foutdoor-entertaining.jpg&imgrefurl=https%3A%2F%2Fwww.crateandbarrel.com%2Foutdoor-table-in-a-bag%2Fs670848&tbnid=PnUz4MbQQZmL3M&vet=12ahUKEwje4c3Dhav7AhU8g84BHS9mDhYQMygOegUIARCRAg..i&docid=8QB4b6T8Ob8VLM&w=1195&h=1195&q=beach%20table&ved=2ahUKEwje4c3Dhav7AhU8g84BHS9mDhYQMygOegUIARCRAg")
+    file = URI.open("https://i.pinimg.com/474x/b9/87/c2/b987c2fb221a710fda4c947fa4c84fef.jpg")
     eventthree = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
@@ -287,7 +287,7 @@ puts "Creating events"
     eventthree.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventthree.save!
 
-    file = URI.open("https://tinyurl.com/4yrdvt4b")
+    file = URI.open("https://i.pinimg.com/474x/3d/a7/0f/3da70f7638822e2d03421fbe7077a386.jpg")
     eventfour = Event.new(
       date: DateTime.now + 1.days,
       user_id: User.all.sample.id,
@@ -301,7 +301,7 @@ puts "Creating events"
     eventfour.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventfour.save!
 
-    file = URI.open("https://tinyurl.com/4yrdvt4b")
+    file = URI.open("https://i.pinimg.com/564x/31/d4/d6/31d4d6b95ffb2504f958664c3523119c.jpg")
     eventfive = Event.new(
       date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
@@ -316,7 +316,7 @@ puts "Creating events"
     eventfive.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventfive.save!
 
-    file = URI.open("https://tinyurl.com/4yrdvt4b")
+    file = URI.open("https://i.pinimg.com/564x/a4/8a/35/a48a35d544c9c48cb4cec3fee2de5455.jpg")
     eventsix = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
@@ -330,7 +330,7 @@ puts "Creating events"
     eventsix.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventsix.save!
 
-    file = URI.open("https://tinyurl.com/ypjmwwx6")
+    file = URI.open("https://i.pinimg.com/474x/30/1b/6b/301b6b14e4edfd466b4da42caac7a43e.jpg")
     eventseven = Event.new(
       date: DateTime.now + 2.days,
       user_id: User.all.sample.id,
@@ -344,21 +344,21 @@ puts "Creating events"
     eventseven.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventseven.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://i.pinimg.com/474x/c4/0c/65/c40c655ae4e5686ccdf5675dd07f26a3.jpg")
     eventeight = Event.new(
       date: DateTime.now + 2.weeks,
       user_id: User.all.sample.id,
       name: "Champs only",
       game_id: Game.all.sample.id,
       address: ": 27, Tradewinds Circle, Cape Town",
-      description: "Please bring some wine and snacks, I do not supply that.Ampped!",
+      description: "Please bring some wine and snacks",
       capacity: rand(3..8)
 
     )
     eventeight.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventeight.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://i.pinimg.com/474x/7a/ed/fc/7aedfc87b4bb1895a9b579102b3c8417.jpg")
     eventnine = Event.new(
       date: DateTime.now + 67.weeks,
       user_id: User.all.sample.id,
@@ -372,7 +372,7 @@ puts "Creating events"
     eventnine.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     eventnine.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://i.pinimg.com/474x/00/80/0a/00800a82dd4ae59e1aff78886cc304cf.jpg")
     eventten = Event.new(
       date: DateTime.now + 15.weeks,
       user_id: User.all.sample.id,
@@ -388,7 +388,7 @@ puts "Creating events"
 
 
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://i.pinimg.com/474x/16/87/0c/16870ccb627f0cccca5cc5efe1fbae6a.jpg")
     event11 = Event.new(
       date: DateTime.now + 10.weeks,
       user_id: User.all.sample.id,
@@ -402,7 +402,7 @@ puts "Creating events"
     event11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event11.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://i.pinimg.com/474x/6e/0b/3e/6e0b3ee5c00a91db19e9a7650e4cfe71.jpg")
     event12 = Event.new(
       date: DateTime.now + 5.weeks,
       user_id: User.all.sample.id,
@@ -416,7 +416,7 @@ puts "Creating events"
     event12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event12.save!
 
-    file = URI.open("https://hw.menardc.com/main/items/media/WOODA004/ProductLarge/WI_P_SC_5PCActionDiningSet_MAIN.jpg")
+    file = URI.open("https://i.pinimg.com/474x/45/8e/01/458e016278a10a66f4d7e3f03f94012e.jpg")
     event13 = Event.new(
       date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
@@ -430,7 +430,7 @@ puts "Creating events"
     event13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event13.save!
 
-    file = URI.open("https://media.gardenista.com/wp-content/uploads/2015/04/fields/cropped-crate-and-barrel-savanna-cane-rug.jpg")
+    file = URI.open("https://i.pinimg.com/474x/76/22/dd/7622dde0d3d9cd0420ae3e6ba2139f9f.jpg")
     event14 = Event.new(
       date: DateTime.now + 12.days,
       user_id: User.all.sample.id,
@@ -444,7 +444,7 @@ puts "Creating events"
     event14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event14.save!
 
-    file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLxd2oN4B7t8dwYW_ABMN-KoSTXySptCWi8owbFIKrxO2_U54EacOh_F-qgGhhqEcH8FQ&usqp=CAU")
+    file = URI.open("https://i.pinimg.com/564x/44/bf/a4/44bfa4a386dc402adf8ff8566515716d.jpg")
     event15 = Event.new(
       date: DateTime.now + 25.days,
       user_id: User.all.sample.id,
@@ -458,7 +458,7 @@ puts "Creating events"
     event15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event15.save!
 
-    file = URI.open("https://tinyurl.com/3ddypsmz")
+    file = URI.open("https://i.pinimg.com/474x/c7/3b/97/c73b9715dd7299608b4be895643363ef.jpg")
     event16 = Event.new(
       date: DateTime.now + 16.days,
       user_id: User.all.sample.id,
@@ -472,7 +472,7 @@ puts "Creating events"
     event16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event16.save!
 
-    file = URI.open("https://i.ebayimg.com/images/g/niwAAOSw481gZtpD/s-l300.jpg")
+    file = URI.open("https://i.pinimg.com/474x/81/86/89/818689ee1f341e25c23f9a1f4e159630.jpg")
     event17 = Event.new(
       date: DateTime.now + 7.weeks,
       user_id: User.all.sample.id,
