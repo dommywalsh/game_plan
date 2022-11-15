@@ -2,8 +2,8 @@
   <div class="card-box">
     <br>
     <h4 style="text-align:center">Pick the game to join!</h4>
-    <div class="d-flex map-card-container">
-      <div class="mt-4 card-overflow bar">
+    <div class="d-flex map-card-container justify-content-center">
+      <div class="mt-4 card-overflow bar mb-5">
         <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
           <div class="form-control">
             <%= f.text_field :query, placeholder: params[:query].present? ? params[:query] : "Enter Location" %>
