@@ -34,11 +34,20 @@
 
 
 
-<div class="container card-catagory">
+
 
     <%# <%= image_tag "#{@event.game.photo}" %>
+   <div class="cards d-grid p-2">
+      <% @accepted_users.each do |accepted_user| %>
+        <%= accepted_user.first_name %>
+      <% end %>
+    </div>
 
-
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tinyurl.com/34ur36bz)">
+  <% @accepted_users.each do |accepted_user| %>
+  <%= accepted_user.first_name %>
+  <% end %>
+  </div>
 
   <div class="container">
   <h4>Current players in this event:</h4>
