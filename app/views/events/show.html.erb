@@ -1,70 +1,64 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/b0/f9/51/b0f95146e216d232d62abfd5d4b87d63.jpg);">
-  <div class="container">
-    <h2><%= @event.name %></h2>
-    <h2> <%= @event.game.name %></h2>
-    <h2>Capacity: <%= @event.capacity %></h2>
-       <% if @event.users.accepted.include? current_user %>
-      <h5>You are signed up for this game</h5>
-    <% elsif @event.users.include? current_user %>
-      <h2>Your invitation is still pending...</h2>
-    <% else %>
-        <% if @event.users.accepted.count < @event.capacity %>
-      <%= simple_form_for [@event, @player] do |f| %>
-        <%= f.button :submit, "join event", class: "btn-flat"%>
+
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1606733847546-db8546099013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1872&q=80);">
+  <div class="show-game-info">
+    <div class="show-game-names">
+      <div class="game-event-name">
+        <h2><%= @event.name %></h2>
+        <h3><%= @event.game.name %></h3>
+      </div>
+    </div>
+    <div class="show-game-players">
+      <div class="game-players-avatars">
+        <% @event.users.accepted.each do |user| %>
+        <div class="modal-dialog modal-dialog-centered">
+          <%= cl_image_tag user.profile_pic.key, class: "avatar-bordered", alt: "avatar-bordered" %>
+          </div>
         <% end %>
-      <% end %>
-    <% end %>
+        <% @open_capacity.times do %>
+          <%= image_tag "open_user", class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-<%# <div class="catan">
-<img src="https://thirdpersonblog.files.wordpress.com/2020/03/img_0395.jpg?w=636" alt="catan-board">
-</div> %>
-
-<div class="card-product">
-  <img src="https://i.pinimg.com/236x/5a/ec/ef/5aecefaea55907b12a409fc97585c60c.jpg" />
-  <div class="card-product-infos">
-    <h2>Heres what your host has to say..</h2>
-    <h2>Description: <%= @event.description %></h2>
-  </div>
-</div>
-
-
-
-
-
-    <%# <%= image_tag "#{@event.game.photo}" %>
-   <div class="cards d-grid p-2">
-      <% @accepted_users.each do |accepted_user| %>
-        <%= accepted_user.first_name %>
+  <div class="show-game-status">
+    <div class="game-status">
+      <% if @event.users.accepted.include? current_user %>
+        <h5>You are signed up for this game</h5>
+      <% elsif @event.users.include? current_user %>
+        <h5>Your invitation is still pending...</h5>
+      <% elsif @event.users.accepted.count < @event.capacity && @event.user != current_user %>
+          <%= simple_form_for [@event, @player] do |f| %>
+            <%= f.button :submit, "join event", class: "btn btn-primary"%>
+          <% end %>
+      <% elsif @event.owner?(current_user)%>
+        <%= link_to finish_event_path(@event) do%>
+          <h5>End Game</h5>
+        <% end %>
+      <% else %>
+        <h5>Game is full</h5>
       <% end %>
     </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tinyurl.com/34ur36bz)">
-  <% @accepted_users.each do |accepted_user| %>
-  <%= accepted_user.first_name %>
-  <% end %>
   </div>
-
-  <div class="container">
-  <h4>Current players in this event:</h4>
-  <ul class="list-group list-group-flush">
-  <% @accepted_users.each do |accepted_user| %>
-  <li class="list-group-item"><%= accepted_user.first_name %> <%= accepted_user.second_name %>
-  <% end %>
-  </div>
+</div>
 
 
-    <% if @event.owner?(current_user) %>
-      <%= link_to "End Game", finish_event_path(@event) %>
-      <% else %>
-    <% end %>
+<div class="modal-dialog modal-dialog-centered">
+  ...
+</div>
 
 <% # chatoom  %>
 
 <div>
-<% if @event.users.accepted.include? current_user %>
-  <%= link_to "Group messages", event_messages_path(@event) %>
-<% end %>
+  <% if @event.users.accepted.include? current_user %>
+    <%= link_to "Group messages", event_messages_path(@event) %>
+  <% end %>
 </div>
 
-</div>
+
+
+
+<div class="cards d-grid">
+      <% @events.each do |event| %>
+        <%= render "card", event: event %>
+      <% end %>
+    </div>

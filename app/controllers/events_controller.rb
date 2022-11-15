@@ -34,11 +34,14 @@ class EventsController < ApplicationController
   end
 
   def show
+    @events = Event.all
     @event = Event.find(params[:id])
     @player = Player.new
     @user = current_user
     @message = Message.new
     @accepted_users = @event.users.accepted
+    @open_capacity = @event.capacity - @event.users.accepted.count
+
   end
 
   def new
