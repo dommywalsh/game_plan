@@ -1,35 +1,48 @@
-<div class="container">
+<br>
+<br>
+<br>
 
+<div class="container card-catagory">
+    <h1>Event: <%= @event.name %></h1>
+    <h4>Game: <%= @event.game.name %></h4>
+    <h5>Description: <%= @event.description %></h5>
+    <h5>Capacity: <%= @event.capacity %></h5>
 
-<h1>Event: <%= @event.name %></h1>
-<h4>Game: <%= @event.game.name %></h4>
-<h5>Description: <%= @event.description %></h5>
-<h5>Capacity: <%= @event.capacity %></h5>
+    <%= image_tag "#{@event.game.photo}" %>
 
-<%= image_tag "#{@event.game.photo}" %>
-
-<% if @event.users.accepted.include? current_user %>
-  <h5>You are signed up for this game</h5>
-<% elsif @event.users.include? current_user %>
-  <h5>Your invitation is still pending...</h5>
-<% else %>
-    <% if @event.users.accepted.count < @event.capacity %>
-  <%= simple_form_for [@event, @player] do |f| %>
-    <%= f.button :submit, "join event", class: "btn btn-ghost"%>
+    <% if @event.users.accepted.include? current_user %>
+      <h5>You are signed up for this game</h5>
+    <% elsif @event.users.include? current_user %>
+      <h5>Your invitation is still pending...</h5>
+    <% else %>
+        <% if @event.users.accepted.count < @event.capacity %>
+      <%= simple_form_for [@event, @player] do |f| %>
+        <%= f.button :submit, "join event", class: "btn-flat"%>
+        <% end %>
+      <% end %>
     <% end %>
+
+
+  <div class="container">
+  <h4>Current players in this event:</h4>
+  <ul class="list-group list-group-flush">
+  <% @accepted_users.each do |accepted_user| %>
+  <li class="list-group-item"><%= accepted_user.first_name %> <%= accepted_user.second_name %> 
   <% end %>
+  </div>
+
+
+    <% if @event.owner?(current_user) %>
+      <%= link_to "End Game", finish_event_path(@event) %>
+      <% else %>
+    <% end %>
+
+<% # chatoom  %>
+
+<div>
+<% if @event.users.accepted.include? current_user %>
+  <%= link_to "Group messages", event_messages_path(@event) %>
 <% end %>
-
-<% @accepted_users.each do |accepted_user| %>
-<%= accepted_user.email %>
-<% end %>
-
-
-<% if @event.owner?(current_user) %>
-  <%= link_to "End Game", finish_event_path(@event) %>
-  <% else %>
-<% end %>
-
-
+</div>
 
 </div>
