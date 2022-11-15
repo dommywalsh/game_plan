@@ -1,0 +1,68 @@
+.banner-show {
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+}
+
+.show-game-info {
+  height: 500px;
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: top;
+
+}
+
+.show-game-names {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+
+  h2 {
+    font-size: 57px;
+    font-weight: 800;
+    margin-left: 25px;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-left: 30px;
+    color: beige;
+  }
+
+}
+
+.show-game-players {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-right: 35px;
+  padding-right: 4px;
+
+}
+
+.show-game-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 30%;
+  height: 65px;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.game-status {
+  background-color: yellow;
+  font-size: 32px;
+  padding: 10px 20px;
+  font-weight: bolder;
+  border-radius: 8px;
+
+  a {
+    text-decoration: none;
+  }
+}
