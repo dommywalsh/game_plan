@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :user_ratings
   has_many :players
   has_many :events
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_one_attached :photo
   validates :username, uniqueness: true
 

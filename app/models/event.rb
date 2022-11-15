@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   belongs_to :user
   belongs_to :game
   has_many :players
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :users, through: :players do
     def accepted
       where("players.status = 1")
@@ -35,8 +35,8 @@ class Event < ApplicationRecord
     end
   end
 
-  # def accepted_users
-  #   accepted_players = self.players.accepted
-  #   accepted_players.map(&:user)
+  # def pending_users
+  #   pending_players = self.players.pending
+  #   pending_players.map(&:user)
   # end
 end

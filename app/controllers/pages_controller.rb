@@ -27,7 +27,7 @@ class PagesController < ApplicationController
     @user = current_user
     @events = @user.events
     # @users = @event.users.all
-    # @accepted_users = @event.users.accepted
+    # @pending_users = @event.users.pending
   end
 
 end
