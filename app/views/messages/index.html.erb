@@ -1,14 +1,14 @@
 <br>
 <br>
-<h4 style="text-align: center">messages page</h4>
+<h4 style="text-align: center">event messages</h4>
 
-<div class="container chatroom"
+<div class="container chatroom mt-3 border rounded"
 data-controller="event-subscription"
 data-event-subscription-event-id-value="<%= @event.id%>"
 data-event-subscription-current-user-id-value="<%= current_user.id
 %>"%>
-    <h2 style="text-align: center"><%= @event.name %></h2>
-
+    <h2 class = "mt-2"><%= @event.name %> chatroom</h2>
+    <hr>
     <div class="messages" data-event-subscription-target="messages">
       <% @messages.each do |message| %>
         <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">

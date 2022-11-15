@@ -1,76 +1,108 @@
 <br>
 <h4 style="text-align: center">Dashboard</h4>
-<% #container for hosted events %>
-<div class="container mt-4 ">
-  <% if @events%>
-    <h3>Hosted games:</h3>
-    <div class="cards d-grid p-2">
 
-      <% @user.events.each do |event| %>
-        <div class="card-myspace border border-dark border-3 p-3 rounded">
-          <h4><%= link_to event.name, event_path(event) %></h4>
-          <h6 class="text-dark mt-4" >Current accepted players:</h6>
-          <%# <% @accepted_users.each do |accepted_user| %>
-          <%# <%= accepted_user.email %>
-          <%# <% end %>
 
-          <h6 class="text-dark mt-4">Event requests:</h6>
-          <% if event.players.pending.first %>
-            <% event.players.pending.each do |player| %>
-              <div>
-                <div class="d-flex justify-content-between">
-                    <%= player.user.email %>
-                    <div class="d-flex justify-content-end player-status-actions">
-                      <%= link_to accept_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2" do %>
-                        <%= image_tag "yes.png" %>
-                      <% end %>
-                      <%= link_to reject_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2" do %>
-                        <%= image_tag "no.png" %>
-                      <% end %>
-                    </div>
-                </div>
+
+<div class="d-flex p-3">
+<% #container for whole page  %>
+
+<div class="left_side_of_dashboard">
+<% #container for notifications, booked, hosted %>
+
+<div class="border border-danger card-notification-area">
+  <% #outer container for event requests  %>
+  <% #inner container for event requests  %>
+    <% if @events %>
+      <% @events.each do |event | %>
+        <% if event.players.pending.first %>
+          <% event.players.pending.each do |player| %>
+            <div class="card-notification mt-2">
+              <div class="notification-image">
+                <%= cl_image_tag player.user.profile_pic.key, class: "avatar-bordered" %>
               </div>
-            <% end %>
+              <div class="notification-info">
+                <p><strong><%= player.user.username %></strong> wants to join <%= event.name %></p>
+              </div>
+              <div class="notification-actions">
+                <%= link_to accept_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+                  <%= image_tag "yes.png" %>
+                <% end %>
+                <%= link_to reject_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+                  <%= image_tag "no.png" %>
+                <% end %>
+              </div>
+            </div>
           <% end %>
-
-        </div>
+        <% end %>
       <% end %>
-    </div>
-    <% else %>
-      <div class="card-product">
-        <div class="card-product-infos">
-          <h2>You are not currently hosting any events</h2>
-        </div>
-      </div>
-  <% end %>
-
-  <% #container for events you're booked into %>
-  <h2>Booked events:</h2>
-  <div class="cards d-grid p-2">
-      <%if @user.accepted_events %>
-        <div class="card-myspace border border-dark border-3 p-3 rounded">
-          <h2>Confirmed bookings</h2>
-            <ol>
-              <div class="container mt-4 ">
-                <% @user.accepted_events.each do |player| %>
-                  <li><%=player.event.name %></li>
-                <% end %>
-              </div>
-            </ol>
-        </div>
-        <div class="card-myspace border border-dark border-3 p-3 rounded">
-          <h2>Pending bookings</h2>
-            <ol>
-              <div class="container mt-4 ">
-                <% @user.pending_events.each do |player| %>
-                  <li><%=player.event.name %></li>
-                <% end %>
-              </div>
-            </ol>
-        </div>
-      <%end%>
+    <% end %>
+      <% #end of inner container for event requests  %>
+     <% # end of outer container for event requests %>
   </div>
 
+  <div class="p-3">
+  <% # outer container for hosted events %>
+
+    <h3>Hosted games:</h3>
+    <div class="hosted-games ">
+      <% # inner container for hosted events %>
+
+        <% if @events %>
+          <% @events.each do |event | %>
+            <%= render "card", event: event %>
+          <% end %>
+        <% end %>
+      <% # end of inner container for hosted events %>
+    </div>
+  <% # end of outer container for hosted events %>
+  </div>
+
+  <div class="p-3">
+    <% # outer container for booked events %>
+    <h2>Booked events:</h2>
+    <div class="d-flex">
+      <% # inner container for booked events %>
+        <%if @user.accepted_events %>
+          <% @user.accepted_events.each do |player| %>
+            <div class="card-myspace border border-dark border-3 p-3 rounded">
+              <%= link_to player.event.name, event_path(player.event) %>
+            </div>
+          <% end %>
+        <% end %>
+      <% # end of inner container for booked events %>
+    </div>
+
+    <h2>Pending events:</h2>
+    <div class="d-flex">
+      <% # inner container for pending events %>
+        <%if @user.pending_events %>
+          <% @user.pending_events.each do |player| %>
+            <div class="card-myspace border border-dark border-3 p-3 rounded">
+              <%= link_to player.event.name, event_path(player.event) %>
+            </div>
+          <% end %>
+        <% end %>
+      <% # end of inner container for pending events %>
+    </div>
+
+
+    <% # end of outer container for booked events %>
+  </div>
+
+<% #end of container for notifications, booked, hosted, etc %>
+</div>
+
+<div style="background-color:blue;">
+  <% #outer container for Personal records (game results)%>
+  <div style="background-color:white;">
+    <% #inner container for Personal records (game results)%>
+    <h1>Personal Record</h1>
+    <% #end of inner container for Personal records (game results)%>
+  </div>
+  <% #end of outer container for Personal records (game results)%>
+</div>
+
+<% #end of container for whole page  %>
 </div>
 
 

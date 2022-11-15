@@ -6,10 +6,9 @@ class User < ApplicationRecord
   has_many :user_ratings
   has_many :players
   has_many :events
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_one_attached :profile_pic
   validates :username, uniqueness: true
-
   after_create :create_user_ratings
 
   INITIAL_RATING = 1500
