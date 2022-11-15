@@ -8,11 +8,11 @@ class MessagesController < ApplicationController
     if @message.save
       EventChannel.broadcast_to(
         @event,
-        render_to_string(partial: "messages/message",
-          locals: { message: @message } )
+        message: render_to_string(partial: "message",
+          locals: { message: @message }),
+        sender_id: @message.user.id
       )
       head :ok
-      # redirect_to event_messages_path(@event)
     else
       render "events/show", status: :unprocessable_entity
     end
@@ -23,10 +23,10 @@ class MessagesController < ApplicationController
     @messages = @event.messages
     @message = Message.new
   end
-
+  
 private
 
   def message_params
-    params.require(:message).permit(:content, :event_id)
+    params.require(:message).permit(:content)
   end
 end
