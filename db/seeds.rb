@@ -105,13 +105,16 @@ user2 = User.new(
   user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user2.save
 
-  file = URI.open("https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3R1cmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-  first_name: "Connor" ,
-  second_name: "Mac" ,
-  phonenumber: 828085052,
-  bio: "Love board games, please let me play with you",
-  username: "CONNYBOY"
-)
+  file = URI.open("https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3R1cmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60")
+  user3 = User.new(
+    email: "connor@gmail.com",
+    password: "123456",
+    first_name: "Connor" ,
+    second_name: "Mac" ,
+    phonenumber: 828085052,
+    bio: "Love board games, please let me play with you",
+    username: "CONNYBOY"
+  )
 user3.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user3.save
 
@@ -119,8 +122,8 @@ user3.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
 user4 = User.new(
   email: "sally@gmail.com",
   password: "123456",
-  first_name: "Sally" ,
-  second_name: "Ali" ,
+  first_name: "Sally",
+  second_name: "Ali",
   phonenumber: 160160515,
   bio: "Just a fun guy looking for a board game",
   username: "Sexy sally"
@@ -132,8 +135,8 @@ user4.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   user5 = User.new(
   email: "dom@gmail.com",
   password: "123456",
-  first_name: "Dom" ,
-  second_name: "Welly" ,
+  first_name: "Dom",
+  second_name: "Welly",
   phonenumber: 160160515,
   bio: "We love to game with Dommo",
   username: "DOMMY"
@@ -184,7 +187,7 @@ user8.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   user9 = User.new(
   email: "molly@gmail.com",
   password: "123456",
-  first_name: "Molly" ,
+  first_name: "Molly",
   second_name: "MOO" ,
   phonenumber: 160160515,
   bio: "Please let me win, just one game of Catan. I have been studying the game for years now and never won one. ",
@@ -210,8 +213,8 @@ user10.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
 user11 = User.new(
   email: "ty@gmail.com",
   password: "123456",
-  first_name: "Tyrone" ,
-  second_name: "Cummins" ,
+  first_name: "Tyrone",
+  second_name: "Cummins",
   phonenumber: 160160515,
   bio: "I love code names, with my vocab its no doubt I have never lost a game, looking for a new team member. ",
   username: "KELLYGIRL1"
@@ -223,8 +226,8 @@ user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   user12 = User.new(
   email: "janine@gmail.com",
   password: "123456",
-  first_name: "janine" ,
-  second_name: "Legend" ,
+  first_name: "janine",
+  second_name: "Legend",
   phonenumber: 160160515,
   bio: "Hi, I am from Cape Town, over going out and drinking but I really love have a few glases of wine and playing a nice boardgame ",
   username: "JANNIE(:"
@@ -236,8 +239,8 @@ user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   user13 = User.new(
   email: "kelly@gmail.com",
   password: "123456",
-  first_name: "Kelly" ,
-  second_name: "Parker" ,
+  first_name: "Kelly",
+  second_name: "Parker",
   phonenumber: 160160515,
   bio: "I enjoy playing games with my mates ",
   username: "KELLYTHELEGEND"
@@ -249,8 +252,8 @@ user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   user14 = User.new(
   email: "Luno@gmail.com",
   password: "123456",
-  first_name: "Luno" ,
-  second_name: "LUUN" ,
+  first_name: "Luno",
+  second_name: "LUUN",
   phonenumber: 160160515,
   bio: "Well well well, what to say.",
   username: "LunoGIRL1"
@@ -262,8 +265,8 @@ user14.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
 user15 = User.new(
   email: "SY@gmail.com",
   password: "123456",
-  first_name: "SY" ,
-  second_name: "SIMMONS" ,
+  first_name: "SY",
+  second_name: "SIMMONS",
   phonenumber: 160160515,
   bio: "Every dog has its day... not me mate",
   username: "SYBOI"
@@ -276,8 +279,8 @@ file = URI.open("https://tse3.mm.bing.net/th?id=OIP.icHh1R6JVB186OIWv0RyZQHaJ4&p
 user16 = User.new(
   email: "jonty@gmail.com",
   password: "123456",
-  first_name: "jonty" ,
-  second_name: "Rhodes" ,
+  first_name: "jonty",
+  second_name: "Rhodes",
   phonenumber: 160160515,
   bio: "I used to be a fantastic cricketer, looking to meet new people and play some games ",
   username: "CATCHY"

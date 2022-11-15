@@ -22,7 +22,6 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
   overflow-y: scroll;
   .card-link {
     width: 100%;
@@ -80,7 +79,8 @@
   width: 100%;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  margin: 10px;
   border-radius: 18px;
 }
 
