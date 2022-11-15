@@ -1,9 +1,13 @@
-<h1>messages page</h1>
+<br>
+<br>
+<h4 style="text-align: center">messages page</h4>
 
 <div class="container chatroom"
 data-controller="event-subscription"
-data-event-subscription-event-id-value="<%= @event.id%>">
-    <h2>#<%= @event.name %></h2>
+data-event-subscription-event-id-value="<%= @event.id%>"
+data-event-subscription-current-user-id-value="<%= current_user.id
+%>"%>
+    <h2 style="text-align: center"><%= @event.name %></h2>
 
     <div class="messages" data-event-subscription-target="messages">
       <% @messages.each do |message| %>
