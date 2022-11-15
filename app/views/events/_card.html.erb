@@ -1,4 +1,4 @@
-<%= link_to event_path(event), class: "d-flex justify-content-center" do %>
+<%= link_to event_path(event), class: "d-flex justify-content-center card-link" do %>
   <div class="card-trip rounded">
       <% if event.photo.attached? %>
         <%= cl_image_tag event.photo.key %>
