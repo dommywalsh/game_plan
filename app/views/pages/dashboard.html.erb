@@ -3,53 +3,53 @@
 
 
 
-<div class="d-flex">
+<div class="d-flex p-3">
 <% #container for whole page  %>
 
 <div class="left_side_of_dashboard">
 <% #container for notifications, booked, hosted %>
 
-  <div class="border border-danger">
-  <% #container for event requests  %>
+<div class="border border-danger card-notification-area">
+  <% #outer container for event requests  %>
+  <% #inner container for event requests  %>
     <% if @events %>
       <% @events.each do |event | %>
         <% if event.players.pending.first %>
           <% event.players.pending.each do |player| %>
-          <div>
-              <div class="d-flex justify-content-between border border-danger">
-                <p><%= player.user.username %> wants to join <%= event.name %></p>
-                  <div class="d-flex justify-content-end border border-danger">
-                      <div class="d-flex justify-content-end player-status-actions">
-                          <%= link_to accept_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2" do %>
-                            <%= image_tag "yes.png" %>
-                          <% end %>
-                          <%= link_to reject_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2" do %>
-                            <%= image_tag "no.png" %>
-                          <% end %>
-                      </div>
-
-                  </div>
+            <div class="card-notification mt-2">
+              <div class="notification-image">
+                <%= cl_image_tag player.user.profile_pic.key, class: "avatar-bordered" %>
+              </div>
+              <div class="notification-info">
+                <p><strong><%= player.user.username %></strong> wants to join <%= event.name %></p>
+              </div>
+              <div class="notification-actions">
+                <%= link_to accept_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+                  <%= image_tag "yes.png" %>
+                <% end %>
+                <%= link_to reject_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+                  <%= image_tag "no.png" %>
+                <% end %>
               </div>
             </div>
           <% end %>
         <% end %>
       <% end %>
     <% end %>
-     <% # end of container for event requests %>
+      <% #end of inner container for event requests  %>
+     <% # end of outer container for event requests %>
   </div>
 
   <div class="p-3">
   <% # outer container for hosted events %>
 
     <h3>Hosted games:</h3>
-    <div class="d-flex">
+    <div class="hosted-games ">
       <% # inner container for hosted events %>
 
         <% if @events %>
           <% @events.each do |event | %>
-            <div class="card-myspace border border-dark border-3 p-3 rounded">
-              <h4><%= link_to event.name, event_path(event) %></h4>
-            </div>
+            <%= render "card", event: event %>
           <% end %>
         <% end %>
       <% # end of inner container for hosted events %>
