@@ -18,10 +18,15 @@
 }
 
 .cards {
+  width: 700px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   overflow-y: scroll;
+  .card-link {
+    width: 100%;
+  }
 }
 
 .cards-home {
@@ -72,11 +77,11 @@
 }
 
 .card-trip {
+  width: 100%;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 18px;
-  width: 300px;
 }
 
 .card-trip > img {
