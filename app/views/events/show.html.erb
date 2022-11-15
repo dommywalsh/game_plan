@@ -2,18 +2,15 @@
 <br>
 <br>
 
-<div class="container card-catagory">
-    <h1>Event: <%= @event.name %></h1>
-    <h4>Game: <%= @event.game.name %></h4>
-    <h5>Description: <%= @event.description %></h5>
-    <h5>Capacity: <%= @event.capacity %></h5>
-
-    <%= image_tag "#{@event.game.photo}" %>
-
-    <% if @event.users.accepted.include? current_user %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/b0/f9/51/b0f95146e216d232d62abfd5d4b87d63.jpg);">
+  <div class="container">
+    <h1><%= @event.name %></h1>
+    <h4> <%= @event.game.name %></h4>
+    <h1>Capacity: <%= @event.capacity %></h1>
+       <% if @event.users.accepted.include? current_user %>
       <h5>You are signed up for this game</h5>
     <% elsif @event.users.include? current_user %>
-      <h5>Your invitation is still pending...</h5>
+      <h1>Your invitation is still pending...</h1>
     <% else %>
         <% if @event.users.accepted.count < @event.capacity %>
       <%= simple_form_for [@event, @player] do |f| %>
@@ -21,13 +18,33 @@
         <% end %>
       <% end %>
     <% end %>
+  </div>
+</div>
+<%# <div class="catan">
+<img src="https://thirdpersonblog.files.wordpress.com/2020/03/img_0395.jpg?w=636" alt="catan-board">
+</div> %>
+
+<div class="card-product">
+  <img src="https://i.pinimg.com/236x/5a/ec/ef/5aecefaea55907b12a409fc97585c60c.jpg" />
+  <div class="card-product-infos">
+    <h2>Heres what your host has to say..</h2>
+    <h2>Description: <%= @event.description %></h2>
+  </div>
+</div>
+
+
+
+<div class="container card-catagory">
+
+    <%# <%= image_tag "#{@event.game.photo}" %>
+
 
 
   <div class="container">
   <h4>Current players in this event:</h4>
   <ul class="list-group list-group-flush">
   <% @accepted_users.each do |accepted_user| %>
-  <li class="list-group-item"><%= accepted_user.first_name %> <%= accepted_user.second_name %> 
+  <li class="list-group-item"><%= accepted_user.first_name %> <%= accepted_user.second_name %>
   <% end %>
   </div>
 
