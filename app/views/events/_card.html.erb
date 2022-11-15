@@ -10,11 +10,10 @@
         <h2><%= event.name %></h2>
       </div>
       <h2 class="card-trip-pricing"><%= event.game.name %></h2>
-      <% if event.user.photo.attached? %>
-        <%= cl_image_tag event.user.photo.key, class: "card-trip-user photo-bordered" %>
+      <% if event.user.profile_pic.attached? %>
+        <%= cl_image_tag event.user.profile_pic.key, class: "card-trip-user photo-bordered" %>
         <%# <%= cl_image_tag event.game.photo.key, class: "card-trip-user photo-bordered" %>
       <% else %>
-
       <% end %>
     </div>
   </div>

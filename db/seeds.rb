@@ -79,7 +79,8 @@ puts "#{Game.count} games created"
 puts "creating users"
 
 
-User.create(
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+user1 = User.new(
   email: "peter.p@gmail.com",
   password: "123456",
   first_name: "Peter",
@@ -88,8 +89,11 @@ User.create(
   bio: "Hi there, avid board games player looking to meet up a few a few legends and put my skill to the test",
   username: "spiderman"
 )
+user1.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+user1.save
 
-User.create(
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+user2 = User.new(
   email: "menno@gmail.com",
   password: "123456",
   first_name: "Menno" ,
@@ -98,8 +102,11 @@ User.create(
   bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by player with other players",
   username: "ziod"
 )
+  user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user2.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+user3 = User.new(
   email: "connor@gmail.com",
   password: "123456",
   first_name: "Connor" ,
@@ -108,8 +115,11 @@ User.create(
   bio: "Love board games, please let me play with you",
   username: "CONNYBOY"
 )
+user3.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user3.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+user4 = User.new(
   email: "sally@gmail.com",
   password: "123456",
   first_name: "Sally" ,
@@ -118,8 +128,11 @@ User.create(
   bio: "Just a fun guy looking for a board game",
   username: "Sexy sally"
 )
+user4.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user4.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user5 = User.new(
   email: "dom@gmail.com",
   password: "123456",
   first_name: "Dom" ,
@@ -128,8 +141,11 @@ User.create(
   bio: "We love to game with Dommo",
   username: "DOMMY"
 )
+user5.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user5.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user6 = User.new(
   email: "lion@gmail.com",
   password: "123456",
   first_name: "Lionel" ,
@@ -138,8 +154,11 @@ User.create(
   bio: "So good to be alive , lets goo!",
   username: "THE GOAT"
 )
+user6.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user6.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user7 = User.new(
   email: "kelly@gmail.com",
   password: "123456",
   first_name: "Kelly" ,
@@ -148,8 +167,11 @@ User.create(
   bio: "I enjoy playing games with my mates ",
   username: "KELLYGIRL1"
 )
+user7.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user7.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user8 = User.new(
   email: "kiki@gmail.com",
   password: "123456",
   first_name: "Kiki" ,
@@ -158,8 +180,11 @@ User.create(
   bio: "My journey with games has been a weird but fruity one, I really enjoy games but I rarely win ",
   username: "KEEKSGOOI"
 )
+user8.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user8.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user9 = User.new(
   email: "molly@gmail.com",
   password: "123456",
   first_name: "Molly" ,
@@ -168,8 +193,11 @@ User.create(
   bio: "Please let me win, just one game of Catan. I have been studying the game for years now and never won one. ",
   username: "MOLLY :)"
 )
+user9.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user9.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+user10 = User.new(
   email: "emily@gmail.com",
   password: "123456",
   first_name: "Emily" ,
@@ -178,8 +206,11 @@ User.create(
   bio: "I think the best way to describe me would be via the song HELLO from Adele ",
   username: "GOOPO69"
 )
+user10.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user10.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+user11 = User.new(
   email: "ty@gmail.com",
   password: "123456",
   first_name: "Tyrone" ,
@@ -188,8 +219,11 @@ User.create(
   bio: "I love code names, with my vocab its no doubt I have never lost a game, looking for a new team member. ",
   username: "KELLYGIRL1"
 )
+user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user11.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user12 = User.new(
   email: "janine@gmail.com",
   password: "123456",
   first_name: "janine" ,
@@ -198,8 +232,11 @@ User.create(
   bio: "Hi, I am from Cape Town, over going out and drinking but I really love have a few glases of wine and playing a nice boardgame ",
   username: "JANNIE(:"
 )
+user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user12.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user13 = User.new(
   email: "kelly@gmail.com",
   password: "123456",
   first_name: "Kelly" ,
@@ -208,8 +245,11 @@ User.create(
   bio: "I enjoy playing games with my mates ",
   username: "KELLYTHELEGEND"
 )
+user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user13.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  user14 = User.new(
   email: "Luno@gmail.com",
   password: "123456",
   first_name: "Luno" ,
@@ -218,8 +258,11 @@ User.create(
   bio: "Well well well, what to say.",
   username: "LunoGIRL1"
 )
+user14.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user14.save
 
-User.create(
+  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+user15 = User.new(
   email: "SY@gmail.com",
   password: "123456",
   first_name: "SY" ,
@@ -228,8 +271,12 @@ User.create(
   bio: "Every dog has its day... not me mate",
   username: "SYBOI"
 )
+user15.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user15.save
 
-User.create(
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+
+user16 = User.new(
   email: "jonty@gmail.com",
   password: "123456",
   first_name: "jonty" ,
@@ -238,6 +285,8 @@ User.create(
   bio: "I used to be a fantastic cricketer, looking to meet new people and play some games ",
   username: "CATCHY"
 )
+  user16.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user16.save
 
 puts "#{User.count} users created"
 
