@@ -20,8 +20,15 @@
               <div class="d-flex justify-content-between border border-danger">
                 <p><%= player.user.username %> wants to join <%= event.name %></p>
                   <div class="d-flex justify-content-end border border-danger">
-                      <p class="remove-text-decoration"><%= button_to "✅", accept_event_player_path(event, player), method: :patch %></p>
-                      <p class="remove-text-decoration"><%= button_to "❌", reject_event_player_path(event, player), method: :patch %></p>
+                      <div class="d-flex justify-content-end player-status-actions">
+                          <%= link_to accept_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2" do %>
+                            <%= image_tag "yes.png" %>
+                          <% end %>
+                          <%= link_to reject_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2" do %>
+                            <%= image_tag "no.png" %>
+                          <% end %>
+                      </div>
+
                   </div>
               </div>
             </div>
@@ -64,6 +71,19 @@
           <% end %>
         <% end %>
       <% # end of inner container for booked events %>
+    </div>
+
+    <h2>Pending events:</h2>
+    <div class="d-flex">
+      <% # inner container for pending events %>
+        <%if @user.pending_events %>
+          <% @user.pending_events.each do |player| %>
+            <div class="card-myspace border border-dark border-3 p-3 rounded">
+              <%= link_to player.event.name, event_path(player.event) %>
+            </div>
+          <% end %>
+        <% end %>
+      <% # end of inner container for pending events %>
     </div>
 
 
