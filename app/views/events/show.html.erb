@@ -1,16 +1,12 @@
-<br>
-<br>
-<br>
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/b0/f9/51/b0f95146e216d232d62abfd5d4b87d63.jpg);">
   <div class="container">
-    <h1><%= @event.name %></h1>
-    <h4> <%= @event.game.name %></h4>
-    <h1>Capacity: <%= @event.capacity %></h1>
+    <h2><%= @event.name %></h2>
+    <h2> <%= @event.game.name %></h2>
+    <h2>Capacity: <%= @event.capacity %></h2>
        <% if @event.users.accepted.include? current_user %>
       <h5>You are signed up for this game</h5>
     <% elsif @event.users.include? current_user %>
-      <h1>Your invitation is still pending...</h1>
+      <h2>Your invitation is still pending...</h2>
     <% else %>
         <% if @event.users.accepted.count < @event.capacity %>
       <%= simple_form_for [@event, @player] do |f| %>
