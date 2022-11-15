@@ -11,7 +11,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/dark-v10"
+      style: "mapbox://styles/mapbox/streets-v11"
     })
 
     const markers = this.markersValue

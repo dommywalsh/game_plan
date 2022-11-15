@@ -13,12 +13,15 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.d-grid {
+  height: 75vh;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   overflow-y: scroll;
-  height: 75vh;
 }
 
 .cards-home {
@@ -70,7 +73,6 @@
 
 .card-trip {
   overflow: hidden;
-  background: #00FFAB;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 18px;
   width: 300px;
