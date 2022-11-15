@@ -24,8 +24,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = current_user
-    @events = @user.events
+    @events = current_user.events
+    @first_pending_player = @events.find_first_pending_player
     # @users = @event.users.all
     # @pending_users = @event.users.pending
   end
