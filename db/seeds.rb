@@ -79,7 +79,7 @@ puts "#{Game.count} games created"
 puts "creating users"
 
 
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+file = URI.open("https://images.unsplash.com/photo-1505925456693-124134d66749?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGV0ZXIlMjBwYXJrZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60")
 user1 = User.new(
   email: "peter.p@gmail.com",
   password: "123456",
@@ -92,7 +92,7 @@ user1 = User.new(
 user1.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save
 
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+file = URI.open("https://images.unsplash.com/photo-1601814933824-fd0b574dd592?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1712&q=80")
 user2 = User.new(
   email: "menno@gmail.com",
   password: "123456",
@@ -105,10 +105,7 @@ user2 = User.new(
   user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user2.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
-user3 = User.new(
-  email: "connor@gmail.com",
-  password: "123456",
+  file = URI.open("https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3R1cmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
   first_name: "Connor" ,
   second_name: "Mac" ,
   phonenumber: 828085052,
@@ -118,7 +115,7 @@ user3 = User.new(
 user3.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user3.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://images.unsplash.com/photo-1505628346881-b72b27e84530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60")
 user4 = User.new(
   email: "sally@gmail.com",
   password: "123456",
@@ -131,7 +128,7 @@ user4 = User.new(
 user4.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user4.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://avatars.githubusercontent.com/u/111738297?v=4")
   user5 = User.new(
   email: "dom@gmail.com",
   password: "123456",
@@ -144,7 +141,7 @@ user4.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
 user5.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user5.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://tse1.mm.bing.net/th?id=OIP.jKHBRVWDytTl9XLqRRQ7kAHaJ4&pid=Api")
   user6 = User.new(
   email: "lion@gmail.com",
   password: "123456",
@@ -157,7 +154,7 @@ user5.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
 user6.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user6.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://tse1.mm.bing.net/th?id=OIP.hdD6qW_-UBv4dpKI59HDBwHaGz&pid=Api")
   user7 = User.new(
   email: "kelly@gmail.com",
   password: "123456",
@@ -170,7 +167,7 @@ user6.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
 user7.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user7.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://avatars.githubusercontent.com/u/113447311?v=4")
   user8 = User.new(
   email: "kiki@gmail.com",
   password: "123456",
@@ -183,7 +180,7 @@ user7.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
 user8.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user8.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://tse3.mm.bing.net/th?id=OIP.6L9jE3aVWU1ivXdPG7PNjAHaHR&pid=Api")
   user9 = User.new(
   email: "molly@gmail.com",
   password: "123456",
@@ -196,7 +193,7 @@ user8.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
 user9.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user9.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://tse2.mm.bing.net/th?id=OIP.hTeMFkhuRFQFuzZsQizc5gHaEo&pid=Api")
 user10 = User.new(
   email: "emily@gmail.com",
   password: "123456",
@@ -209,7 +206,7 @@ user10 = User.new(
 user10.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user10.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://wallpapertag.com/wallpaper/full/9/9/f/716759-funny-monkey-wallpaper-1920x1080-for-android-tablet.jpg")
 user11 = User.new(
   email: "ty@gmail.com",
   password: "123456",
@@ -222,7 +219,7 @@ user11 = User.new(
 user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user11.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://cdn.images.dailystar.co.uk/dynamic/1/photos/893000/faces-299893.jpg")
   user12 = User.new(
   email: "janine@gmail.com",
   password: "123456",
@@ -235,7 +232,7 @@ user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
 user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user12.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("http://www.funnyjunksite.com/pictures/wp-content/uploads/2015/06/Old-Alien.jpg")
   user13 = User.new(
   email: "kelly@gmail.com",
   password: "123456",
@@ -248,7 +245,7 @@ user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
 user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user13.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("http://1.bp.blogspot.com/-6fIRzTkJZo4/TovWZ9RcK4I/AAAAAAAABzg/E8MDXobSP54/s1600/38871-hi-Bob_Marley2.jpg")
   user14 = User.new(
   email: "Luno@gmail.com",
   password: "123456",
@@ -261,7 +258,7 @@ user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
 user14.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user14.save
 
-  file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+  file = URI.open("https://tse4.mm.bing.net/th?id=OIP.8Q01DtFe6Q1hpuzCi_ISSAHaHa&pid=Api")
 user15 = User.new(
   email: "SY@gmail.com",
   password: "123456",
@@ -274,7 +271,7 @@ user15 = User.new(
 user15.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user15.save
 
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1d-IOy7_gdopxNUgDA1bWajBsoE5KqMKNZg&usqp=CAU")
+file = URI.open("https://tse3.mm.bing.net/th?id=OIP.icHh1R6JVB186OIWv0RyZQHaJ4&pid=Api")
 
 user16 = User.new(
   email: "jonty@gmail.com",
