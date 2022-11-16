@@ -154,18 +154,46 @@
 
 }
 
-.right_side_of_dashboard {
+// .right-side-of-dashboard {
+//   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//   background-color: #efefef;
+//   width: 40vw;
+//   border-radius: 10px;
+//   margin-left: 30px;
+//   padding: 25px;
+//   text-align: center
+// }
+
+.nav-pills {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 21px;
+}
+
+.dashboard-rankings {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #efefef;
   width: 40vw;
   border-radius: 10px;
   margin-left: 30px;
   padding: 25px;
-  text-align: center
+  text-align: center;
+  height: 67%;
+  overflow: scroll;
+  margin-bottom: 30px;
 }
 
-.nav-pills {
+.message-room {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #efefef;
+  width: 40vw;
+  border-radius: 10px;
+  margin-left: 30px;
+  padding: 25px;
+  text-align: center;
+  overflow: scroll;
+  height: 29%;
+}
+.message-room-buttons-container {
   display: flex;
-  justify-content: space-around;
-  margin-top: 21px;
 }

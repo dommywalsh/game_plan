@@ -83,15 +83,30 @@
       </div>
     </div>
   </div>
-  <div class="right_side_of_dashboard">
-    <h4>Your rankings:</h4>
-    <hr>
-    <% current_user.user_ratings.sort_by(&:rating).reverse.each do |user_rating| %>
-      <% leaderboard = user_rating.game.user_ratings.sort_by(&:rating).reverse %>
-      <% index = leaderboard.index(user_rating) %>
-      <h5><strong><%= user_rating.game.name %></strong></h5>
-      <p>Position: <%= index + 1 %>/ <%= user_rating.game.user_ratings.count %></p>
+  <div class="right-side-of-dashboard">
+    <div class="dashboard-rankings">
+      <h4>Your rankings:</h4>
       <hr>
-    <%end  %>
+      <% current_user.user_ratings.sort_by(&:rating).reverse.each do |user_rating| %>
+        <% leaderboard = user_rating.game.user_ratings.sort_by(&:rating).reverse %>
+        <% index = leaderboard.index(user_rating) %>
+        <h5><strong><%= user_rating.game.name %></strong></h5>
+        <p>Position: <%= index + 1 %>/ <%= user_rating.game.user_ratings.count %></p>
+        <hr>
+      <%end  %>
+    </div>
+    <div class="message-room">
+      <i class="fa-solid fa-messages"></i><h5>(<%= current_user.events.count %>)</h5>
+      <%if current_user.events%>
+      <div class="message-room-buttons-container">
+        <% current_user.events.each do |event| %>
+            <%= link_to event.name, event_messages_path(event), class: "btn-messages "%>
+        <%end%>
+      </div>
+      <%else%>
+        <p>You have no chatrooms open</p>
+      <%end%>
+  </div>
+    </div>
   </div>
 </div>
