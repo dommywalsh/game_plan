@@ -24,8 +24,8 @@
           </ul>
 
           <%= form_with url: submit_scores_event_path(@event) do |form| %>
-            <%= form.label :first_place, "First place:", { class: "form-label"}  %>
-            <%= form.select :first_place, @event.participants, { class: "form-control"} %>
+            <%= form.label :first_place, "First place:" %>
+            <%= form.select :first_place, @event.participants %>
             <%= form.label :second_place, "Second place:" %>
             <%= form.select :second_place, @event.participants %>
             <%= form.submit "Submit" %>
