@@ -9,8 +9,6 @@
     </div>
     <div class="show-game-players">
       <div class="game-players-avatars">
-
-
         <% @event.users.accepted.each do |user| %>
           <button type="button" class="avatar-bordered"data-bs-toggle="modal" data-bs-target="#user-<%=user.id%>">
           <%= cl_image_tag user.profile_pic.key, class: "avatar-bordered", alt: "avatar-bordered" %>
@@ -39,7 +37,7 @@
                   <%# <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Understood</button> %>
-                  </div>
+                  <%# </div> %>
                 </div>
               </div>
             </div>

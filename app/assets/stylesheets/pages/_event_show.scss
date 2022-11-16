@@ -41,6 +41,11 @@
   margin-top: 20px;
   margin-right: 35px;
   padding-right: 4px;
+  .avatar-bordered {
+    position: relative;
+    bottom: 2px;
+    right:6px;
+  }
 
 }
 
@@ -48,15 +53,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: transparent;
   width: 30%;
   height: 65px;
-  border-radius: 15px;
+  border-radius: 32px;
   margin: auto;
 }
 
 .game-status {
-  background-color: yellow;
+  background-color: #E8B548;
   font-size: 32px;
   padding: 10px 20px;
   font-weight: bolder;
