@@ -95,6 +95,7 @@
   font-size: 14px;
   font-weight: normal;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-trip p {
@@ -112,6 +113,7 @@
   align-items: flex-end;
   position: relative;
   font-family: 'Poppins', sans-serif;
+  text-decoration: none;
 
 }
 
@@ -123,6 +125,7 @@
   border: 3px black;
   box-shadow: 2px;
   font-family: 'Poppins', sans-serif;
+  text-decoration: none;
 
 }
 
@@ -167,4 +170,10 @@
   padding: 16px;
   margin-right: 50px;
   font-family: 'Poppins', sans-serif;
+}
+
+.card-trip-user {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
 }
