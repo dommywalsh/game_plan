@@ -28,6 +28,14 @@
   }
 }
 
+.cards-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 80px;
+  width: 60%;
+}
+
 .cards-home {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -192,7 +200,7 @@
 .event-card {
   height: 350px;
   border-radius: 10px;
-  background-color: #E8B548;
+  background-color: #f4f2e6 ;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -210,7 +218,7 @@
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
-  background-color: #A0C1B7;
+  background-color: whitesmoke;
 
   h5 {
     margin-bottom: 0px;

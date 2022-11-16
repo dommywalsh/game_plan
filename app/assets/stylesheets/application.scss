@@ -10,12 +10,14 @@
 @import "flatpickr/themes/dark";
 @import "flatpickr/plugins/confirmDate/confirmDate";
 
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "components/banner";
 @import "components/catan_board";
 @import "components/avatar";
+
 
 // // Import style for flatpickr
 // require("flatpickr/dist/flatpickr.css")
