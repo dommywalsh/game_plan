@@ -1,104 +1,84 @@
 <br>
 <h4 style="text-align: center">Dashboard</h4>
 
-
-
 <div class="d-flex p-3">
-<% #container for whole page  %>
+  <div class="left_side_of_dashboard">
+    <% #container for notifications, booked, hosted %>
+    <h5>Notifications (<%= @events.pending_players.count %>):</h5>
+    <div class="card-notification-area mb-3">
+        <% if @first_pending_player %>
+          <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow%>">
+            <div class="notification-image">
+              <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
+            </div>
+            <div class="notification-info">
+              <p><strong><%= @first_pending_player.user.username %></strong> wants to join <%= @first_pending_player.event.name %></p>
+            </div>
+            <div class="notification-actions">
+              <div class="notification-action">
+                <%= link_to accept_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+                  <%= image_tag "yes.png" %>
+                <% end %>
+                <%= link_to reject_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+                  <%= image_tag "no.png" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
 
-<div class="left_side_of_dashboard">
-<% #container for notifications, booked, hosted %>
+    <div class="p-3 m3 pills-container">
+      <ul class="nav nav-pills" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="btn-dash active" id="hosted-tab" data-bs-toggle="tab" data-bs-target="#hosted-tab-pane" type="button" role="tab" aria-controls="hosted-tab-pane" aria-selected="true">Hosting</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="btn-dash " id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted-tab-pane" type="button" role="tab" aria-controls="accepted-tab-pane" aria-selected="false">Accepted</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="btn-dash " id="contact-tab" data-bs-toggle="tab" data-bs-target="#pending-tab-pane" type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="false">Pending</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
 
-<h5>Notifications (<%= @events.pending_players.count %>):</h5>
-<div class="card-notification-area mb-3">
-  <% #outer container for event requests  %>
-  <% #inner container for event requests  %>
-    <% if @first_pending_player %>
-      <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow %>">
-        <div class="notification-image">
-          <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "avatar-bordered" %>
+        <div class="tab-pane fade show active" id="hosted-tab-pane" role="tabpanel" aria-labelledby="hosted-tab" tabindex="0">
+          <div class="hosted-games">
+            <% if @events %>
+              <% @events.each do |event | %>
+                <%= render "events/card", event: event %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
-        <div class="notification-info">
-          <p><strong><%= @first_pending_player.user.username %></strong> wants to join <%= @first_pending_player.event.name %></p>
+
+        <div class="tab-pane fade" id="accepted-tab-pane" role="tabpanel" aria-labelledby="accepted-tab" tabindex="0">
+          <div class="hosted-games">
+            <%if current_user.accepted_events %>
+              <% current_user.accepted_events.each do |player| %>
+                <%= render "events/card", event: player.event %>
+              <%end%>
+            <%end%>
+          </div>
         </div>
-        <div class="notification-actions">
-          <%= link_to accept_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
-            <%= image_tag "yes.png" %>
-          <% end %>
-          <%= link_to reject_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
-            <%= image_tag "no.png" %>
-          <% end %>
+
+        <div class="tab-pane fade" id="pending-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+          <div class="hosted-games">
+            <%if current_user.pending_events %>
+              <% current_user.pending_events.each do |player| %>
+                <%= render "events/card", event: player.event %>
+              <%end%>
+            <%end%>
+          </div>
         </div>
+
       </div>
+    </div>
+  </div>
+  <div class="right_side_of_dashboard p-3">
+  <h5>Event Chats:</h5>
+    <% current_user.events.each do |event| %>
+      <%= link_to event.name, event_messages_path(event), class: "btn-messages "%>
     <% end %>
-      <% #end of inner container for event requests  %>
-     <% # end of outer container for event requests %>
   </div>
-
-  <div class="p-3">
-  <% # outer container for hosted events %>
-
-    <h3>Hosted games:</h3>
-    <div class="hosted-games ">
-      <% # inner container for hosted events %>
-
-        <% if @events %>
-          <% @events.each do |event | %>
-            <%= render "card", event: event %>
-          <% end %>
-        <% end %>
-      <% # end of inner container for hosted events %>
-    </div>
-  <% # end of outer container for hosted events %>
-  </div>
-
-  <div class="p-3">
-    <% # outer container for booked events %>
-    <h2>Booked events:</h2>
-    <div class="d-flex">
-      <% # inner container for booked events %>
-        <%if current_user.accepted_events %>
-          <% current_user.accepted_events.each do |player| %>
-            <div class="card-myspace border border-dark border-3 p-3 rounded">
-              <%= link_to player.event.name, event_path(player.event) %>
-            </div>
-          <% end %>
-        <% end %>
-      <% # end of inner container for booked events %>
-    </div>
-
-    <h2>Pending events:</h2>
-    <div class="cards hosted-games">
-      <% # inner container for pending events %>
-        <%if current_user.pending_events %>
-          <% current_user.pending_events.each do |player| %>
-            <div class="card-category">
-              <%= link_to player.event.name, event_path(player.event) %>
-            </div>
-          <% end %>
-        <% end %>
-      <% # end of inner container for pending events %>
-    </div>
-
-
-    <% # end of outer container for booked events %>
-  </div>
-
-<% #end of container for notifications, booked, hosted, etc %>
 </div>
-
-<div style="background-color:blue;">
-  <% #outer container for Personal records (game results)%>
-  <div style="background-color:white;">
-    <% #inner container for Personal records (game results)%>
-    <h1>Personal Record</h1>
-    <% #end of inner container for Personal records (game results)%>
-  </div>
-  <% #end of outer container for Personal records (game results)%>
-</div>
-
-<% #end of container for whole page  %>
-</div>
-
-
-<p class="remove-text-decoration">
