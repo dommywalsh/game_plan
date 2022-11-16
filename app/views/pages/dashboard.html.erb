@@ -7,13 +7,13 @@
       <div class="dashboard-profile">
         <%= cl_image_tag current_user.profile_pic.key, class: "avatar-bordered", alt: "avatar-bordered" %>
         <div class="dashboard-profile-info">
-          <h4><%= current_user.first_name %> <%= current_user.second_name %></h4>
+          <h5><strong><%= current_user.first_name %> <%= current_user.second_name %></strong></h5>
           <p><strong>Bio: </strong><%= current_user.bio %></p>
         </div>
         <i class="fa-solid fa-pen-to-square"></i>
       </div>
       <div class="card-notification-area mb-3">
-        <h5 class="p-3">Notifications (<%= @events.pending_players.count %>):</h5>
+        <h5 class="p-3"><strong>Notifications (<%= @events.pending_players.count %>):</strong> </h5>
           <% if @first_pending_player %>
             <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow%>">
               <div class="notification-image">
@@ -92,6 +92,7 @@
         <% index = leaderboard.index(user_rating) %>
         <h5><strong><%= user_rating.game.name %></strong></h5>
         <p>Position: <%= index + 1 %>/ <%= user_rating.game.user_ratings.count %></p>
+        <p>Points: <%=user_rating.rating %></p>
         <hr>
       <%end  %>
     </div>

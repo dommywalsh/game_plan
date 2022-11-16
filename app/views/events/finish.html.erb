@@ -2,20 +2,33 @@
 <br>
 <br>
 
-<div class="container">
-      <h1><%=@event.name%> is over! </h1>
-      <h3>Players involved in this game of <%= @event.game.name %>:</h3>
-      <ul>
-      <% @event.players.each do |player| %>
-        <li><%= player.user.first_name %></li>
-      <% end %>
-      </ul>
+<div class="d-flex" style="justify-content: center">
+  <div class="end-game-container">
+    <h1><%=@event.name%> is over! </h1>
+    <hr>
+    <h3>Now that the game is over, it would benefit the whole community if you could
+    fill out this form detailing who placed where. We ask for your utmost honesty
+    as this helps us create an app that upholds the values of boardgames around
+    the world. </h3>
+    <hr>
+        <h5>According to our records, the players involved in <%= @event.game.name %> were:</h5>
+          <ul>
+            <div class="end-game-chits">
+              <% @event.players.each do |player| %>
+                <div class="end-game-chit">
+                    <%= cl_image_tag player.user.profile_pic.key, class: "avatar-large" %>
+                    <%= player.user.first_name %>
+                </div>
+              <% end %>
+            </div>
+          </ul>
 
-      <%= form_with url: submit_scores_event_path(@event) do |form| %>
-        <%= form.label :first_place, "First place:" %>
-        <%= form.select :first_place, @event.participants %>
-        <%= form.label :second_place, "Second place:" %>
-        <%= form.select :second_place, @event.participants %>
-        <%= form.submit "Submit" %>
-      <% end %>
+          <%= form_with url: submit_scores_event_path(@event) do |form| %>
+            <%= form.label :first_place, "First place:", { class: "form-label"}  %>
+            <%= form.select :first_place, @event.participants, { class: "form-control"} %>
+            <%= form.label :second_place, "Second place:" %>
+            <%= form.select :second_place, @event.participants %>
+            <%= form.submit "Submit" %>
+          <% end %>
+  </div>
 </div>
