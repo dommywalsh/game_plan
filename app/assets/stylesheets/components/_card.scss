@@ -28,6 +28,14 @@
   }
 }
 
+.cards-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 80px;
+  width: 60%;
+}
+
 .cards-home {
   display: grid;
   grid-template-columns: 1fr 1fr;

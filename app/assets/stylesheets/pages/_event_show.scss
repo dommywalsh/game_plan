@@ -17,7 +17,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  color: white;
+  color: rgb(165, 118, 118);
 
   h2 {
     font-size: 57px;
@@ -29,7 +29,13 @@
     font-size: 36px;
     font-weight: 500;
     margin-left: 30px;
-    color: beige;
+    color: rgb(140, 140, 61);
+  }
+  h4 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 30px;
+    color: rgb(201, 201, 120);
   }
 
 }
@@ -69,5 +75,14 @@
 
   a {
     text-decoration: none;
+  }
+}
+
+#card-carousel {
+  margin-inline:25px ;
+  .carousel-item {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
   }
 }
