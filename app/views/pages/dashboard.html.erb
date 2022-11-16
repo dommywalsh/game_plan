@@ -12,7 +12,7 @@
               <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
             </div>
             <div class="notification-info">
-              <p><%= @first_pending_player.user.username %> wants to join <%= @first_pending_player.event.name %></p>
+              <p><strong><%= @first_pending_player.user.username %></strong> wants to join <%= @first_pending_player.event.name %></p>
             </div>
             <div class="notification-actions">
               <div class="notification-action">
@@ -75,7 +75,7 @@
       </div>
     </div>
   </div>
-  <div class="right_side_of_dashboard">
+  <div class="right_side_of_dashboard p-3">
   <h5>Event Chats:</h5>
     <% current_user.events.each do |event| %>
       <%= link_to event.name, event_messages_path(event), class: "btn-messages "%>
