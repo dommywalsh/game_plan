@@ -187,9 +187,10 @@
 
 .cards-events {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 260px 260px 260px;
   grid-gap: 24px;
   padding: 40px;
+  margin: auto;
 }
 
 .event-card-link {
@@ -198,7 +199,7 @@
 }
 
 .event-card {
-  height: 350px;
+  height: 380px;
   border-radius: 10px;
   background-color: #f4f2e6 ;
   display: flex;
