@@ -14,20 +14,22 @@
   <% #outer container for event requests  %>
   <% #inner container for event requests  %>
     <% if @first_pending_player %>
-      <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow %>">
+      <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow%>">
         <div class="notification-image">
-          <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "avatar-bordered" %>
+          <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
         </div>
         <div class="notification-info">
           <p><strong><%= @first_pending_player.user.username %></strong> wants to join <%= @first_pending_player.event.name %></p>
         </div>
         <div class="notification-actions">
-          <%= link_to accept_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
-            <%= image_tag "yes.png" %>
-          <% end %>
-          <%= link_to reject_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
-            <%= image_tag "no.png" %>
-          <% end %>
+          <div class="notification-action">
+            <%= link_to accept_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+              <%= image_tag "yes.png" %>
+            <% end %>
+            <%= link_to reject_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+              <%= image_tag "no.png" %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
@@ -52,14 +54,19 @@
   <% # end of outer container for hosted events %>
   </div>
 
-  <div class="p-3">
+  <div class="">
     <% # outer container for booked events %>
     <h2>Booked events:</h2>
-    <div class="d-flex">
+    <div class="p-3 card-trip rounded d-flex">
       <% # inner container for booked events %>
         <%if current_user.accepted_events %>
           <% current_user.accepted_events.each do |player| %>
-            <div class="card-myspace border border-dark border-3 p-3 rounded">
+            <% if player.event.photo.attached? %>
+              <%= cl_image_tag player.event.photo.key %>
+            <% else %>
+              <%= image_tag "https://tinyurl.com/9frz2xjv", class:"event-card-img" %>
+            <% end %>
+            <div class="card-trip-infos">
               <%= link_to player.event.name, event_path(player.event) %>
             </div>
           <% end %>
@@ -68,11 +75,16 @@
     </div>
 
     <h2>Pending events:</h2>
-    <div class="cards hosted-games">
+    <div class="p-3 card-trip rounded d-flex">
       <% # inner container for pending events %>
         <%if current_user.pending_events %>
           <% current_user.pending_events.each do |player| %>
-            <div class="card-category">
+            <% if player.event.photo.attached? %>
+              <%= cl_image_tag player.event.photo.key %>
+            <% else %>
+              <%= image_tag "https://tinyurl.com/9frz2xjv", class:"event-card-img" %>
+            <% end %>
+            <div class="card-trip-infos">
               <%= link_to player.event.name, event_path(player.event) %>
             </div>
           <% end %>
@@ -87,18 +99,5 @@
 <% #end of container for notifications, booked, hosted, etc %>
 </div>
 
-<div style="background-color:blue;">
-  <% #outer container for Personal records (game results)%>
-  <div style="background-color:white;">
-    <% #inner container for Personal records (game results)%>
-    <h1>Personal Record</h1>
-    <% #end of inner container for Personal records (game results)%>
-  </div>
-  <% #end of outer container for Personal records (game results)%>
-</div>
-
 <% #end of container for whole page  %>
 </div>
-
-
-<p class="remove-text-decoration">
