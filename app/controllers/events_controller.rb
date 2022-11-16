@@ -34,8 +34,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @events = Event.all
     @event = Event.find(params[:id])
+    @similar_events = Event.all.where(game: @event.game)
     @player = Player.new
     @user = current_user
     @message = Message.new

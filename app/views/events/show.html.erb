@@ -5,6 +5,8 @@
       <div class="game-event-name">
         <h2><%= @event.name %></h2>
         <h3><%= @event.game.name %></h3>
+        <h3><%= @event.date %></h3>
+        <h4><%= @event.description %></h4>
       </div>
     </div>
     <div class="show-game-players">
@@ -60,7 +62,7 @@
             <%= f.button :submit, "join event", class: "btn btn-primary"%>
           <% end %>
       <% elsif @event.owner?(current_user)%>
-        <%= link_to finish_event_path(@event) do%>
+            <%= link_to finish_event_path(@event) do%>
           <h5>End Game</h5>
         <% end %>
       <% else %>
@@ -70,24 +72,54 @@
   </div>
 </div>
 
-<!-- Button trigger modal -->
-
-
-
-
 <% # chatoom  %>
 
-<div>
+<div class = btn-primary style="text-align: center">
   <% if @event.users.accepted.include? current_user %>
     <%= link_to "Group messages", event_messages_path(@event) %>
   <% end %>
 </div>
+<br>
+<br>
 
+<h4 style="text-align: center">Events that are also playing: <%= @event.game.name %></h4>
+<br>
+<br>
 
-
-
-<div class="cards d-grid">
-      <% @events.each do |event| %>
-        <%= render "card", event: event %>
+<div id="card-carousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <% @similar_events.each_with_index do |event, index| %>
+      <% if index < 4 %>
+      <%= render "card", event: event %>
       <% end %>
+    <% end %>
     </div>
+    <% if @similar_events.size > 4 %>
+    <div class="carousel-item">
+      <% @similar_events.each_with_index do |event, index| %>
+      <% if index > 3 && index < 8 %>
+      <%= render "card", event: event %>
+      <% end %>
+    <% end %>
+    </div>
+    <% end %>
+    <% if @similar_events.size > 8 %>
+    <div class="carousel-item">
+      <% @similar_events.each_with_index do |event, index| %>
+      <% if index > 7 && index < 12 %>
+      <%= render "card", event: event %>
+      <% end %>
+    <% end %>
+    </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#card-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#card-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
