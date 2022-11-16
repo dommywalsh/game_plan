@@ -326,7 +326,7 @@ puts "Creating events"
     eventthree = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
-      name: "RISK NIGHT BABY",
+      name: "Just do it!",
       game_id: Game.all.sample.id,
       address: "41, Skilpadvlei Road, Cape Town",
       description: "You love to see it, couple mates having a good time",
@@ -369,7 +369,7 @@ puts "Creating events"
     eventsix = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
-      name: "Thursday catan",
+      name: "Thursday games",
       game_id: Game.all.sample.id,
       address: "28, Klinker Street, Cape Town",
       description: "Please be serious about gaming",
@@ -425,7 +425,7 @@ puts "Creating events"
     eventten = Event.new(
       date: DateTime.now + 15.weeks,
       user_id: User.all.sample.id,
-      name: "SO amped for this guys",
+      name: "Here we go..",
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
       description: "Lets be respectful of our opponents as well as the game we are playing",
@@ -441,7 +441,7 @@ puts "Creating events"
     event11 = Event.new(
       date: DateTime.now + 10.weeks,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "Serious gamers only",
       game_id: Game.all.sample.id,
       address: "Pakalolo Table View, 14, Beach Boulevard",
       description: "Table View loving",
@@ -511,7 +511,7 @@ puts "Creating events"
     event16 = Event.new(
       date: DateTime.now + 16.days,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "Relaxed time",
       game_id: Game.all.sample.id,
       address: "34, Shelduck Crescent",
       description: "If someone would like to stay after I am happy to play some Perudo after the game",
@@ -525,7 +525,7 @@ puts "Creating events"
     event17 = Event.new(
       date: DateTime.now + 7.weeks,
       user_id: User.all.sample.id,
-      name: "Legends only",
+      name: "Chilled game",
       game_id: Game.all.sample.id,
       address: "Witzands Aquifer Nature Reserve, 1, Dassenberg Drive",
       description: "I love games hey, I think I could be addicted to Perudo, please help me but also play with me",
