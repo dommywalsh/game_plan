@@ -37,7 +37,7 @@ Game.create(
 )
 
 Game.create(
-  name: "Secret Hitler",
+  name: "Candy Land",
   desciption: "Secret Hitler is a dramatic game of political intrigue and betrayal set in 1930's Germany. Players are secretly divided into two teams - liberals and fascists. Known only to each other, the fascists coordinate to sow distrust and install their cold-blooded leader.",
   first_place_points: 300,
   second_place_points: 150 ,
@@ -100,7 +100,7 @@ user2 = User.new(
   second_name: "Bru" ,
   phonenumber: 864545052,
   bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by player with other players",
-  username: "ziod"
+  username: "zoid"
 )
   user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user2.save
@@ -148,10 +148,10 @@ user5.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   user6 = User.new(
   email: "lion@gmail.com",
   password: "123456",
-  first_name: "Lionel" ,
-  second_name: "Messi" ,
+  first_name: "Lionel",
+  second_name: "Messi",
   phonenumber: 160160515,
-  bio: "So good to be alive , lets goo!",
+  bio: "Hi, my name is Lionel and I really like to host games at my place with good vibes, lets go!",
   username: "THE GOAT"
 )
 user6.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -161,10 +161,10 @@ user6.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   user7 = User.new(
   email: "kelly@gmail.com",
   password: "123456",
-  first_name: "Kelly" ,
-  second_name: "Parker" ,
+  first_name: "Kelly",
+  second_name: "Parker",
   phonenumber: 160160515,
-  bio: "I enjoy playing games with my mates ",
+  bio: "I enjoy playing games with my mates and would be cool if you would join us",
   username: "KELLYGIRL1"
 )
 user7.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -174,7 +174,7 @@ user7.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   user8 = User.new(
   email: "kiki@gmail.com",
   password: "123456",
-  first_name: "Kiki" ,
+  first_name: "Kiki",
   second_name: "Kennedy" ,
   phonenumber: 160160515,
   bio: "My journey with games has been a weird but fruity one, I really enjoy games but I rarely win ",
@@ -188,7 +188,7 @@ user8.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   email: "molly@gmail.com",
   password: "123456",
   first_name: "Molly",
-  second_name: "MOO" ,
+  second_name: "MOO",
   phonenumber: 160160515,
   bio: "Please let me win, just one game of Catan. I have been studying the game for years now and never won one. ",
   username: "MOLLY :)"
@@ -200,11 +200,11 @@ user9.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
 user10 = User.new(
   email: "emily@gmail.com",
   password: "123456",
-  first_name: "Emily" ,
-  second_name: "Goop" ,
+  first_name: "Emily",
+  second_name: "Goop",
   phonenumber: 160160515,
-  bio: "I think the best way to describe me would be via the song HELLO from Adele ",
-  username: "GOOPO69"
+  bio: "I think the best way to describe me would be via the song HELLO from Adele",
+  username: "Emmy"
 )
 user10.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user10.save
@@ -217,7 +217,7 @@ user11 = User.new(
   second_name: "Cummins",
   phonenumber: 160160515,
   bio: "I love code names, with my vocab its no doubt I have never lost a game, looking for a new team member. ",
-  username: "KELLYGIRL1"
+  username: "Tyronehatesgames"
 )
 user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user11.save
@@ -229,7 +229,7 @@ user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   first_name: "janine",
   second_name: "Legend",
   phonenumber: 160160515,
-  bio: "Hi, I am from Cape Town, over going out and drinking but I really love have a few glases of wine and playing a nice boardgame ",
+  bio: "Hi, I am from Cape Town, over going out and drinking but I really love have a few glases of wine and playing a nice boardgame",
   username: "JANNIE(:"
 )
 user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -237,38 +237,38 @@ user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
 
   file = URI.open("http://www.funnyjunksite.com/pictures/wp-content/uploads/2015/06/Old-Alien.jpg")
   user13 = User.new(
-  email: "kelly@gmail.com",
+  email: "ula@gmail.com",
   password: "123456",
-  first_name: "Kelly",
-  second_name: "Parker",
+  first_name: "Ula",
+  second_name: "Costa",
   phonenumber: 160160515,
-  bio: "I enjoy playing games with my mates ",
-  username: "KELLYTHELEGEND"
+  bio: "I enjoy playing games with my mates with a paloma in hand",
+  username: "Ulalala"
 )
 user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user13.save
 
   file = URI.open("http://1.bp.blogspot.com/-6fIRzTkJZo4/TovWZ9RcK4I/AAAAAAAABzg/E8MDXobSP54/s1600/38871-hi-Bob_Marley2.jpg")
   user14 = User.new(
-  email: "Luno@gmail.com",
+  email: "patrick@gmail.com",
   password: "123456",
-  first_name: "Luno",
-  second_name: "LUUN",
+  first_name: "Patrick",
+  second_name: "Star",
   phonenumber: 160160515,
-  bio: "Well well well, what to say.",
-  username: "LunoGIRL1"
+  bio: "Cant find Gary, looking for someone to play games with.",
+  username: "5arms"
 )
 user14.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user14.save
 
   file = URI.open("https://tse4.mm.bing.net/th?id=OIP.8Q01DtFe6Q1hpuzCi_ISSAHaHa&pid=Api")
 user15 = User.new(
-  email: "SY@gmail.com",
+  email: "chris@gmail.com",
   password: "123456",
-  first_name: "SY",
-  second_name: "SIMMONS",
+  first_name: "Chris",
+  second_name: "Nguyen",
   phonenumber: 160160515,
-  bio: "Every dog has its day... not me mate",
+  bio: "I love code wars and chess",
   username: "SYBOI"
 )
 user15.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -277,13 +277,13 @@ user15.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
 file = URI.open("https://tse3.mm.bing.net/th?id=OIP.icHh1R6JVB186OIWv0RyZQHaJ4&pid=Api")
 
 user16 = User.new(
-  email: "jonty@gmail.com",
+  email: "Joe@gmail.com",
   password: "123456",
-  first_name: "jonty",
-  second_name: "Rhodes",
+  first_name: "Joe",
+  second_name: "Dreyer",
   phonenumber: 160160515,
-  bio: "I used to be a fantastic cricketer, looking to meet new people and play some games ",
-  username: "CATCHY"
+  bio: "I used to be a fantastic cricketer, looking to meet new people and play some games",
+  username: "Joe"
 )
   user16.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user16.save
@@ -298,7 +298,7 @@ puts "Creating events"
     eventone = Event.new(
       date: DateTime.now + 10.days,
       user_id: User.all.sample.id,
-      name: "Girls night out",
+      name: "Girls night",
       game_id: Game.all.sample.id,
       address: "69, Uys Krige Drive",
       description: "Please bring some wine",
@@ -312,7 +312,7 @@ puts "Creating events"
     eventtwo = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
-      name: "Big games night",
+      name: "Games night",
       game_id: Game.all.sample.id,
       address: "4, Southern Right Circle, Cape Town",
       description: "A lovely night with some friends",
@@ -340,7 +340,7 @@ puts "Creating events"
     eventfour = Event.new(
       date: DateTime.now + 1.days,
       user_id: User.all.sample.id,
-      name: "Girls night out",
+      name: "Games Galore",
       game_id: Game.all.sample.id,
       address: " 38, De la Haye Avenue, Cape Town",
       description: "Should be fun",
@@ -354,7 +354,7 @@ puts "Creating events"
     eventfive = Event.new(
       date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
-      name: "Secret H",
+      name: "Card games",
       game_id: Game.all.sample.id,
       address: "15, Willow Way, Cape Town",
       description: "Excited to meet some new people, but looking for serrious gamers please",
@@ -372,7 +372,7 @@ puts "Creating events"
       name: "Thursday games",
       game_id: Game.all.sample.id,
       address: "28, Klinker Street, Cape Town",
-      description: "Please be serious about gaming",
+      description: "Please be serious about gaming, but also not so serious",
       capacity: rand(3..8)
 
     )
@@ -425,7 +425,7 @@ puts "Creating events"
     eventten = Event.new(
       date: DateTime.now + 15.weeks,
       user_id: User.all.sample.id,
-      name: "Here we go..",
+      name: "All games",
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
       description: "Lets be respectful of our opponents as well as the game we are playing",
@@ -441,10 +441,10 @@ puts "Creating events"
     event11 = Event.new(
       date: DateTime.now + 10.weeks,
       user_id: User.all.sample.id,
-      name: "Serious gamers only",
+      name: "Risk",
       game_id: Game.all.sample.id,
       address: "Pakalolo Table View, 14, Beach Boulevard",
-      description: "Table View loving",
+      description: "Come and join me for an eventful night of card games",
       capacity: rand(3..8)
 
     )
@@ -455,10 +455,10 @@ puts "Creating events"
     event12 = Event.new(
       date: DateTime.now + 5.weeks,
       user_id: User.all.sample.id,
-      name: "Please bring dice",
+      name: "Good vibes",
       game_id: Game.all.sample.id,
       address: "15, B. Molokoane Road",
-      description: "Molo road with the lads!",
+      description: "Lets play some games and let the good vibes flow!",
       capacity: rand(3..8)
 
     )
@@ -469,10 +469,10 @@ puts "Creating events"
     event13 = Event.new(
       date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
-      name: "Lets have some fun ",
+      name: "Friday night",
       game_id: Game.all.sample.id,
       address: "54, Walmer Road",
-      description: "Good clean fun please",
+      description: "We love to play board games on a Friday night",
       capacity: rand(3..8)
 
     )
@@ -486,7 +486,7 @@ puts "Creating events"
       name: "Legends only",
       game_id: Game.all.sample.id,
       address: "8, Braambos Lane",
-      description: "Interesting how cream always rises to the top",
+      description: "Just a bunch of legends getting together to play board games",
       capacity: rand(3..8)
 
     )
@@ -497,10 +497,10 @@ puts "Creating events"
     event15 = Event.new(
       date: DateTime.now + 25.days,
       user_id: User.all.sample.id,
-      name: "We love games",
+      name: "Dinner and games",
       game_id: Game.all.sample.id,
       address: "52, Blue Valley Avenue",
-      description: "Just some good mates looking to have a lekker time",
+      description: "Just some good mates looking to have a lekker time will be providing some food but bring some wine!",
       capacity: rand(3..8)
 
     )
@@ -534,6 +534,20 @@ puts "Creating events"
     )
     event17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
     event17.save!
+
+    file = URI.open("https://i.pinimg.com/474x/10/df/15/10df15e054cdd21608c389b8c1f31280.jpg")
+    event18 = Event.new(
+      date: DateTime.now + 7.weeks,
+      user_id: User.all.sample.id,
+      name: "Good time",
+      game_id: Game.all.sample.id,
+      address: "10 Prima ave, Bakoven",
+      description: "Love to play games and meet new people",
+      capacity: rand(3..8)
+
+    )
+    event18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+    event18.save!
 
 puts "#{Event.count} Events created"
 puts "creating players"
