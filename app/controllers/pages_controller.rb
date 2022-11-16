@@ -28,6 +28,6 @@ class PagesController < ApplicationController
     @first_pending_player = @events.find_first_pending_player
     # @users = @event.users.all
     # @pending_users = @event.users.pending
+    # @ordered_ratings_array = UserRating.order_ratings
   end
-
 end
