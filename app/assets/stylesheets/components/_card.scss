@@ -176,3 +176,110 @@
   height: 32px;
   width: 32px;
 }
+
+.cards-events {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+  padding: 40px;
+}
+
+.event-card-link {
+  text-decoration: none;
+  color: black;
+}
+
+.event-card {
+  height: 350px;
+  border-radius: 10px;
+  background-color: #E8B548;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px;
+  border: solid;
+  padding: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.event-name {
+  padding: 10px;
+  border-radius: 10px;
+  height: 20%;
+  border: solid;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  background-color: #A0C1B7;
+
+  h5 {
+    margin-bottom: 0px;
+  }
+}
+
+.event-info {
+  padding: 10px;
+  border-radius: 5px;
+  height: 75%;
+  border: solid;
+  position: relative;
+  background-size: cover;
+}
+
+.event-card-avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border-color: white;
+  border: 2px;
+}
+
+.game-players {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.game-host-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.game-players-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+  position: absolute;
+  bottom: 0px;
+  left: 8px;
+}
+
+.game-players-numbers {
+  margin-left: 6px;
+}
+
+.game-name {
+  margin-right: 6px;
+}
+
+.game-name, .game-players-numbers {
+
+  p {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+  }
+}
+
+.game-players-icon {
+  font-size: 26px;
+  color: white;
+}

@@ -1,20 +1,26 @@
-<%= link_to event_path(event), class: "d-flex justify-content-center card-link" do %>
-  <div class="card-trip rounded">
-      <% if event.photo.attached? %>
-        <%= cl_image_tag event.photo.key %>
-      <% else %>
-      <%= image_tag "https://tinyurl.com/9frz2xjv", class:"event-card-img" %>
-      <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= event.name %></h2>
+<%= link_to event_path(event), class: "event-card-link" do %>
+  <div class="event-card">
+    <div class="event-name d-flex justify-content-center align-items-center">
+      <h5><%= event.name.truncate(12) %></h5>
+    </div>
+    <% image_path_string = event.photo.attached? ? event.photo.key : "https://tinyurl.com/9frz2xjv" %>
+    <div class="event-info" style="background-image: url(<%=  cl_image_path image_path_string %>);">
+      <div class="game-host-info">
+        <div class="game-name">
+            <p><%= event.game.name %></p>
+        </div>
+        <div class="host-avatar">
+          <%= cl_image_tag event.user.profile_pic.key, class:"event-card-avatar"%>
+        </div>
       </div>
-      <h2 class="card-trip-pricing"><%= event.game.name %></h2>
-      <% if event.user.profile_pic.attached? %>
-        <%= cl_image_tag event.user.profile_pic.key, class: "card-trip-user photo-bordered" %>
-        <%# <%= cl_image_tag event.game.photo.key, class: "card-trip-user photo-bordered" %>
-      <% else %>
-      <% end %>
+      <div class="game-players-info">
+        <div class="game-players-icon">
+          <i class="fa-solid fa-chess-pawn"></i>
+        </div>
+        <div class="game-players-numbers">
+          <p><%= event.players.count %>/<%= event.capacity %></p>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>
