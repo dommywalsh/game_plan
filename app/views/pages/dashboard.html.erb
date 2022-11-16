@@ -1,24 +1,18 @@
 <br>
 <h4 style="text-align: center">Dashboard</h4>
 
-
-
 <div class="d-flex p-3">
-<% #container for whole page  %>
-
   <div class="left_side_of_dashboard">
     <% #container for notifications, booked, hosted %>
-    <div class="p-3">
     <h5>Notifications (<%= @events.pending_players.count %>):</h5>
     <div class="card-notification-area mb-3">
-      <% #outer container for event requests  %>
         <% if @first_pending_player %>
           <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow%>">
             <div class="notification-image">
               <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
             </div>
             <div class="notification-info">
-              <p><strong><%= @first_pending_player.user.username %></strong> wants to join <strong><%= @first_pending_player.event.name %><strong></p>
+              <p><%= @first_pending_player.user.username %> wants to join <%= @first_pending_player.event.name %></p>
             </div>
             <div class="notification-actions">
               <div class="notification-action">
@@ -32,66 +26,59 @@
             </div>
           </div>
         <% end %>
-        <% # end of outer container for event requests %>
     </div>
 
-  <div class="p-3 m3 pills-container">
-    <ul class="nav nav-pills" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="btn active" id="hosted-tab" data-bs-toggle="tab" data-bs-target="#hosted-tab-pane" type="button" role="tab" aria-controls="hosted-tab-pane" aria-selected="true">Hosting</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="btn " id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted-tab-pane" type="button" role="tab" aria-controls="accepted-tab-pane" aria-selected="false">Accepted</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="btn " id="contact-tab" data-bs-toggle="tab" data-bs-target="#pending-tab-pane" type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="false">Pending</button>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="hosted-tab-pane" role="tabpanel" aria-labelledby="hosted-tab" tabindex="0">
-        <div class="hosted-games ">
-          <% if @events %>
-            <% @events.each do |event | %>
-              <%= render "card", event: event %>
+    <div class="p-3 m3 pills-container">
+      <ul class="nav nav-pills" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="btn-dash active" id="hosted-tab" data-bs-toggle="tab" data-bs-target="#hosted-tab-pane" type="button" role="tab" aria-controls="hosted-tab-pane" aria-selected="true">Hosting</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="btn-dash " id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted-tab-pane" type="button" role="tab" aria-controls="accepted-tab-pane" aria-selected="false">Accepted</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="btn-dash " id="contact-tab" data-bs-toggle="tab" data-bs-target="#pending-tab-pane" type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="false">Pending</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="hosted-tab-pane" role="tabpanel" aria-labelledby="hosted-tab" tabindex="0">
+          <div class="hosted-games">
+            <% if @events %>
+              <% @events.each do |event | %>
+                <%= render "events/card", event: event %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
-      </div>
 
-      <div class="tab-pane fade" id="accepted-tab-pane" role="tabpanel" aria-labelledby="accepted-tab" tabindex="0">
-        <%if current_user.accepted_events %>
-          <% current_user.accepted_events.each do |player| %>
-            <% if player.event.photo.attached? %>
-              <%= cl_image_tag player.event.photo.key %>
-            <% else %>
-              <%= image_tag "https://tinyurl.com/9frz2xjv", class:"event-card-img" %>
-            <% end %>
-              <div class="card-trip-infos">
-                <%= link_to player.event.name, event_path(player.event) %>
-              </div>
-          <% end %>
-        <% end %>
-      </div>
+        <div class="tab-pane fade" id="accepted-tab-pane" role="tabpanel" aria-labelledby="accepted-tab" tabindex="0">
+          <div class="hosted-games">
+            <%if current_user.accepted_events %>
+              <% current_user.accepted_events.each do |player| %>
+                <%= render "events/card", event: player.event %>
+              <%end%>
+            <%end%>
+          </div>
+        </div>
 
-      <div class="tab-pane fade" id="pending-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-        <%if current_user.pending_events %>
-          <% current_user.pending_events.each do |player| %>
-            <% if player.event.photo.attached? %>
-              <%= cl_image_tag player.event.photo.key %>
-            <% else %>
-              <%= image_tag "https://tinyurl.com/9frz2xjv", class:"event-card-img" %>
-            <% end %>
-            <div class="card-trip-infos">
-              <%= link_to player.event.name, event_path(player.event) %>
-            </div>
-          <% end %>
-        <% end %>
+        <div class="tab-pane fade" id="pending-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+          <div class="hosted-games">
+            <%if current_user.pending_events %>
+              <% current_user.pending_events.each do |player| %>
+                <%= render "events/card", event: player.event %>
+              <%end%>
+            <%end%>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
-</div>
-
-  <div class="right-side-of-dashboard">
-    <h1>rankings</h1>
+  <div class="right_side_of_dashboard">
+  <h5>Event Chats:</h5>
+    <% current_user.events.each do |event| %>
+      <%= link_to event.name, event_messages_path(event), class: "btn-messages "%>
+    <% end %>
   </div>
+</div>

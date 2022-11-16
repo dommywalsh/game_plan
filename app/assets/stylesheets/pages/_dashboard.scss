@@ -1,5 +1,9 @@
 .left_side_of_dashboard {
   width: 70%;
+
+  h5 {
+    margin-top: 20px;
+  }
 }
 
 .player-status-actions a {
@@ -8,6 +12,8 @@
 
 .card-notification-area {
   width: 38%;
+  padding: 18px;
+  margin-top: 10px;
 }
 
 .card-notification {
@@ -58,8 +64,9 @@
 .hosted-games {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 8px;
-  padding: 5px;
+  grid-gap: 18px;
+  padding: 20px;
+  margin-top: 15px;
 }
 
 .stacked-notifications {
@@ -90,9 +97,19 @@
   background-color: #efefef;
   border-radius: 5px;
   margin-top: 44px;
-  width: 80%;
+  width: 100%;
+  margin-right: 55px;
 }
 
-.right-side-of-dashboard {
-  background-color: #efefef;
+.right_side_of_dashboard {
+  background-color: #511e81;
+  width: 40vw;
+  border-radius: 10px;
+  margin-left: 30px
+}
+
+.nav-pills {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 21px
 }

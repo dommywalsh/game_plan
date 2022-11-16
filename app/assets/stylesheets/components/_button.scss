@@ -20,14 +20,25 @@
   border-color: #e8b548;
 }
 
-.btn.active {
-  background-color: #B6244F;
+.btn-dash {
   border-radius: 5px;
+  padding: 10px 35px;
+  border: none;
+  font-size: 20px;
+  opacity: 50%;
 }
 
-.btn.active:hover {
-  background-color: #da5d15;
+.btn-dash.active {
+  background-color: #b6244f;
   border-radius: 5px;
+  padding: 10px 35px;
+  opacity: 100%;
+}
+
+.btn-dash:hover {
+  opacity: 100%;
+  border-radius: 5px;
+  padding: 10px 35px;
 }
 
 .btn-flat {
@@ -36,4 +47,16 @@
   border-radius: 4px;
   background: #e8b548;
   transition: background 0.3s ease;
+}
+
+.btn-messages {
+  background-color: #b6244f;
+  border-radius: 5px;
+  padding: 10px 35px;
+  opacity: 100%;
+  color:black;
+}
+
+a.btn-messages {
+  text-decoration: none;
 }
