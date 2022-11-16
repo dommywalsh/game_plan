@@ -193,7 +193,15 @@
   text-align: center;
   overflow: scroll;
   height: 29%;
+
+  h4 {
+    margin-bottom: 20px;
+  }
 }
+
+
 .message-room-buttons-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }

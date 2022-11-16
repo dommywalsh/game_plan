@@ -96,7 +96,7 @@
       <%end  %>
     </div>
     <div class="message-room">
-      <i class="fa-solid fa-messages"></i><h5>(<%= current_user.events.count %>)</h5>
+      <h4><i class="fa-solid fa-envelope"></i> (<%= current_user.events.count %>)</h4>
       <%if current_user.events%>
       <div class="message-room-buttons-container">
         <% current_user.events.each do |event| %>
