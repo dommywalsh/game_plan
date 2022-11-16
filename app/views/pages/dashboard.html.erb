@@ -9,32 +9,27 @@
 <div class="left_side_of_dashboard">
 <% #container for notifications, booked, hosted %>
 
-<div class="border border-danger card-notification-area">
+<h5>Notifications (<%= @events.pending_players.count %>):</h5>
+<div class="card-notification-area mb-3">
   <% #outer container for event requests  %>
   <% #inner container for event requests  %>
-    <% if @events %>
-      <% @events.each do |event | %>
-        <% if event.players.pending.first %>
-          <% event.players.pending.each do |player| %>
-            <div class="card-notification mt-2">
-              <div class="notification-image">
-                <%= cl_image_tag player.user.profile_pic.key, class: "avatar-bordered" %>
-              </div>
-              <div class="notification-info">
-                <p><strong><%= player.user.username %></strong> wants to join <%= event.name %></p>
-              </div>
-              <div class="notification-actions">
-                <%= link_to accept_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
-                  <%= image_tag "yes.png" %>
-                <% end %>
-                <%= link_to reject_event_player_path(event, player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
-                  <%= image_tag "no.png" %>
-                <% end %>
-              </div>
-            </div>
+    <% if @first_pending_player %>
+      <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow %>">
+        <div class="notification-image">
+          <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "avatar-bordered" %>
+        </div>
+        <div class="notification-info">
+          <p><strong><%= @first_pending_player.user.username %></strong> wants to join <%= @first_pending_player.event.name %></p>
+        </div>
+        <div class="notification-actions">
+          <%= link_to accept_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+            <%= image_tag "yes.png" %>
           <% end %>
-        <% end %>
-      <% end %>
+          <%= link_to reject_event_player_path(@first_pending_player.event.name, @first_pending_player), data: { 'turbo-method': :patch }, class: "mx-2 remove-text-decoration" do %>
+            <%= image_tag "no.png" %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
       <% #end of inner container for event requests  %>
      <% # end of outer container for event requests %>
@@ -62,8 +57,8 @@
     <h2>Booked events:</h2>
     <div class="d-flex">
       <% # inner container for booked events %>
-        <%if @user.accepted_events %>
-          <% @user.accepted_events.each do |player| %>
+        <%if current_user.accepted_events %>
+          <% current_user.accepted_events.each do |player| %>
             <div class="card-myspace border border-dark border-3 p-3 rounded">
               <%= link_to player.event.name, event_path(player.event) %>
             </div>
@@ -73,11 +68,11 @@
     </div>
 
     <h2>Pending events:</h2>
-    <div class="d-flex">
+    <div class="cards hosted-games">
       <% # inner container for pending events %>
-        <%if @user.pending_events %>
-          <% @user.pending_events.each do |player| %>
-            <div class="card-myspace border border-dark border-3 p-3 rounded">
+        <%if current_user.pending_events %>
+          <% current_user.pending_events.each do |player| %>
+            <div class="card-category">
               <%= link_to player.event.name, event_path(player.event) %>
             </div>
           <% end %>

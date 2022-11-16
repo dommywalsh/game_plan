@@ -35,8 +35,14 @@ class Event < ApplicationRecord
     end
   end
 
-  # def pending_users
-  #   pending_players = self.players.pending
-  #   pending_players.map(&:user)
-  # end
+  def self.find_first_pending_player
+    event = find { |e| e.players.any?(&:pending?) }
+    return nil unless event
+
+    event.players.pending.first
+  end
+
+  def self.pending_players
+    Player.where(event_id: all.map(&:id)).pending
+  end
 end

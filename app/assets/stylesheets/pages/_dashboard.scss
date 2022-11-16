@@ -1,6 +1,5 @@
-
 .left_side_of_dashboard {
-  width: 80%
+  width: 80%;
 }
 
 .player-status-actions a {
@@ -19,10 +18,10 @@
   overflow: hidden;
   height: 60px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-radius: 8px;
+  // border-radius: 8px;
 }
 
 .notification-image {
@@ -43,21 +42,35 @@
 }
 
 .notification-actions {
-
   width: 20%;
   img {
     width: 18px;
     height: 18px;
   }
 
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 .hosted-games {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 8px;
   padding: 5px;
 }
+
+.stacked-notifications {
+  background: #fff;
+  padding: 30px;
+}
+
+.dashboard-events-card {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  border-radius: 18px;
+}
+
