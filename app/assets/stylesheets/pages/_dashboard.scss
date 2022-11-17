@@ -100,6 +100,10 @@
   height: 480px;
   justify-content: center;
 }
+
+.hosted-games::-webkit-scrollbar { width: 0 !important }
+
+
 .stacked-notifications {
   background: #E8B548;
   padding: 10px;
@@ -166,6 +170,10 @@
   overflow: scroll;
   margin-bottom: 30px;
 }
+
+.dashboard-rankings::-webkit-scrollbar { width: 0 !important }
+
+
 .message-room {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #EFEFEF;
@@ -180,6 +188,10 @@
     margin-bottom: 20px;
   }
 }
+
+.message-room::-webkit-scrollbar { width: 0 !important }
+
+
 .message-room-buttons-container {
   display: grid;
   grid-template-columns: 1fr 1fr;

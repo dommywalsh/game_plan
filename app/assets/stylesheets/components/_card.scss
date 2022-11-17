@@ -189,6 +189,8 @@
   margin: auto;
 }
 
+.cards-events::-webkit-scrollbar { width: 0 !important }
+
 .event-card-link {
   text-decoration: none;
   color: black;
