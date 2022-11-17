@@ -5,7 +5,9 @@
       <div class="game-event-name">
         <h2><%= @event.name %></h2>
         <h3><%= @event.game.name %></h3>
-        <h3><%= @event.date %></h3>
+        <h3><%= @event.date.strftime('%a %d %b %Y') %></h3>
+        <h3><%= @event.date.strftime('%I:%M %p') %></h3>
+        <h4>Description:</h4>
         <h4><%= @event.description %></h4>
       </div>
     </div>
@@ -20,7 +22,7 @@
               <div class="modal-dialog ">
                 <div class="modal-content modal-joe">
                   <div class="modal-header">
-                    <h5 class="modal-title modal-text" id="user-<%=user.id%>Label"><%= user.username %></h5>
+                    <h5 class="modal-title modal-text" id="user-<%=user.id%>Label">Username:<%= user.username %></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body ">
@@ -40,7 +42,8 @@
                     <button type="button" class="btn btn-primary">
                           <% if @event.users.accepted.include? current_user %>
                             <%= link_to "Group messages", event_messages_path(@event) %>
-                          <% end %></button>
+                          <% end %>
+                    </button>
                    </div>
                 </div>
               </div>
@@ -58,14 +61,19 @@
       <% if @event.users.accepted.include? current_user %>
         <h5>You are signed up for this game</h5>
       <% elsif @event.users.include? current_user %>
-        <h5>Your invitation is still pending...</h5>
+        <button class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Pending request..
+        </button>
       <% elsif @event.users.accepted.count < @event.capacity && @event.user != current_user %>
           <%= simple_form_for [@event, @player] do |f| %>
-            <%= f.button :submit, "join event", class: "btn btn-primary"%>
+            <%= f.button :submit, "join event", class: "btn btn-join"%>
           <% end %>
       <% elsif @event.owner?(current_user)%>
+      <button type="button" class="btn btn-join">
             <%= link_to finish_event_path(@event) do%>
           <h5>End Game</h5>
+      </button>
         <% end %>
       <% else %>
         <h5>Game is full</h5>
@@ -81,32 +89,19 @@
 <br>
 <br>
 
+<% numberEvents = @similar_events.size %>
+<% cardsPerSlides = 4 %>
+<% slideNumber = (numberEvents/cardsPerSlides.to_f).ceil %>
 <div id="card-carousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-    <% @similar_events.each_with_index do |event, index| %>
-      <% if index < 4 %>
-      <%= render "card", event: event %>
-      <% end %>
-    <% end %>
-    </div>
-    <% if @similar_events.size > 4 %>
-    <div class="carousel-item">
-      <% @similar_events.each_with_index do |event, index| %>
-      <% if index > 3 && index < 8 %>
-      <%= render "card", event: event %>
-      <% end %>
-    <% end %>
-    </div>
-    <% end %>
-    <% if @similar_events.size > 8 %>
-    <div class="carousel-item">
-      <% @similar_events.each_with_index do |event, index| %>
-      <% if index > 7 && index < 12 %>
-      <%= render "card", event: event %>
-      <% end %>
-    <% end %>
-    </div>
+    <% for index in (0...slideNumber) %>
+      <div class="carousel-item <%= index == 0 ? 'active': '' %>">
+        <% for position in (0...cardsPerSlides)  %>
+          <% unless (@similar_events[index * cardsPerSlides + position]).nil? %>
+            <%= render "card", event: @similar_events[index * cardsPerSlides + position] %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#card-carousel" data-bs-slide="prev">

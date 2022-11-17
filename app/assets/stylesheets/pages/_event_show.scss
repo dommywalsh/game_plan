@@ -67,14 +67,17 @@
 }
 
 .game-status {
-  background-color: #E8B548;
-  font-size: 32px;
+  
   padding: 10px 20px;
   font-weight: bolder;
-  border-radius: 8px;
 
   a {
     text-decoration: none;
+  }
+
+  h3 {
+    color: antiquewhite;
+
   }
 }
 

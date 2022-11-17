@@ -65,3 +65,19 @@ a.btn-messages {
 .button {
   text-decoration: none;
 }
+
+.btn-join {
+  background-color: #bdc814;
+  border-radius: 8px;
+  border: none;
+  color: black;
+  padding: 10px 25px;
+}
+
+.btn-join:hover {
+  background-color: #5b7924;
+  color: #e5ff00;
+  border-color: #d20e0e;
+}
+
+
