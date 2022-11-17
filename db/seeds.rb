@@ -303,7 +303,7 @@ puts "Creating events"
     eventone = Event.new(
       date: DateTime.now + 10.days,
       user_id: User.all.sample.id,
-      name: "Girls night",
+      name: "Catan night",
       game_id: Game.all.sample.id,
       address: "69, Uys Krige Drive",
       description: "Please bring some wine",
@@ -331,7 +331,7 @@ puts "Creating events"
     eventthree = Event.new(
       date: DateTime.now + 3.days,
       user_id: User.all.sample.id,
-      name: "Just do it!",
+      name: "Boardgames in Newlands",
       game_id: Game.all.sample.id,
       address: "41, Skilpadvlei Road, Cape Town",
       description: "You love to see it, couple mates having a good time",
@@ -388,7 +388,7 @@ puts "Creating events"
     eventseven = Event.new(
       date: DateTime.now + 2.days,
       user_id: User.all.sample.id,
-      name: "Beers with the lads",
+      name: "Wine & dine",
       game_id: Game.all.sample.id,
       address: "17, Louis Botha Avenue, Cape Town",
       description: "Looking to have a relaxed evening with a few friends and perhaps a some new friends",
@@ -416,7 +416,7 @@ puts "Creating events"
     eventnine = Event.new(
       date: DateTime.now + 67.weeks,
       user_id: User.all.sample.id,
-      name: "Looking to meet people",
+      name: "Catan Vibes",
       game_id: Game.all.sample.id,
       address: "52, Blue Valley Avenue",
       description: "Just some good mates looking to have a lekker time",
@@ -446,7 +446,7 @@ puts "Creating events"
     event11 = Event.new(
       date: DateTime.now + 10.weeks,
       user_id: User.all.sample.id,
-      name: "Games on the beach",
+      name: "Games on clifton beach",
       game_id: Game.all.sample.id,
       address: "Pakalolo Table View, 14, Beach Boulevard",
       description: "Come and join me for an eventful night of card games",
@@ -460,7 +460,7 @@ puts "Creating events"
     event12 = Event.new(
       date: DateTime.now + 5.weeks,
       user_id: User.all.sample.id,
-      name: "Wine, cheese and games",
+      name: "Wine, cheese, and games",
       game_id: Game.all.sample.id,
       address: "15, B. Molokoane Road",
       description: "Lets play some games and let the good vibes flow!",
