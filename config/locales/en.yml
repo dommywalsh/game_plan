@@ -31,3 +31,4 @@
 
 en:
   hello: "Hello world"
+  max_event_capacity_reached: "Max capacity reached"

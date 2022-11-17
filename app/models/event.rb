@@ -62,4 +62,8 @@ class Event < ApplicationRecord
   def confirmed_user?(user)
     self.users.confirmed.include? user
   end
+
+  def max_capacity_reached?
+    players.count >= self.capacity
+  end
 end

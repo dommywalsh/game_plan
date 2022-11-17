@@ -554,15 +554,18 @@ puts "Creating events"
 puts "#{Event.count} Events created"
 puts "creating players"
 
-100.times do
-  player = Player.new(
-    status: rand(0...3),
-    event_id: Event.all.sample.id,
-    user_id: User.all.sample.id
-  )
-  # Event.Player = Player.all.sample
-  # player.user = User.all.sample
-  player.save!
+events = Event.all
+events.each do |event|
+  (4..8).times do
+    player = Player.new(
+      status: rand(0...3),
+      event_id: Event.all.sample.id,
+      user_id: User.all.sample.id
+    )
+    # Event.Player = Player.all.sample
+    # player.user = User.all.sample
+    player.save
+  end
 end
 
 puts "#{Player.count} players created"
