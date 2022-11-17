@@ -13,7 +13,7 @@
     </div>
     <div class="show-game-players">
       <div class="game-players-avatars">
-        <% @event.users.accepted.each do |user| %>
+        <% @event.users.confirmed.each do |user| %>
           <button type="button" class="avatar-bordered"data-bs-toggle="modal" data-bs-target="#user-<%=user.id%>">
           <%= cl_image_tag user.profile_pic.key, class: "avatar-bordered", alt: "avatar-bordered" %>
           </button>
@@ -40,7 +40,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-primary">
-                          <% if @event.users.accepted.include? current_user %>
+                          <% if @event.users.confirmed.include? current_user %>
                             <%= link_to "Group messages", event_messages_path(@event) %>
                           <% end %>
                     </button>
@@ -58,14 +58,14 @@
   </div>
   <div class="show-game-status">
     <div class="game-status">
-      <% if @event.users.accepted.include? current_user %>
+      <% if @event.confirmed_user?(current_user) %>
         <h5>You are signed up for this game</h5>
-      <% elsif @event.users.include? current_user %>
+      <% elsif @event.pending_user?(current_user) %>
         <button class="btn btn-primary" type="button" disabled>
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Pending request..
         </button>
-      <% elsif @event.users.accepted.count < @event.capacity && @event.user != current_user %>
+      <% elsif @event.users.confirmed.count < @event.capacity%>
           <%= simple_form_for [@event, @player] do |f| %>
             <%= f.button :submit, "join event", class: "btn btn-join"%>
           <% end %>
