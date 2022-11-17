@@ -38,7 +38,7 @@ Game.create(
 
 Game.create(
   name: "Candy Land",
-  desciption: "Secret Hitler is a dramatic game of political intrigue and betrayal set in 1930's Germany. Players are secretly divided into two teams - liberals and fascists. Known only to each other, the fascists coordinate to sow distrust and install their cold-blooded leader.",
+  desciption: "Candy Land is a dramatic game of political intrigue and betrayal set in 1930's Germany. Players are secretly divided into two teams - liberals and fascists. Known only to each other, the fascists coordinate to sow distrust and install their cold-blooded leader.",
   first_place_points: 300,
   second_place_points: 150 ,
   losing_points: -100,
@@ -86,7 +86,7 @@ user1 = User.new(
   first_name: "Peter",
   second_name: "Parker",
   phonenumber: 828085052,
-  bio: "Hi there, avid board games player looking to meet up a few a few legends and put my skill to the test",
+  bio: "Hi there, I am an avid board games player looking to meet up a with few a few legends and put my skill to the test",
   username: "spiderman"
 )
 user1.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -99,7 +99,7 @@ user2 = User.new(
   first_name: "Menno" ,
   second_name: "Bru" ,
   phonenumber: 864545052,
-  bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by playing with other players",
+  bio: "Yo guys! I am an avid Catan player with some pretty big wins under my belt. I would love to meet up and put my skills to the test",
   username: "zoid"
 )
   user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -112,7 +112,7 @@ user2 = User.new(
     first_name: "Connor" ,
     second_name: "Mac" ,
     phonenumber: 828085052,
-    bio: "Love board games, please let me play with you",
+    bio: "Just a perudo enthusiast trying to find people to play with!! Please help! ",
     username: "CONNYBOY"
   )
 user3.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -125,8 +125,8 @@ user4 = User.new(
   first_name: "Sally",
   second_name: "Ali",
   phonenumber: 160160515,
-  bio: "Just a fun guy looking for a board game",
-  username: "Sexy sally"
+  bio: "Capetonian looking to play board games with other chilled people",
+  username: "Sally Stricko"
 )
 user4.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user4.save
@@ -138,7 +138,7 @@ user4.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   first_name: "Dom",
   second_name: "Welly",
   phonenumber: 160160515,
-  bio: "We love to game with Dommo",
+  bio: "Board-game afficionado looking to connect with some legends close by",
   username: "DOMMY"
 )
 user5.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -151,7 +151,8 @@ user5.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   first_name: "Lionel",
   second_name: "Messi",
   phonenumber: 160160515,
-  bio: "Hi, my name is Lionel and I really like to host games at my place with good vibes, lets go!",
+  bio: "Hi, my name is Lionel, i'm from Argentina. I'm new to the country and would love to make new friends over some of
+  my favourite boardgames",
   username: "THE GOAT"
 )
 user6.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -164,7 +165,7 @@ user6.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png
   first_name: "Kelly",
   second_name: "Parker",
   phonenumber: 160160515,
-  bio: "I enjoy playing games with my mates and would be cool if you would join us",
+  bio: "30 Seconds is the shit, and i don't know why no one wants to play with me. Help me out guys!",
   username: "KELLYGIRL1"
 )
 user7.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -203,7 +204,7 @@ user10 = User.new(
   first_name: "Emily",
   second_name: "Goop",
   phonenumber: 160160515,
-  bio: "I think the best way to describe me would be via the song HELLO from Adele",
+  bio: "Chilled jazz, friends, and game of catan by the fire is my idea of a good evening.",
   username: "Emmy"
 )
 user10.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -216,7 +217,7 @@ user11 = User.new(
   first_name: "Tyrone",
   second_name: "Cummins",
   phonenumber: 160160515,
-  bio: "I love code names, with my vocab its no doubt I have never lost a game, looking for a new team member. ",
+  bio: "None of my friends like boardgames! So this app is a life-changer. Let's chill, drink wine, and play RISK! ",
   username: "Tyronehatesgames"
 )
 user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -229,7 +230,8 @@ user11.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   first_name: "janine",
   second_name: "Legend",
   phonenumber: 160160515,
-  bio: "Hi, I am from Cape Town, over going out and drinking but I really love have a few glases of wine and playing a nice boardgame",
+  bio: "Hi, my name is Jannie and I am from Cape Town. I am over going out and drinking but I really love having a
+  few glasses of wine and playing a nice boardgame",
   username: "JANNIE(:"
 )
 user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -243,7 +245,7 @@ user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   second_name: "Costa",
   phonenumber: 160160515,
   bio: "Hi there, I am an exchange student from Argentina :) I am in Cape Town for 2 weeks and would love to link up with some locals to play my favourite boardgame: Catan",
-  username: "Ulalala"
+  username: "UlaCosta"
 )
 user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user13.save
@@ -252,11 +254,11 @@ user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   user14 = User.new(
   email: "patrick@gmail.com",
   password: "123456",
-  first_name: "Patrick",
+  first_name: "Nico",
   second_name: "Star",
   phonenumber: 160160515,
-  bio: "Well hello! A am a German Backpacker. I have been looking for a group of people to play Catan with for while now. Hoping this will help! ",
-  username: "5arms"
+  bio: "Well hello! I am a German Backpacker. I have been looking for a group of people to play Catan with for while now. Hoping this will solve my problem! ",
+  username: "Nico"
 )
 user14.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user14.save
@@ -269,7 +271,7 @@ user15 = User.new(
   second_name: "Nguyen",
   phonenumber: 160160515,
   bio: "I love code wars and chess",
-  username: "SYBOI"
+  username: "ch0rizo"
 )
 user15.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user15.save
@@ -282,7 +284,8 @@ user16 = User.new(
   first_name: "Joe",
   second_name: "Dreyer",
   phonenumber: 160160515,
-  bio: "Hi, My name is Joe and I used to be a fantastic cricketer, due to injury I now have to take it easy. I find the best way to relax is playing a boardgame, having a pints and a good chat",
+  bio: "Hi, My name is Joe and I used to be a fantastic cricketer, due to injury I now have to take it easy.
+  I find the best way to relax is playing a boardgame, having a pints and a good chat",
   username: "Joe"
 )
   user16.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
