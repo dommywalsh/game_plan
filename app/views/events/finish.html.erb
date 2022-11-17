@@ -1,17 +1,22 @@
 <br>
 <br>
 <br>
-
+<br>
 <div class="d-flex" style="justify-content: center">
   <div class="end-game-container">
-    <h1><%=@event.name%> is over! </h1>
+    <h4><%=@event.name%> is over! </h4>
+      <br>
     <hr>
-    <h3>Now that the game is over, it would benefit the whole community if you could
+    <br>
+    <p>Now that the game is over, it would benefit the whole community if you could
     fill out this form detailing who placed where. We ask for your utmost honesty
     as this helps us create an app that upholds the values of boardgames around
-    the world. </h3>
+    the world.</p>
+    <br>
     <hr>
+    <br>
         <h5>According to our records, the players involved in <%= @event.game.name %> were:</h5>
+        <br>
           <ul>
             <div class="end-game-chits">
               <% @event.players.each do |player| %>
