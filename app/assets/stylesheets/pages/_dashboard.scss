@@ -127,13 +127,13 @@
 .pills-container {
   background-color: #EFEFEF;
   border-radius: 5px;
-  // margin-top: 30px;
-  // height: 65vh;
   width: 100%;
   margin-right: 55px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-top: 30px;
   flex: 1 1 auto;
+  height: 400px;
+  overflow: scroll;
 }
 .right-side-of-dashboard {
   // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

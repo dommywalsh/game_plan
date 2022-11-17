@@ -19,8 +19,15 @@
               <div class="notification-image">
                 <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
               </div>
-              <div class="notification-info">
-                <p><strong><%= @first_pending_player.user.username %></strong> wants to join <%= @first_pending_player.event.name %></p>
+              <% user = @first_pending_player.user %>
+              <div
+                class="notification-info"
+                data-controller="alert"
+                data-alert-name-value="<%= user.first_name %>"
+                data-alert-bio-value="<%= user.bio %>"
+                data-alert-image-value="<%= user.profile_pic.url %>"
+              >
+                <p><strong><%= link_to user.username,  profile_page_path(user.username) , data: { action: "click->alert#fireAlert" } %></strong></p>
               </div>
               <div class="notification-actions">
                 <div class="notification-action">

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AlertController from "./alert_controller"
+application.register("alert", AlertController)
+
 import EventSubscriptionController from "./event_subscription_controller"
 application.register("event-subscription", EventSubscriptionController)
 
