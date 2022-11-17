@@ -39,8 +39,8 @@ class EventsController < ApplicationController
     @player = Player.new
     @user = current_user
     @message = Message.new
-    @accepted_users = @event.users.accepted
-    @open_capacity = @event.capacity - @event.users.accepted.count
+    @accepted_users = @event.users.confirmed
+    @open_capacity = @event.capacity - @event.users.confirmed.count
   end
 
   def new
@@ -50,6 +50,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
+    Player.create(event: @event, user: current_user, status: :confirmed)
 
     if @event.save
       redirect_to event_path(@event)

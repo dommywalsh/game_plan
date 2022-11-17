@@ -7,8 +7,12 @@ class Event < ApplicationRecord
   has_many :players
   has_many :messages, dependent: :destroy
   has_many :users, through: :players do
-    def accepted
+    def confirmed
       where("players.status = 1")
+    end
+
+    def pending
+      where("players.status = 0")
     end
   end
 
@@ -44,5 +48,13 @@ class Event < ApplicationRecord
 
   def self.pending_players
     Player.where(event_id: all.map(&:id)).pending
+  end
+
+  def pending_user?(user)
+    self.users.pending.include? user
+  end
+
+  def confirmed_user?(user)
+    self.users.confirmed.include? user
   end
 end
