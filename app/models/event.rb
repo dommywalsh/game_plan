@@ -1,5 +1,10 @@
 class Event < ApplicationRecord
   # acts_as_mappable
+  validates :capacity, presence: true
+  validates :game, presence: true
+  validates :name, presence: true
+  validates :description, presence: true, uniqueness: true
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   belongs_to :user
