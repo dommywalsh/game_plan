@@ -242,7 +242,7 @@ user12.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   first_name: "Ula",
   second_name: "Costa",
   phonenumber: 160160515,
-  bio: "I enjoy playing games with my mates with a paloma in hand",
+  bio: "Hi there, I am an exchange student from Argentina :) I am in Cape Town for 2 weeks and would love to link up with some locals to play my favourite boardgame: Catan",
   username: "Ulalala"
 )
 user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -255,7 +255,7 @@ user13.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/pn
   first_name: "Patrick",
   second_name: "Star",
   phonenumber: 160160515,
-  bio: "Cant find Gary, looking for someone to play games with.",
+  bio: "Well hello! A am a German Backpacker. I have been looking for a group of people to play Catan with for while now. Hoping this will help! ",
   username: "5arms"
 )
 user14.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -282,13 +282,15 @@ user16 = User.new(
   first_name: "Joe",
   second_name: "Dreyer",
   phonenumber: 160160515,
-  bio: "I used to be a fantastic cricketer, looking to meet new people and play some games",
+  bio: "Hi, My name is Joe and I used to be a fantastic cricketer, due to injury I now have to take it easy. I find the best way to relax is playing a boardgame, having a pints and a good chat",
   username: "Joe"
 )
   user16.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
   user16.save
 
 puts "#{User.count} users created"
+
+
 
 puts "Creating events"
 
@@ -354,7 +356,7 @@ puts "Creating events"
     eventfive = Event.new(
       date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
-      name: "Card games",
+      name: "Relaxed monday",
       game_id: Game.all.sample.id,
       address: "15, Willow Way, Cape Town",
       description: "Excited to meet some new people, but looking for serrious gamers please",
@@ -383,10 +385,10 @@ puts "Creating events"
     eventseven = Event.new(
       date: DateTime.now + 2.days,
       user_id: User.all.sample.id,
-      name: "Poker night",
+      name: "Beers with the lads",
       game_id: Game.all.sample.id,
       address: "17, Louis Botha Avenue, Cape Town",
-      description: "BE the game, live the game",
+      description: "Looking to have a relaxed evening with a few friends and perhaps a some new friends",
       capacity: rand(3..8)
 
     )
@@ -397,10 +399,10 @@ puts "Creating events"
     eventeight = Event.new(
       date: DateTime.now + 2.weeks,
       user_id: User.all.sample.id,
-      name: "Champs only",
+      name: "Elites",
       game_id: Game.all.sample.id,
       address: ": 27, Tradewinds Circle, Cape Town",
-      description: "Please bring some wine and snacks",
+      description: "This is a serious game please make sure you rank in the top 10",
       capacity: rand(3..8)
 
     )
@@ -411,9 +413,9 @@ puts "Creating events"
     eventnine = Event.new(
       date: DateTime.now + 67.weeks,
       user_id: User.all.sample.id,
-      name: "Boardgames are for sissies",
+      name: "Looking to meet people",
       game_id: Game.all.sample.id,
-      address: "5, Links Drive",
+      address: "52, Blue Valley Avenue",
       description: "Just some good mates looking to have a lekker time",
       capacity: rand(3..8)
 
@@ -425,7 +427,7 @@ puts "Creating events"
     eventten = Event.new(
       date: DateTime.now + 15.weeks,
       user_id: User.all.sample.id,
-      name: "All games",
+      name: "Wabooms Boardgames",
       game_id: Game.all.sample.id,
       address: "15, Waboomskloof",
       description: "Lets be respectful of our opponents as well as the game we are playing",
@@ -441,7 +443,7 @@ puts "Creating events"
     event11 = Event.new(
       date: DateTime.now + 10.weeks,
       user_id: User.all.sample.id,
-      name: "Risk",
+      name: "Games on the beach",
       game_id: Game.all.sample.id,
       address: "Pakalolo Table View, 14, Beach Boulevard",
       description: "Come and join me for an eventful night of card games",
@@ -455,7 +457,7 @@ puts "Creating events"
     event12 = Event.new(
       date: DateTime.now + 5.weeks,
       user_id: User.all.sample.id,
-      name: "Good vibes",
+      name: "Wine, cheese and games",
       game_id: Game.all.sample.id,
       address: "15, B. Molokoane Road",
       description: "Lets play some games and let the good vibes flow!",
@@ -469,10 +471,10 @@ puts "Creating events"
     event13 = Event.new(
       date: DateTime.now + 7.days,
       user_id: User.all.sample.id,
-      name: "Friday night",
+      name: "Friday night at Walmer Road",
       game_id: Game.all.sample.id,
       address: "54, Walmer Road",
-      description: "We love to play board games on a Friday night",
+      description: "Will find a peaceful place in the garden for the game to be played",
       capacity: rand(3..8)
 
     )
@@ -542,7 +544,7 @@ puts "Creating events"
       name: "Good time",
       game_id: Game.all.sample.id,
       address: "10 Prima ave, Bakoven",
-      description: "Love to play games and meet new people",
+      description: "Comfortable setting with an amazing view",
       capacity: rand(3..8)
 
     )
@@ -565,11 +567,10 @@ end
 
 puts "#{Player.count} players created"
 
-rating = UserRating.new(
-  game_id: Game.all.sample.id,
-  user_id: User.all.sample.id,
-  rating: rand(1000..2000)
-)
-rating.save!
-puts "#{UserRating.count} ratings created"
+all_ratings = UserRating.all
+all_ratings.each do |rating|
+  rating.update(rating: rand(1000..2500))
+end
+
+puts "#{all_ratings.count} ratings updated"
 puts "Your seeds are now ready for action"

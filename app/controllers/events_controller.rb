@@ -35,7 +35,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @similar_events = Event.all.where(game: @event.game)
+    @similar_events = Event.all.where(game: @event.game) || Event.all.where(capacity: @event.capacity)
     @player = Player.new
     @user = current_user
     @message = Message.new
