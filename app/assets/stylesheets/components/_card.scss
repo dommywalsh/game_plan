@@ -229,6 +229,8 @@
   border: solid;
   position: relative;
   background-size: cover;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 }
 
 .event-card-avatar {
