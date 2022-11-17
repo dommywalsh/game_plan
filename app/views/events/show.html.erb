@@ -81,32 +81,19 @@
 <br>
 <br>
 
+<% numberEvents = @similar_events.size %>
+<% cardsPerSlides = 4 %>
+<% slideNumber = (numberEvents/cardsPerSlides.to_f).ceil %>
 <div id="card-carousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-    <% @similar_events.each_with_index do |event, index| %>
-      <% if index < 4 %>
-      <%= render "card", event: event %>
-      <% end %>
-    <% end %>
-    </div>
-    <% if @similar_events.size > 4 %>
-    <div class="carousel-item">
-      <% @similar_events.each_with_index do |event, index| %>
-      <% if index > 3 && index < 8 %>
-      <%= render "card", event: event %>
-      <% end %>
-    <% end %>
-    </div>
-    <% end %>
-    <% if @similar_events.size > 8 %>
-    <div class="carousel-item">
-      <% @similar_events.each_with_index do |event, index| %>
-      <% if index > 7 && index < 12 %>
-      <%= render "card", event: event %>
-      <% end %>
-    <% end %>
-    </div>
+    <% for index in (0...slideNumber) %>
+      <div class="carousel-item <%= index == 0 ? 'active': '' %>">
+        <% for position in (0...cardsPerSlides)  %>
+          <% unless (@similar_events[index * cardsPerSlides + position]).nil? %>
+            <%= render "card", event: @similar_events[index * cardsPerSlides + position] %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#card-carousel" data-bs-slide="prev">
