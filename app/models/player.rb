@@ -3,6 +3,13 @@ class Player < ApplicationRecord
   belongs_to :user
   enum status: [:pending, :confirmed, :rejected]
 
+  validate :check_max_capacity
+
+  def check_max_capacity
+    if event.max_capacity_reached?
+      errors.add :event, :max_event_capacity_reached
+    end
+  end
 
   def self.stack_shadow
     if count == 0

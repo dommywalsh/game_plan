@@ -19,8 +19,15 @@
               <div class="notification-image">
                 <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
               </div>
-              <div class="notification-info">
-                <p><strong><%= @first_pending_player.user.username %></strong> wants to join <%= @first_pending_player.event.name %></p>
+              <% user = @first_pending_player.user %>
+              <div
+                class="notification-info"
+                data-controller="alert"
+                data-alert-name-value="<%= user.first_name %>"
+                data-alert-bio-value="<%= user.bio %>"
+                data-alert-image-value="<%= user.profile_pic.url %>"
+              >
+                <p class="dashboard-notification-link"><strong><%= link_to user.username,  profile_page_path(user.username) , data: { action: "click->alert#fireAlert" }, class:"dashboard-notification-link" %></strong></p>
               </div>
               <div class="notification-actions">
                 <div class="notification-action">
@@ -51,7 +58,7 @@
       <div class="tab-content" id="myTabContent">
 
         <div class="tab-pane fade show active" id="hosted-tab-pane" role="tabpanel" aria-labelledby="hosted-tab" tabindex="0">
-          <div class="hosted-games">
+          <div class="hosted-games-dashboard">
             <% if @events %>
               <% @events.each do |event | %>
                 <%= render "events/card", event: event %>
@@ -61,7 +68,7 @@
         </div>
 
         <div class="tab-pane fade" id="accepted-tab-pane" role="tabpanel" aria-labelledby="accepted-tab" tabindex="0">
-          <div class="hosted-games">
+          <div class="hosted-games-dashboard">
             <%if current_user.accepted_events %>
               <% current_user.accepted_events.each do |player| %>
                 <%= render "events/card", event: player.event %>
@@ -71,7 +78,7 @@
         </div>
 
         <div class="tab-pane fade" id="pending-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-          <div class="hosted-games">
+          <div class="hosted-games-dashboard">
             <%if current_user.pending_events %>
               <% current_user.pending_events.each do |player| %>
                 <%= render "events/card", event: player.event %>

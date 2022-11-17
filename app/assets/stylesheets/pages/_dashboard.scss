@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   h5 {
-    margin-top: -11px;
+    margin-top: -4px;
   }
 }
 .player-status-actions a {
@@ -14,7 +14,7 @@
   width: 100%;
   height: 100%;
   padding: 18px;
-  background: #EFEFEF;
+  background: #efefef;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -61,7 +61,7 @@
 .dashboard-profile {
   display: flex;
   align-items: center;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   padding: 25px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -95,17 +95,28 @@
   grid-template-columns: 260px 260px 260px;
   grid-gap: 18px;
   padding: 20px;
-  margin-top: 15px;
   overflow: scroll;
   height: 480px;
   justify-content: center;
 }
 
+.hosted-games-dashboard {
+  display: flex;
+  gap: 18px;
+  height: 100%;
+  padding: 20px;
+  overflow: scroll;
+  height: 400px;
+  .event-card {
+    width: 303px;
+    height: 100%;
+  }
+}
 .hosted-games::-webkit-scrollbar { width: 0 !important }
 
 
 .stacked-notifications {
-  background: #E8B548;
+  background: #e8b548;
   padding: 10px;
   border-radius: 1px;
 }
@@ -129,24 +140,16 @@
   border: white 1px solid;
 }
 .pills-container {
-  background-color: #EFEFEF;
+  background-color: #efefef;
   border-radius: 5px;
-  // margin-top: 30px;
-  // height: 65vh;
   width: 100%;
   margin-right: 55px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-top: 30px;
   flex: 1 1 auto;
+  height: 400px;
 }
 .right-side-of-dashboard {
-  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  // background-color: #EFEFEF;
-  // width: 40vw;
-  // border-radius: 10px;
-  // margin-left: 30px;
-  // padding: 25px;
-  // text-align: center
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -156,11 +159,10 @@
 .nav-pills {
   display: flex;
   justify-content: space-around;
-  margin-top: 21px;
 }
 .dashboard-rankings {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   width: 100%;
   border-radius: 10px;
   // margin-left: 30px;
@@ -176,7 +178,7 @@
 
 .message-room {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   // width: 40vw;
   border-radius: 10px;
   // margin-left: 30px;
@@ -196,4 +198,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+.dashboard-notification-link {
+  text-decoration: none;
+  color: black;
+}
+.dashboard-notification-link:hover {
+  text-decoration: none;
+  color: black;
 }

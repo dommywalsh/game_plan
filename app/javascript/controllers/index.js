@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AlertController from "./alert_controller"
+application.register("alert", AlertController)
+
 import ConfettiController from "./confetti_controller"
 application.register("confetti", ConfettiController)
 
