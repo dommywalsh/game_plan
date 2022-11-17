@@ -7,6 +7,9 @@ import { application } from "./application"
 import ConfettiController from "./confetti_controller"
 application.register("confetti", ConfettiController)
 
+import CounterController from "./counter_controller"
+application.register("counter", CounterController)
+
 import EventSubscriptionController from "./event_subscription_controller"
 application.register("event-subscription", EventSubscriptionController)
 
