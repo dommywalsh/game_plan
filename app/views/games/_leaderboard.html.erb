@@ -13,14 +13,14 @@
           <th class="text-center" scope="col">Rating</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody data-controller="counter">
         <% game.user_ratings.sort_by{ |player| player.rating }.reverse.each_with_index do |player, index| %>
-          <tr>
-            <th class="text-center" style="vertical-align: middle"><%= cl_image_tag player.user.profile_pic.key, class: "avatar-large" %> </th>
+          <tr class="counter-value" akhi="<%=player.rating%>" first-name="<%= player.user.first_name %>" second-name="<%= player.user.second_name %>">
+            <th class="text-center" style="vertical-align: middle"><%= cl_image_tag player.user.profile_pic.key, class: "avatar-large" %></th>
             <th class="text-center" style="vertical-align: middle" scope="row"><%= index + 1 %></th>
-            <th class="text-center" style="vertical-align: middle"><%= player.user.first_name %> </th>
-            <th class="text-center" style="vertical-align: middle"><%= player.user.second_name %> </th>
-            <th class="text-center" style="vertical-align: middle"><%= player.rating %></th>
+            <th id="first_name"  class="text-center" style="vertical-align: middle">?</th>
+            <th id="second_name" class="text-center" style="vertical-align: middle">?</th>
+            <th id="rating" class="text-center" style="vertical-align: middle">500</th>
           </tr>
         <% end %>
       </tbody>
