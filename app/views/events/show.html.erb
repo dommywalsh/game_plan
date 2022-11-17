@@ -2,7 +2,9 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1606733847546-db8546099013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1872&q=80);">
   <div class="show-game-info">
     <div class="show-game-names">
+    <div class="container">
       <div class="game-event-name">
+      <br>
       <br>
       <br>
       <br>
@@ -13,6 +15,7 @@
         <h4><strong>Date:</strong> <%= @event.date.strftime('%a %d %b %Y') %> <%= @event.date.strftime('%I:%M %p') %></h4>
         <h4><strong>Description:</strong> <%= @event.description %></h3>
       </div>
+    </div>
     </div>
     <div class="show-game-players">
       <div class="game-players-avatars">
@@ -83,14 +86,11 @@
     </div>
   </div>
 </div>
-
 <br>
 <br>
-
-<h4 style="text-align: center">Events that are also playing: <%= @event.game.name %></h4>
+<h4 style="text-align: center">More <%= @event.game.name %> events:</h4>
 <br>
 <br>
-
 <% numberEvents = @similar_events.size %>
 <% cardsPerSlides = 4 %>
 <% slideNumber = (numberEvents/cardsPerSlides.to_f).ceil %>
