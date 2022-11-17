@@ -2,95 +2,97 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1606733847546-db8546099013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1872&q=80);">
   <div class="show-game-info">
     <div class="show-game-players">
-      <div>
-        <div class="game-event-name">
-          <h2><%= @event.name %></h2>
-          <p><%= @event.description %></p>
-        </div>
+      <div class="game-event-name">
+        <h2><%= @event.name %></h2>
+        <p>"<%= @event.description %>"</p>
       </div>
       <div class="current-players">
-        <div>
-          <h3>Players:</h3>
-        </div>
-        <div class="game-players-avatars">
-          <% @event.users.confirmed.each do |user| %>
-            <button type="button" class="avatar-bordered"data-bs-toggle="modal" data-bs-target="#user-<%=user.id%>">
-            <%= cl_image_tag user.profile_pic.key, class: "avatar-bordered", alt: "avatar-bordered" %>
-            </button>
-              <!-- Modal -->
-              <div class="modal fade" id="user-<%=user.id%>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="user-<%=user.id%>Label" aria-hidden="true">
-                <div class="modal-dialog ">
-                  <div class="modal-content modal-joe">
-                    <div class="modal-header">
-                      <h5 class="modal-title modal-text" id="user-<%=user.id%>Label">Username:<%= user.username %></h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body ">
-                    <ul>
-                    <p>Player's name:</p>
-                    <li><%= user.first_name.capitalize %><%=  user.second_name.capitalize %></li>
-                    <p></p>
-                    <p>Player's Bio:</p>
-                    <li><%= user.bio %></li>
-                    <p></p>
-                    <p>Player's email:</p>
-                    <li><%= user.email %></li>
-                    </ul>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">
-                            <% if @event.users.confirmed.include? current_user %>
-                              <%= link_to "Group messages", event_messages_path(@event) %>
-                            <% end %>
-                      </button>
+        <div class="players-display">
+          <div>
+          </div>
+          <div class="game-players-avatars">
+            <% i = 12 %>
+            <% @event.users.confirmed.each do |user| %>
+              <button type="button" class="avatar-bordered" data-bs-toggle="modal" data-bs-target="#user-<%=user.id%>">
+              <%= cl_image_tag user.profile_pic.key, style: "z-index: #{i}", class: "avatar-bordered", alt: "avatar-bordered" %>
+              </button>
+              <% i -= 1 %>
+                <!-- Modal -->
+                <div class="modal fade" id="user-<%=user.id%>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="user-<%=user.id%>Label" aria-hidden="true">
+                  <div class="modal-dialog ">
+                    <div class="modal-content modal-joe">
+                      <div class="modal-header">
+                        <h5 class="modal-title modal-text" id="user-<%=user.id%>Label">Username:<%= user.username %></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body ">
+                      <ul>
+                      <p>Player's name:</p>
+                      <li><%= user.first_name.capitalize %><%=  user.second_name.capitalize %></li>
+                      <p></p>
+                      <p>Player's Bio:</p>
+                      <li><%= user.bio %></li>
+                      <p></p>
+                      <p>Player's email:</p>
+                      <li><%= user.email %></li>
+                      </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">
+                              <% if @event.users.confirmed.include? current_user %>
+                                <%= link_to "Group messages", event_messages_path(@event) %>
+                              <% end %>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-          <% end %>
-          <% @open_capacity.times do %>
-            <%= image_tag "open_user", class: "avatar-bordered", alt: "avatar-bordered" %>
-          <% end %>
+            <% end %>
+            <% i = 5 %>
+            <% @open_capacity.times do %>
+              <%= image_tag "open_user", style: "z-index: #{i}",class: "avatar-bordered-holder", alt: "avatar-bordered" %>
+              <% i -= 1 %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
     <div class="show-game-names">
       <div class= "show-game-infos">
-        <h3><%= @event.game.name %></h3>
-        <h4><%= @event.date.strftime('%a %d') %></h4>
+        <h4><%= @event.date.strftime('%d %b') %></h4>
         <h4> <%= @event.date.strftime('%I:%M %p') %></h4>
         <h5><i class="fa-sharp fa-solid fa-map-pin"></i> <%= @event.address %></h5>
       </div>
-      <div class="show-game-status">
-        <div class="game-status">
-          <% if @event.confirmed_user?(current_user) %>
-            <div class="">
-              <h5>You are signed up for this game</h5>
-            </div>
-          <% elsif @event.pending_user?(current_user) %>
-            <button class="btn btn-primary" type="button" disabled>
-              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Pending request..
-            </button>
-          <% elsif @event.users.confirmed.count < @event.capacity%>
-              <%= simple_form_for [@event, @player] do |f| %>
-                <%= f.button :submit, "Join Event", class: "btn btn-join"%>
-              <% end %>
-          <% elsif @event.owner?(current_user)%>
-          <button type="button" class="btn btn-join">
-                <%= link_to finish_event_path(@event) do%>
-              <h5>End Game</h5>
+
+    </div>
+  </div>
+  <div class="status-postion">
+    <div class="show-game-status">
+      <div class="game-status">
+        <% if @event.confirmed_user?(current_user) %>
+          <div class="">
+            <h5>You are signed up for this game</h5>
+          </div>
+        <% elsif @event.pending_user?(current_user) %>
+          <button class="btn btn-primary" type="button" disabled>
+              Pending request..
           </button>
+        <% elsif @event.users.confirmed.count < @event.capacity%>
+            <%= simple_form_for [@event, @player] do |f| %>
+              <%= f.button :submit, "Join Event", class: "btn btn-join-players"%>
             <% end %>
-          <% else %>
-            <h5>Game is full</h5>
+        <% elsif @event.owner?(current_user)%>
+        <button type="button" class="btn btn-join">
+              <%= link_to finish_event_path(@event) do%>
+            <h5>End Game</h5>
+        </button>
           <% end %>
-        </div>
+        <% else %>
+          <h5>Game is full</h5>
+        <% end %>
       </div>
     </div>
   </div>
-
 </div>
 <br>
 <br>

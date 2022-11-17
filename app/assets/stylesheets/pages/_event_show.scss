@@ -1,17 +1,26 @@
 .banner-show {
   background-size: cover;
   background-position: center;
-  padding: 140px 80px 60px 90px;
+  padding: 118px 80px 20px 90px;
   height: 68vh;
+  position: relative;
 }
 
 .show-game-info {
-  height: 100%;
+  height: 90%;
 
   display: flex;
   justify-content: space-between;
   margin-top: top;
 
+}
+
+.user-on-top {
+  z-index: 4;
+}
+
+.user-on-bottom {
+  z-index: 0;
 }
 
 .show-game-names {
@@ -33,12 +42,25 @@
     font-weight: 500;
     margin-left: 30px;
     color: rgb(244,242,230);
+    font-family: 'Nunito', serif;
   }
   h4 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 300;
     margin-left: 30px;
     color: rgb(255, 255, 255);
+    opacity: 80%;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 4px 4px 18px darkgrey;
+  }
+
+  h5 {
+    font-size: 22px;
+    color: #e8b548;
+    text-shadow: 1px 1px 3px grey;
+    font-weight: 400;
+    margin-top: 14px;
+
   }
 
 }
@@ -46,7 +68,7 @@
 .show-game-players {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 20px;
   margin-right: 35px;
   padding-right: 4px;
@@ -57,15 +79,19 @@
 }
 
 .show-game-status {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: transparent;
   height: 65px;
   border-radius: 32px;
   color: white;
   font-size: 32px;
   font-weight: 600;
+  position: absolute;
+  bottom: -20px;
+}
+
+.players-display {
+  display: flex;
+  margin-right: 20px;
 }
 
 .game-status {
@@ -79,16 +105,19 @@
 
   h3 {
     color: antiquewhite;
+    margin: 0px;
+    padding: 0px;
 
   }
 }
 
-.show-game-infos {
-  margin-bottom: 60px;
-}
 
 .current-players {
   display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 40px;
+
 
   h3 {
     margin-right: 20px;
@@ -96,19 +125,31 @@
   }
 }
 
+.status-postion{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .game-event-name {
 
   h2 {
-    font-size: 48px;
+    font-size: 64px;
     font-weight: 700;
-    color: burlywood;
+    color: #e8b548;
+    font-family: "Aboreto", cursive;
+    text-shadow: 2px 2px 2px darkgrey;
+    letter-spacing: 1px;
   }
 
   p {
-    font-size: 24px;
+    font-size: 21px;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 400;
     color: antiquewhite;
+    width: 80%;
+    opacity: 70%;
+    text-shadow: 1px 1px 4px black;
   }
 }
 
