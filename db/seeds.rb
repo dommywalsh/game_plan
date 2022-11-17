@@ -302,11 +302,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/aa/a9/60/aaa9601beeee93ff5e0dffd4325a5ef9.jpg")
     eventone = Event.new(
       date: DateTime.now + 10.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Catan night",
-      game_id: Game.all.sample.id,
+      game: Game.find_by(name: "Catan"),
       address: "69, Uys Krige Drive",
-      description: "Please bring some wine",
+      description: "Catan eve at my place. Bring wine, beers, and some snacks to contribute. I will be
+      providing some drinks and food too",
       capacity: rand(3..8)
 
     )
@@ -316,11 +317,11 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/82/e8/5f/82e85f77f610b5d41390e819c187fa36.jpg")
     eventtwo = Event.new(
       date: DateTime.now + 3.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Games night",
-      game_id: Game.all.sample.id,
+      game: Game.find_by(name: "Catan"),
       address: "4, Southern Right Circle, Cape Town",
-      description: "A lovely night with some friends",
+      description: "Just a couple of mates vibing over boardgames and beers. If you have any questions, don't hesitate to message me",
       capacity: rand(3..8)
 
     )
@@ -330,11 +331,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/b9/87/c2/b987c2fb221a710fda4c947fa4c84fef.jpg")
     eventthree = Event.new(
       date: DateTime.now + 3.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Boardgames in Newlands",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "41, Skilpadvlei Road, Cape Town",
-      description: "You love to see it, couple mates having a good time",
+      description: "Catan eve at my place. Bring wine, beers, and some snacks to contribute. I will be
+      providing some drinks and food too",
       capacity: 10
 
     )
@@ -344,11 +346,11 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/3d/a7/0f/3da70f7638822e2d03421fbe7077a386.jpg")
     eventfour = Event.new(
       date: DateTime.now + 1.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Games Galore",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: " 38, De la Haye Avenue, Cape Town",
-      description: "Should be fun",
+      description: "Meeting up at clifton with a few mates to chill and get down playing some competitive boardgames",
       capacity: rand(3..8)
 
     )
@@ -358,9 +360,9 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/564x/31/d4/d6/31d4d6b95ffb2504f958664c3523119c.jpg")
     eventfive = Event.new(
       date: DateTime.now + 7.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Relaxed monday",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "15, Willow Way, Cape Town",
       description: "Excited to meet some new people, but looking for serrious gamers please",
       capacity: rand(3..8)
@@ -373,11 +375,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/564x/a4/8a/35/a48a35d544c9c48cb4cec3fee2de5455.jpg")
     eventsix = Event.new(
       date: DateTime.now + 3.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Thursday games",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "28, Klinker Street, Cape Town",
-      description: "Please be serious about gaming, but also not so serious",
+      description: "Please be serious about gaming, but also not so serious, you know?
+      Drop me a message if you have any questions",
       capacity: rand(3..8)
 
     )
@@ -387,11 +390,11 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/30/1b/6b/301b6b14e4edfd466b4da42caac7a43e.jpg")
     eventseven = Event.new(
       date: DateTime.now + 2.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Wine & dine",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "17, Louis Botha Avenue, Cape Town",
-      description: "Looking to have a relaxed evening with a few friends and perhaps a some new friends",
+      description: "Looking to have a relaxed evening with a few old friends and perhaps some new ones",
       capacity: rand(3..8)
 
     )
@@ -401,11 +404,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/c4/0c/65/c40c655ae4e5686ccdf5675dd07f26a3.jpg")
     eventeight = Event.new(
       date: DateTime.now + 2.weeks,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Elites",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: ": 27, Tradewinds Circle, Cape Town",
-      description: "This is a serious game please make sure you rank in the top 10",
+      description: "What better way to spend a Saturday evening than competitive boardgames on a Saturday night?
+      I'll provide the snacks, you bring the wine",
       capacity: rand(3..8)
 
     )
@@ -415,11 +419,11 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/7a/ed/fc/7aedfc87b4bb1895a9b579102b3c8417.jpg")
     eventnine = Event.new(
       date: DateTime.now + 67.weeks,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Catan Vibes",
-      game_id: Game.all.sample.id,
+      game: Game.find_by(name: "Catan"),
       address: "52, Blue Valley Avenue",
-      description: "Just some good mates looking to have a lekker time",
+      description: "Looking for some mates to play the best boardgame on earth!! I'll provide the snacks, you bring the wine",
       capacity: rand(3..8)
 
     )
@@ -429,11 +433,11 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/00/80/0a/00800a82dd4ae59e1aff78886cc304cf.jpg")
     eventten = Event.new(
       date: DateTime.now + 15.weeks,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Wabooms Boardgames",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "15, Waboomskloof",
-      description: "Lets be respectful of our opponents as well as the game we are playing",
+      description: "Looking for some mates to play the best boardgame on earth!! I'll provide the snacks, you bring the wine",
       capacity: rand(3..8)
 
     )
@@ -445,11 +449,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/16/87/0c/16870ccb627f0cccca5cc5efe1fbae6a.jpg")
     event11 = Event.new(
       date: DateTime.now + 10.weeks,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Games on clifton beach",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "Pakalolo Table View, 14, Beach Boulevard",
-      description: "Come and join me for an eventful night of card games",
+      description: "What better way to spend a Saturday evening than competitive boardgames on a Saturday night?
+      I'll provide the snacks, you bring the wine",
       capacity: rand(3..8)
 
     )
@@ -459,11 +464,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/6e/0b/3e/6e0b3ee5c00a91db19e9a7650e4cfe71.jpg")
     event12 = Event.new(
       date: DateTime.now + 5.weeks,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Wine, cheese, and games",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "15, B. Molokoane Road",
-      description: "Lets play some games and let the good vibes flow!",
+      description: "Yo guys, i'm hosting a boardgames evening at my place this weekend and need a few
+      more takers to get a competitive game going.",
       capacity: rand(3..8)
 
     )
@@ -473,11 +479,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/45/8e/01/458e016278a10a66f4d7e3f03f94012e.jpg")
     event13 = Event.new(
       date: DateTime.now + 7.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Friday night at Walmer Road",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "54, Walmer Road",
-      description: "Will find a peaceful place in the garden for the game to be played",
+      description: "This weekend is going to be an absolute stinker! The weather is looking prime and i have the perfect garden
+      for a few new friends to bond over some games. Drop me a message if you're keen to join",
       capacity: rand(3..8)
 
     )
@@ -487,11 +494,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/76/22/dd/7622dde0d3d9cd0420ae3e6ba2139f9f.jpg")
     event14 = Event.new(
       date: DateTime.now + 12.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Legends only",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "8, Braambos Lane",
-      description: "Just a bunch of legends getting together to play board games",
+      description: "What better way to spend a Saturday evening than competitive boardgames on a Saturday night?
+      I'll provide the snacks, you bring the wine",
       capacity: rand(3..8)
 
     )
@@ -501,11 +509,11 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/564x/44/bf/a4/44bfa4a386dc402adf8ff8566515716d.jpg")
     event15 = Event.new(
       date: DateTime.now + 25.days,
-      user_id: User.all.sample.id,
-      name: "Dinner and games",
-      game_id: Game.all.sample.id,
+      user: User.all.sample,
+      name: "Dinner & games",
+      game: Game.all.sample,
       address: "52, Blue Valley Avenue",
-      description: "Just some good mates looking to have a lekker time will be providing some food but bring some wine!",
+      description: "Looking for some mates to play the best boardgame on earth!! I'll provide the snacks, you bring the wine",
       capacity: rand(3..8)
 
     )
@@ -515,11 +523,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/c7/3b/97/c73b9715dd7299608b4be895643363ef.jpg")
     event16 = Event.new(
       date: DateTime.now + 16.days,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Relaxed time",
-      game_id: Game.all.sample.id,
+      game: Game.find_by(name: "Perudo"),
       address: "34, Shelduck Crescent",
-      description: "If someone would like to stay after I am happy to play some Perudo after the game",
+      description: "Just got back from Argentina where i played a ton of Perudo with the locals. Looking for a few people
+      who share the same passion for this awesome game",
       capacity: rand(3..8)
 
     )
@@ -529,11 +538,12 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/81/86/89/818689ee1f341e25c23f9a1f4e159630.jpg")
     event17 = Event.new(
       date: DateTime.now + 7.weeks,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Chilled game",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "Witzands Aquifer Nature Reserve, 1, Dassenberg Drive",
-      description: "I love games hey, I think I could be addicted to Perudo, please help me but also play with me",
+      description: "I'm borderline addicted to Perudo, but i'm okay with it. If you're keen for a game
+      accompanied by other like-minded people and wine, drop me a message.",
       capacity: rand(3..8)
 
     )
@@ -543,11 +553,11 @@ puts "Creating events"
     file = URI.open("https://i.pinimg.com/474x/10/df/15/10df15e054cdd21608c389b8c1f31280.jpg")
     event18 = Event.new(
       date: DateTime.now + 7.weeks,
-      user_id: User.all.sample.id,
+      user: User.all.sample,
       name: "Good time",
-      game_id: Game.all.sample.id,
+      game: Game.all.sample,
       address: "10 Prima ave, Bakoven",
-      description: "Comfortable setting with an amazing view",
+      description: "Looking for some mates to play the best boardgame on earth!! I'll provide the snacks, you bring the wine",
       capacity: rand(3..8)
 
     )
@@ -560,8 +570,8 @@ puts "creating players"
 100.times do
   player = Player.new(
     status: rand(0...3),
-    event_id: Event.all.sample.id,
-    user_id: User.all.sample.id
+    event: Event.all.sample,
+    user: User.all.sample
   )
   # Event.Player = Player.all.sample
   # player.user = User.all.sample
