@@ -13,10 +13,6 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.d-grid {
-  height: 68vh;
-}
-
 .cards {
   width: 700px;
   margin: 0 auto;
@@ -212,17 +208,21 @@
 }
 
 .event-name {
-  padding: 10px;
+  padding: 4px;
   border-radius: 10px;
-  height: 20%;
-  border: solid;
+  height: 30%;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
   background-color: whitesmoke;
-
+  background-image: image-url("knife1.jpg");
+  background-size: cover;
+  background-position-y: 50px;
   h5 {
     margin-bottom: 0px;
+    font-family: 'Aboreto', cursive;
+    letter-spacing: 1px;
+    font-weight: 100;
   }
 }
 
