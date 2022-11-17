@@ -74,7 +74,7 @@ class EventsController < ApplicationController
       user.user_ratings.find_by(game: @game).increment_losing_scores!
     end
 
-    redirect_to leaderboard_game_path(@game)
+    redirect_to leaderboards_games_path
   end
 
   private
