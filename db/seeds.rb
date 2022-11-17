@@ -99,7 +99,7 @@ user2 = User.new(
   first_name: "Menno" ,
   second_name: "Bru" ,
   phonenumber: 864545052,
-  bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by player with other players",
+  bio: "Hello! I think I am the best Catan player in my area and I would like to put that to the test by playing with other players",
   username: "zoid"
 )
   user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")

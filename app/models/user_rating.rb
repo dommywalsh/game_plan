@@ -17,5 +17,8 @@ class UserRating < ApplicationRecord
     self.save
   end
 
-  
+  def self.order_ratings
+    sort_by(&:rating)
+  end
+
 end

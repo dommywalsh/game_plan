@@ -7,8 +7,8 @@
         <%= simple_form_for @event do |f| %>
           <%= f.input :name, placeholder: 'Event name' %>
           <%= f.input :address, placeholder: '18 Clarievaux road, Kalk bay , Cape Town' %>
-          <%= f.input :description, placeholder: 'Give us details about your event...' %>
           <%= f.association :game %>
+          <%= f.input :description, placeholder: 'Give us details about your event...' %>
           <%= f.input :capacity, placeholder: 'How many people can your event host' %>
           <%= f.input :date, as: :datetime %>
           <%= f.input :image, as: :file %>

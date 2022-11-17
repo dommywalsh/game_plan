@@ -41,7 +41,6 @@ class EventsController < ApplicationController
     @message = Message.new
     @accepted_users = @event.users.accepted
     @open_capacity = @event.capacity - @event.users.accepted.count
-
   end
 
   def new
