@@ -1,11 +1,12 @@
 .banner-show {
   background-size: cover;
   background-position: center;
-  padding: 80px 0;
+  padding: 140px 80px 60px 90px;
+  height: 68vh;
 }
 
 .show-game-info {
-  height: 500px;
+  height: 100%;
 
   display: flex;
   justify-content: space-between;
@@ -15,8 +16,10 @@
 
 .show-game-names {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: flex-end;
   color: rgb(232,181,72);
 
   h2 {
@@ -42,15 +45,13 @@
 
 .show-game-players {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 20px;
   margin-right: 35px;
   padding-right: 4px;
   .avatar-bordered {
-    position: relative;
-    bottom: 2px;
-    right:6px;
+
   }
 
 }
@@ -60,10 +61,11 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  width: 30%;
   height: 65px;
   border-radius: 32px;
-  margin: auto;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .game-status {
@@ -78,6 +80,35 @@
   h3 {
     color: antiquewhite;
 
+  }
+}
+
+.show-game-infos {
+  margin-bottom: 60px;
+}
+
+.current-players {
+  display: flex;
+
+  h3 {
+    margin-right: 20px;
+    color: antiquewhite;
+  }
+}
+
+.game-event-name {
+
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: burlywood;
+  }
+
+  p {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    color: antiquewhite;
   }
 }
 

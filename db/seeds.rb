@@ -556,7 +556,7 @@ puts "creating players"
 
 events = Event.all
 events.each do |event|
-  (4..8).times do
+  rand(4..8).times do
     player = Player.new(
       status: rand(0...3),
       event_id: Event.all.sample.id,
