@@ -29,7 +29,7 @@
 }
 
 .btn-dash.active {
-  background-color: #b6244f;
+  background-color: rgb(232, 181, 72);
   border-radius: 5px;
   padding: 10px 35px;
   opacity: 100%;
@@ -50,7 +50,7 @@
 }
 
 .btn-messages {
-  background-color: #b6244f;
+  background-color: rgb(232, 181, 72);
   border-radius: 5px;
   padding: 10px 35px;
   opacity: 100%;
@@ -80,4 +80,10 @@ a.btn-messages {
   border-color: #d20e0e;
 }
 
-
+.swal2-confirm {
+    border: 0;
+    border-radius: 0.25em;
+    background-color: rgb(232, 181, 72) !important;
+    color: #fff;
+    font-size: 1em;
+}

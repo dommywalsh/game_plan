@@ -29,6 +29,8 @@ export default class extends Controller {
       imageWidth: 100,
       imageHeight: 100,
       imageAlt: "Profile avatar",
+      buttonsStyling: true,
+      confirmButtonColor: 'rgb(232, 181, 72)'
     });
   }
 }
