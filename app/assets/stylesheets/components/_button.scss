@@ -67,17 +67,15 @@ a.btn-messages {
 }
 
 .btn-join {
-  background-color: #bdc814;
+  background-color: #E6503A;
   border-radius: 8px;
-  border: none;
   color: black;
   padding: 10px 25px;
+  box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
 }
 
 .btn-join:hover {
-  background-color: #5b7924;
-  color: #e5ff00;
-  border-color: #d20e0e;
+  background-color: black;
+  color: #E6503A;
 }
-
-
