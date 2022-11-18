@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 require "open-uri"
 
@@ -572,13 +565,14 @@ events.each do |event|
   rand(4..8).times do
     player = Player.new(
       status: rand(0...3),
-      event_id: Event.all.sample.id,
+      event_id: events.sample.id,
       user_id: User.all.sample.id
     )
     # Event.Player = Player.all.sample
     # player.user = User.all.sample
     player.save
   end
+end
 
 puts "#{Player.count} players created"
 
