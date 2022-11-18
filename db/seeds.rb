@@ -40,7 +40,7 @@ Game.create(
   name: "Candy Land",
   desciption: "Candy Land is a dramatic game of political intrigue and betrayal set in 1930's Germany. Players are secretly divided into two teams - liberals and fascists. Known only to each other, the fascists coordinate to sow distrust and install their cold-blooded leader.",
   first_place_points: 300,
-  second_place_points: 150 ,
+  second_place_points: 150,
   losing_points: -100,
   photo: "secret hitler.webp"
 )
@@ -284,8 +284,7 @@ user16 = User.new(
   first_name: "Joe",
   second_name: "Dreyer",
   phonenumber: 160160515,
-  bio: "Hi, My name is Joe and I used to be a fantastic cricketer, due to injury I now have to take it easy.
-  I find the best way to relax is playing a boardgame, having a pints and a good chat",
+  bio: "Hi, I am Joe and I love playing board games. It has been a long time since I have lost a game of perudo. I am so keen to meet new people and test my skills ",
   username: "Joe"
 )
   user16.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -481,7 +480,7 @@ puts "Creating events"
       date: DateTime.now + 7.days,
       user: User.all.sample,
       name: "Friday night at Walmer Road",
-      game: Game.all.sample,
+      game: Game.find_by(name: "Catan"),
       address: "54, Walmer Road",
       description: "This weekend is going to be an absolute stinker! The weather is looking prime and i have the perfect garden
       for a few new friends to bond over some games. Drop me a message if you're keen to join",
@@ -525,7 +524,7 @@ puts "Creating events"
       date: DateTime.now + 16.days,
       user: User.all.sample,
       name: "Relaxed time",
-      game: Game.find_by(name: "Perudo"),
+      game: Game.find_by(name: "Catan"),
       address: "34, Shelduck Crescent",
       description: "Just got back from Argentina where i played a ton of Perudo with the locals. Looking for a few people
       who share the same passion for this awesome game",
@@ -540,7 +539,7 @@ puts "Creating events"
       date: DateTime.now + 7.weeks,
       user: User.all.sample,
       name: "Chilled game",
-      game: Game.all.sample,
+      game: Game.find_by(name: "Catan"),
       address: "Witzands Aquifer Nature Reserve, 1, Dassenberg Drive",
       description: "I'm borderline addicted to Perudo, but i'm okay with it. If you're keen for a game
       accompanied by other like-minded people and wine, drop me a message.",
@@ -588,3 +587,142 @@ end
 
 puts "#{all_ratings.count} ratings updated"
 puts "Your seeds are now ready for action"
+
+
+# below here are the seeds that you are making your own
+
+file = URI.open("https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg")
+roux = User.new(
+  email: "rouxdb@gmail.com",
+  password: "123456",
+  first_name: "Roux" ,
+  second_name: "De Boy" ,
+  phonenumber: 828085052,
+  bio: "Ya boy, enjoy a competitive game of Catan with a couple of my top dogs",
+  username: "ROUDEBOY"
+)
+
+roux.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+roux.save
+
+file = URI.open("https://images.unsplash.com/photo-1505628346881-b72b27e84530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60")
+gabi = User.new(
+  email: "gabi@gmail.com",
+  password: "123456",
+  first_name: "Gabi" ,
+  second_name: "Rein" ,
+  phonenumber: 828085052,
+  bio: " Hey there, Cape Town local legend. Favourite board game is candy crush but happy to play anything! Keen to meet up and have a good time with some cool people ",
+  username: "SASSYGABS"
+)
+
+gabi.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+gabi.save
+
+puts "rouxgabi"
+
+file = URI.open("https://i.pinimg.com/474x/16/87/0c/16870ccb627f0cccca5cc5efe1fbae6a.jpg")
+event_demo = Event.new(
+  date: DateTime.new(2022, 11, 18, 16),
+  user: User.where(email: "joe@gmail.com").first,
+  name: "Demo Day Derby",
+  game: Game.where(name: "Catan").first,
+  address: "97 Durham Avenue, Salt River",
+  description: "The bootcamp is over, its been a wild ride. Lets blow off some steam, who's keen to settle Catan",
+  capacity: 4
+
+)
+event_demo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+event_demo.save!
+
+puts "eventmade"
+
+player1 = Player.new(
+  status: 1,
+  event: event_demo,
+  user: User.where(email: "gabi@gmail.com").first
+)
+player1.save
+
+player2 = Player.new(
+  status: 1,
+  event: event_demo,
+  user: User.where(email: "rouxdb@gmail.com").first
+)
+player2.save
+
+player2 = Player.new(
+  status: 0,
+  event: event_demo,
+  user: User.where(email: "chris@gmail.com").first
+)
+player2.save
+
+player2 = Player.new(
+  status: 0,
+  event: event_demo,
+  user: User.where(email: "patrick@gmail.com").first
+)
+player2.save
+
+puts "DEmo Day made"
+
+
+file = URI.open("https://i.pinimg.com/564x/78/eb/f0/78ebf0a126340df67c2b473ba4597010.jpg")
+done_demo = Event.new(
+  date: DateTime.new(2022, 11, 15, 22),
+  user: User.where(email: "joe@gmail.com").first,
+  name: "Top Dogs",
+  game: Game.where(name: "Catan").first,
+  address: "32 Roodebloem, Woodstock",
+  description: "Hey guy, I am hosting Catan at mine and would love it if you came over",
+  capacity: 5
+
+)
+done_demo.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+done_demo.save!
+
+puts "completed game made"
+
+player1 = Player.new(
+  status: 1,
+  event: done_demo,
+  user: User.where(email: "gabi@gmail.com").first
+)
+player1.save
+
+player2 = Player.new(
+  status: 1,
+  event: done_demo,
+  user: User.where(email: "chris@gmail.com").first
+)
+player2.save
+
+puts "making games for Joe"
+
+player2 = Player.new(
+  status: 1,
+  event: done_demo,
+  user: User.where(email: "joe@gmail.com").first
+)
+player2.save
+
+
+player2 = Player.new(
+  status: 2,
+  event: Event.all.sample,
+  user: User.where(email: "joe@gmail.com").first
+)
+player2.save
+
+
+player2 = Player.new(
+  status: 0,
+  event: Event.all.sample,
+  user: User.where(email: "joe@gmail.com").first
+)
+player2.save
+
+
+
+puts "players"
