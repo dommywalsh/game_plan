@@ -22,7 +22,7 @@
                   <div class="modal-dialog ">
                     <div class="modal-content modal-joe">
                       <div class="modal-header">
-                        <h5 class="modal-title modal-text" id="user-<%=user.id%>Label">Username:<%= user.username %></h5>
+                        <h5 class="modal-title modal-text" id="user-<%=user.id%>Label">Username: <%= user.username %></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body ">
@@ -50,7 +50,7 @@
             <% end %>
             <% i = 5 %>
             <% @open_capacity.times do %>
-              <%= image_tag "open_user", style: "z-index: #{i}",class: "avatar-bordered-holder", alt: "avatar-bordered" %>
+              <%= image_tag "open_user.jpg", style: "z-index: #{i}",class: "avatar-bordered-holder", alt: "avatar-bordered" %>
               <% i -= 1 %>
             <% end %>
           </div>
@@ -69,7 +69,13 @@
   <div class="status-postion">
     <div class="show-game-status">
       <div class="game-status">
-        <% if @event.confirmed_user?(current_user) %>
+        <% if @event.owner?(current_user) && @event.endable? %>
+          <%= link_to finish_event_path(@event) do%>
+            <button type="button" class="btn btn-join">
+                <h5>End Game</h5>
+            </button>
+          <% end %>
+        <% elsif @event.confirmed_user?(current_user) %>
           <div class="">
             <h5>You are signed up for this game</h5>
           </div>
@@ -81,12 +87,6 @@
             <%= simple_form_for [@event, @player] do |f| %>
               <%= f.button :submit, "Join Event", class: "btn btn-join-players"%>
             <% end %>
-        <% elsif @event.owner?(current_user)%>
-        <button type="button" class="btn btn-join">
-              <%= link_to finish_event_path(@event) do%>
-            <h5>End Game</h5>
-        </button>
-          <% end %>
         <% else %>
           <h5>Game is full</h5>
         <% end %>
