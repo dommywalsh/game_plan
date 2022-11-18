@@ -1,9 +1,14 @@
 .end-game-container {
   text-align: center;
   margin-top: 40px;
+  background: rgb(34,193,195);
+  background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 
   h4 {
     font-size: 48px;
+    line-height: 82px;
+    letter-spacing: 4px;
+
   }
 }
 
@@ -25,7 +30,11 @@
 }
 
 .players-in-game {
-  padding: 20px;
+  padding: 48px;
+
+  h5 {
+    margin-bottom: 15px;
+  }
 }
 
 .players-in-game {
@@ -41,14 +50,22 @@ margin-left: 25px;
 }
 
 .congrats-text {
-  padding: 45px 10px;
+  padding: 50px 10px;
   background-color: #efefef;
   border-radius: 12px;
   width: 100%;
   margin-bottom: 28px;
 
+  h2 {
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 600;
+    font-style: oblique;
+  }
+
   h4 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 }
 
@@ -62,10 +79,17 @@ margin-left: 25px;
 }
 
 .placings-area {
-    padding: 45px 10px;
+    padding: 55px 10px;
     background-color: #efefef;
     border-radius: 12px;
     width: 100%;
+    font-family: "Poppins", sans-serif;
+
+    label {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
 }
 
 
@@ -77,6 +101,13 @@ margin-left: 25px;
   cursor: pointer;
   position: relative;
   margin-top: 20px;
+  background-color: #e8b548;
+}
+
+.btn-join:hover {
+  background-color: #000000;
+  color: #e8b548;
+  border-color: #e8b548;
 }
 
 #confetti-canvas {
