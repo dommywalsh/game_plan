@@ -649,12 +649,6 @@ player2 = Player.new(
   event: event_demo,
   user: User.where(email: "rouxdb@gmail.com").first
 )
-
-player2 = Player.new(
-  status: 1,
-  event: event_demo,
-  user: User.where(email: "joe@gmail.com").first
-)
 player2.save
 
 player2 = Player.new(
