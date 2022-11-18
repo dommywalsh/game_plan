@@ -27,7 +27,7 @@
                 data-alert-bio-value="<%= user.bio %>"
                 data-alert-image-value="<%= user.profile_pic.url %>"
               >
-                <p class="dashboard-notification-link"><strong><%= link_to user.username,  profile_page_path(user.username) , data: { action: "click->alert#fireAlert" }, class:"dashboard-notification-link" %></strong></p>
+                <p class="dashboard-notification-link"><strong><%= link_to user.username,  profile_page_path(user.username) , data: { action: "click->alert#fireAlert" }, class:"dashboard-notification-link" %></strong> wants to join <%= @first_pending_player.event.name%></p>
               </div>
               <div class="notification-actions">
                 <div class="notification-action">
