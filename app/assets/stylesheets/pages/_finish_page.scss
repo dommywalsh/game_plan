@@ -7,6 +7,8 @@
   h4 {
     font-size: 48px;
     line-height: 82px;
+    letter-spacing: 4px;
+
   }
 }
 
@@ -56,6 +58,10 @@ margin-left: 25px;
 
   h2 {
     margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 600;
+    font-style: oblique;
   }
 
   h4 {
@@ -77,6 +83,13 @@ margin-left: 25px;
     background-color: #efefef;
     border-radius: 12px;
     width: 100%;
+    font-family: "Poppins", sans-serif;
+
+    label {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
 }
 
 
