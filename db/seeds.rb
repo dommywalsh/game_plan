@@ -565,7 +565,7 @@ events.each do |event|
   rand(4..8).times do
     player = Player.new(
       status: rand(0...3),
-      event_id: Event.all.sample.id,
+      event_id: events.sample.id,
       user_id: User.all.sample.id
     )
     # Event.Player = Player.all.sample
