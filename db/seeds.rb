@@ -578,6 +578,7 @@ events.each do |event|
     # Event.Player = Player.all.sample
     # player.user = User.all.sample
     player.save
+    end
   end
 
 puts "#{Player.count} players created"
