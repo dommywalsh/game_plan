@@ -1,9 +1,6 @@
 <h2>Game Plan</h2>
 
-This app was created to connect competitive, like-minded boardgame enthusiasts over the games they love.
-
-It was designed, implemented, and shipped in two weeks as our final project for LeWagon.
-
+Game Plan is a prototype app created to connect competitive, like-minded boardgame enthusiasts over the games they love. It was designed, implemented, and shipped in two weeks as our final project for LeWagon.
 
 <br>
 
