@@ -1,10 +1,16 @@
-<h3>Game Plan - A meetup app for boardgames.</h3>
+<h2>Game Plan</h2>
+
+This app was created to connect competitive, like-minded boargame enthusiasts over the games they love. 
+
+It was designed, implemented, and shipped in two weeks as our final project for LeWagon.
+
+
 <br>
 
-This project was designed, implemented, and shipped in two weeks as our final project for LeWagon.
 
-As any boardgame afficionado knows, it's often difficult to find the right amount of people to play your favourite game, let alone agree on a time and a place to play. This app is designed to connect competitive, like-minded boargame enthusiasts over the games they love.
-
-<br>
-
-![Home page](/app/assets/images/showpage.jpg " Game Plan home page")
+![Home page](/app/assets/images/home.png " Game Plan home page")
+![dashboard](/app/assets/images/dashboard.png " dashboard")
+![create page](/app/assets/images/create_an_event.png " create an event page")
+![event page](/app/assets/images/event_page.png " event page")
+![leaderboard page](/app/assets/images/leaderboard_main.png " leaderboard")
+![index page](/app/assets/images/index.png " events")
