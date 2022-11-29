@@ -1,6 +1,6 @@
 <h2>Game Plan</h2>
 
-This app was created to connect competitive, like-minded boargame enthusiasts over the games they love. 
+This app was created to connect competitive, like-minded boardgame enthusiasts over the games they love.
 
 It was designed, implemented, and shipped in two weeks as our final project for LeWagon.
 
