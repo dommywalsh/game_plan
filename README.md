@@ -20,4 +20,4 @@ The main technologies implemented were:
 ![event page](/app/assets/images/event_page.png " event page")
 ![leaderboard page](/app/assets/images/leaderboard_main.png " leaderboard")
 ![index page](/app/assets/images/index.png " events")
-![end page](/app/assets/images/end_page.png "end page")
+![end page](/app/assets/images/end_game.png "end page")
