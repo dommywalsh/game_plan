@@ -1,6 +1,15 @@
 <h2>Game Plan</h2>
 
-Game Plan is a prototype app created to connect competitive, like-minded boardgame enthusiasts over the games they love. It was designed, implemented, and shipped in two weeks as our final project for LeWagon.
+Game Plan was our final project at LeWagon coding bootcamp. In two weeks we designed, implemented and shipped to production a meet-up app for boardgames.
+
+The main technologies implemented were:
+
+- Ruby on Rails
+- HTML & CSS
+- Bootstrap
+- PostgresQL
+- Heroku
+- Git & Github
 
 <br>
 
@@ -11,3 +20,4 @@ Game Plan is a prototype app created to connect competitive, like-minded boardga
 ![event page](/app/assets/images/event_page.png " event page")
 ![leaderboard page](/app/assets/images/leaderboard_main.png " leaderboard")
 ![index page](/app/assets/images/index.png " events")
+![end page](/app/assets/images/end_page.png "end page")
