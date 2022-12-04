@@ -1,15 +1,15 @@
 <h2>Game Plan</h2>
+Game Plan is a meetup app designed for boardgame enthusiasts. Game Plan was our final project at LeWagon coding bootcamp. In two weeks it was designed, implemented, and shipped to production.
 
-Game Plan was our final project at LeWagon coding bootcamp. In two weeks we designed, implemented and shipped to production a meet-up app for boardgames.
+As a couple of boardgame nerds we wanted to create an app that could bring like-minded individuals over the games they love. A user is able to create a meetup, join a meetup, and view a list of meetups. Major games included Settlers of Catan, Perudo, Risk, Code Names, and others. Each game has its own live leaderboard that is updated at the end of each game after the scores have been submitted.
 
-The main technologies implemented were:
+<h2>Technologies Used</h2>
+The app is built using Ruby on Rails and JavaScript. The front end is styled using Bootstrap and custom CSS.
+The app is deployed on Heroku and uses PostgreSQL as the database.
 
-- Ruby on Rails
-- HTML & CSS
-- Bootstrap
-- PostgresQL
-- Heroku
-- Git & Github
+
+
+
 
 <br>
 
