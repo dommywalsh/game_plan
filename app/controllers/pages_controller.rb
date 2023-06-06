@@ -26,6 +26,7 @@ class PagesController < ApplicationController
   def dashboard
     @events = current_user.events
     @first_pending_player = @events.find_first_pending_player
+    @user = current_user
     # @users = @event.users.all
     # @pending_users = @event.users.pending
     # @ordered_ratings_array = UserRating.order_ratings

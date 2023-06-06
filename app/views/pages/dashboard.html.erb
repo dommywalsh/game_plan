@@ -2,11 +2,16 @@
 <br>
 <br>
 
+
 <div class="dashboard-main-container p-3">
   <div class="left_side_of_dashboard">
     <div class="dashboard-top-left">
       <div class="dashboard-profile">
-        <%= cl_image_tag current_user.profile_pic.key, class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% if current_user.profile_pic && current_user.profile_pic.key %>
+          <%= cl_image_tag current_user.profile_pic.key, class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% else %>
+          <%= image_tag "person-icon.png", class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% end %>
         <div class="dashboard-profile-info">
           <h5><strong><%= current_user.first_name %> <%= current_user.second_name %></strong></h5>
           <p><strong>Bio: </strong><%= current_user.bio %></p>
@@ -18,7 +23,11 @@
           <% if @first_pending_player %>
             <div class="card-notification mt-2 stacked-notifications" style="box-shadow:<%= @events.pending_players.stack_shadow%>">
               <div class="notification-image">
-                <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
+                <% if @first_pending_player.user.profile_pic && @first_pending_player.user.profile_pic.key %>
+                  <%= cl_image_tag @first_pending_player.user.profile_pic.key, class: "notification-avatar" %>
+                <% else %>
+                  <%= image_tag "person-icon.png", class: "notification-avatar" %>
+                <% end %>
               </div>
               <% user = @first_pending_player.user %>
               <div
