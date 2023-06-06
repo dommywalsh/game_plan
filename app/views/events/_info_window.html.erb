@@ -1,3 +1,12 @@
-<h2><%= event.name %></h2>
-<p><%= event.address %></p>
-<p><%= event.date %></p>
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= link_to event.name, event_path(event), class: "text-decoration-none text-dark" %>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= event.address %></h6>
+    <p class="card-text"><%= event.date.strftime("%d %b %Y") %></p>
+    <%= link_to 'View Event', event_path(event), class: 'btn btn-primary' %>
+  </div>
+</div>

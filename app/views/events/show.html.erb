@@ -14,7 +14,11 @@
             <% i = 12 %>
             <% @event.users.confirmed.each do |user| %>
               <button type="button" class="avatar-bordered" data-bs-toggle="modal" data-bs-target="#user-<%=user.id%>">
-              <%= cl_image_tag user.profile_pic.key, style: "z-index: #{i}", class: "avatar-bordered", alt: "avatar-bordered" %>
+              <% if user.profile_pic && user.profile_pic.key %>
+                <%= cl_image_tag user.profile_pic.key, style: "z-index: #{i}", class: "avatar-bordered", alt: "avatar-bordered" %>
+              <% else %>
+                <%= image_tag "person-icon.png", style: "z-index: #{i}", class: "avatar-bordered", alt: "avatar-bordered" %>
+              <% end %>
               </button>
               <% i -= 1 %>
                 <!-- Modal -->

@@ -16,11 +16,18 @@
       <tbody data-controller="counter">
         <% game.user_ratings.sort_by{ |player| player.rating }.reverse.each_with_index do |player, index| %>
           <tr class="counter-value" akhi="<%=player.rating%>">
-            <th class="text-center" style="vertical-align: middle"><%= cl_image_tag player.user.profile_pic.key, class: "avatar-large" %></th>
+            <th class="text-center" style="vertical-align: middle">
+              <% if player.user.profile_pic && player.user.profile_pic.key %>
+                <%= cl_image_tag player.user.profile_pic.key, class: "avatar-large" %>
+              <% else %>
+                <!-- Render default image -->
+                <%= image_tag "person-icon.png", class: "avatar-large" %>
+              <% end %>
+            </th>
             <th class="text-center" style="vertical-align: middle" scope="row"><%= index + 1 %></th>
             <th class="text-center" style="vertical-align: middle"><%= player.user.first_name %></th>
             <th class="text-center" style="vertical-align: middle"><%= player.user.second_name %></th>
-            <th id="rating" class="text-center" style="vertical-align: middle">500</th>
+            <th id="rating" class="text-center" style="vertical-align: middle"><%= player.rating %></th>
           </tr>
         <% end %>
       </tbody>

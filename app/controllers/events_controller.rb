@@ -3,6 +3,7 @@ class EventsController < ApplicationController
     @games = Game.all
     @event = Event.new
     @events = Event.all
+    @user = current_user
 
     if params[:query].present?
       @events = Event.near(params[:query], 20)
@@ -50,9 +51,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    Player.create(event: @event, user: current_user, status: :confirmed)
 
     if @event.save
+      Player.create(event: @event, user: current_user, status: :confirmed)
       redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity

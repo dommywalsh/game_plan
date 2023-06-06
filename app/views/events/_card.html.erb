@@ -10,7 +10,11 @@
             <p><%= event.game.name %></p>
         </div>
         <div class="host-avatar">
-          <%= cl_image_tag event.user.profile_pic.key, class:"event-card-avatar"%>
+            <% if @user.profile_pic && @user.profile_pic.key %>
+              <%= cl_image_tag user.profile_pic.key, class:"event-card-avatar" %>
+            <% else %>
+              <%= image_tag "person-icon.png", class:"event-card-avatar" %>
+            <% end %>
         </div>
       </div>
       <div class="game-players-info">
