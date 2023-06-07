@@ -1,18 +1,29 @@
-// .mapboxgl-popup {
-//   max-width: 200px;
-// }
+.mapboxgl-popup {
+  max-width: 200px;
+}
 
-// .mapboxgl-popup-content {
-//   text-align: center;
-//   font-family: "Open Sans", sans-serif;
-// }
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
 
-// .mapboxgl-canvas {
-//   width: 100%;
-// }
+.mapboxgl-canvas {
+  width: 100%;
+}
 
-// .mapboxgl-popup {
-//   /* Set the default background of the popup to transparent */
-//   background-color: transparent;
-//   /* Other custom styles */
-// }
+.mapboxgl-popup {
+  /* Set the default background of the popup to transparent */
+  background-color: transparent;
+  /* Other custom styles */
+}
+
+.map-container {
+  border: 1px solid #000; /* Adjust this to set the border color and thickness */
+  padding: 10px; /* Adjust this to set the padding */
+}
+
+@media (min-width: 992px) {
+  .map-container {
+    width: 35%;
+  }
+}

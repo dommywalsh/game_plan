@@ -10,6 +10,8 @@
 @import "message";
 @import "leaderboard";
 @import "modal";
+@import "map";
+
 
 
 .card-box {
@@ -24,4 +26,8 @@
 
 .mb-5 {
   margin-bottom: 0px !important;
+}
+
+.text-center h4 {
+  margin-top: 87px;
 }
