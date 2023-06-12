@@ -85,3 +85,9 @@
   .flatpickr-input[readonly] {
     background: transparent;
   }
+
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+  }
