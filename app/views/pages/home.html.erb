@@ -6,23 +6,20 @@
       </span>
     </h1>
     <h3>Life is better shared, play games together!</h3>
-    <div class="container mt-4 card-overflow bar">
-      <%= form_with url: events_path, method: :get do |f| %>
-        <div class="form-row">
-          <div class="form-group col-12 col-sm-6 col-md-3 py-2">
-            <%= f.text_field :query, placeholder: "Enter location", class: "form-control" %>
+      <div class="container mt-4 card-overflow bar">
+        <%= form_with url: events_path, method: :get, class: "d-flex" do |f| %>
+          <div class="form-control">
+            <%= f.text_field :query, placeholder: "Enter location" %>
           </div>
-          <div class="form-group col-12 col-sm-6 col-md-3 py-2">
-            <%= f.collection_select(:gamefilter, @games, :name, :name, {prompt: true}, {class: "form-control"}) %>
+          <div class="form-control">
+            <%= f.collection_select(:gamefilter, @games, :name, :name, prompt: true) %>
           </div>
-          <div class="form-group col-12 col-sm-6 col-md-3 py-2">
-            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: "Select date", class: "form-control" %>
+          <div class="form-control">
+            <%= f.text_field :date_input, data: { controller: "flatpicker" }, placeholder: "Select date" %>
           </div>
-          <div class="form-group col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-center py-2">
-            <%= submit_tag "Search", class: "btn btn-primary w-50" %>
-          </div>
-        </div>
-      <% end %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

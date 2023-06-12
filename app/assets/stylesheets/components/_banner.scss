@@ -18,3 +18,9 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(214, 208, 208, 0.2);
 }
+
+@media (max-width: 991px) {
+  .banner-show {
+    flex-direction: column;
+  }
+}
